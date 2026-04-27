@@ -14,8 +14,8 @@ import { OIL_ICONS } from '../constants/oilIcons';
 interface Props {
   slots: SessionSlot[];
   narrative: string;
-  vibe: Vibe;
-  time: TimeOfDay;
+  vibe: Vibe | null;
+  time: TimeOfDay | null;
   ownedIds: Set<string>;
   onOilPress: (oil: EssentialOil) => void;
   onSwapPress: (slotIndex: number, oil: EssentialOil | null) => void;
@@ -33,6 +33,24 @@ export function TrioResult({ slots, narrative, vibe, time, ownedIds, onOilPress,
     <View style={styles.container}>
       {/* Slots */}
       {slots.map((slot, index) => {
+        if (slot.kind === 'empty') {
+          return (
+            <TouchableOpacity
+              key={`empty-${index}`}
+              style={styles.emptySlot}
+              onPress={() => onSwapPress(index, null)}
+              activeOpacity={0.75}
+            >
+              <View style={styles.oilIndexBadge}>
+                <Text style={styles.oilIndex}>{index + 1}</Text>
+              </View>
+              <Ionicons name="add-circle-outline" size={22} color={Colors.textMuted} />
+              <Text style={styles.emptySlotText}>Add oil or blend</Text>
+              <Ionicons name="chevron-forward" size={16} color={Colors.textMuted} style={{ marginLeft: 'auto' }} />
+            </TouchableOpacity>
+          );
+        }
+
         if (slot.kind === 'blend') {
           const { blend } = slot;
           const botanicalKey = OIL_ICONS[blend.oils[0]?.id]?.botanical ?? 'sprout';
@@ -193,6 +211,23 @@ export function TrioResult({ slots, narrative, vibe, time, ownedIds, onOilPress,
 const styles = StyleSheet.create({
   container: {
     gap: Spacing.md,
+  },
+  emptySlot: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.sm,
+    backgroundColor: Colors.bgCard,
+    borderRadius: Radius.lg,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    borderStyle: 'dashed',
+    padding: Spacing.md,
+  },
+  emptySlotText: {
+    fontFamily: Typography.sans,
+    fontSize: FontSize.md,
+    color: Colors.textMuted,
+    fontStyle: 'italic',
   },
   oilCard: {
     backgroundColor: Colors.bgCard,

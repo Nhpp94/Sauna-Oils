@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 import { Typography, FontSize } from '../constants/theme';
 import { CustomLibraryProvider } from '../context/CustomLibraryContext';
 import { MyKitProvider } from '../context/MyKitContext';
+import { SavedSessionsProvider } from '../context/SavedSessionsContext';
 import {
   Inter_400Regular,
   Inter_600SemiBold,
@@ -31,6 +32,7 @@ export default function RootLayout() {
   return (
     <MyKitProvider>
     <CustomLibraryProvider>
+    <SavedSessionsProvider>
       <StatusBar style="light" />
       <Stack
         screenOptions={{
@@ -54,10 +56,13 @@ export default function RootLayout() {
           name="session/result"
           options={{ headerShown: false, presentation: 'modal' }}
         />
+        <Stack.Screen name="session/build" options={{ headerShown: false, presentation: 'modal' }} />
+        <Stack.Screen name="saved-sessions" options={{ headerShown: false }} />
         <Stack.Screen name="oil/[id]" options={{ headerShown: false, presentation: 'fullScreenModal' }} />
         <Stack.Screen name="blend/[id]" options={{ headerShown: false, presentation: 'fullScreenModal' }} />
         <Stack.Screen name="incense/[id]" options={{ headerShown: false, presentation: 'fullScreenModal' }} />
       </Stack>
+    </SavedSessionsProvider>
     </CustomLibraryProvider>
     </MyKitProvider>
   );

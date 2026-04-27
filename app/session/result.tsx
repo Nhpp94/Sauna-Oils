@@ -1,22 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, Pressable,
-  StyleSheet,
+  StyleSheet, TextInput, Modal,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import GrainOverlay from '../../components/GrainOverlay';
-import { SessionSlot } from '../../data/recommendations';
+import { SessionSlot, SessionTrio, getCompatibleOils, suggestSwap, SwapCandidate } from '../../data/recommendations';
 import { useMyOils } from '../../hooks/useMyOils';
 import { useMyIncense } from '../../hooks/useMyIncense';
 import { useCustomLibrary } from '../../context/CustomLibraryContext';
+import { useSavedSessions } from '../../context/SavedSessionsContext';
 import { TrioResult } from '../../components/TrioResult';
 import { SwapModal } from '../../components/SwapModal';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
 import { FORM_META, IncenseForm } from '../../constants/incenseForms';
 import { BotanicalIcon } from '../../components/BotanicalIcon';
-import { EssentialOil } from '../../data/oils';
-import { useSharedSession } from '../../store/sessionStore';
+import { EssentialOil, OILS } from '../../data/oils';
+import { useSharedSession, setSharedSession, getActiveSavedSessionId } from '../../store/sessionStore';
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function shortDate(ts: number) {
+  const d = new Date(ts);
+  return `${MONTHS[d.getMonth()]} ${d.getDate()}`;
+}
+function cap(s: string) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 const INCENSE_FORM_BOTANICALS: Record<string, string> = {
   wood: 'wood-stick', resin: 'resin-drop', herb: 'herb-bundle',
@@ -39,13 +49,26 @@ export default function ResultScreen() {
   const router = useRouter();
   const { ownedIds } = useMyOils();
   const { ownedIncenseIds } = useMyIncense();
-  const { customBlends } = useCustomLibrary();
+  const { customBlends, customOils } = useCustomLibrary();
+  const allOils = useMemo(() => [...OILS, ...customOils], [customOils]);
+  const { saveSession, updateSession } = useSavedSessions();
   const session = useSharedSession();
+
+  const activeSavedIdRef = useRef(getActiveSavedSessionId());
+
+  useEffect(() => {
+    if (activeSavedIdRef.current && session?.rounds) {
+      updateSession(activeSavedIdRef.current, session.rounds);
+    }
+  }, [session?.rounds]);
 
   const [activeRound, setActiveRound] = useState(0);
   const [swapTarget, setSwapTarget] = useState<SwapTarget | null>(null);
+  const [saveModalVisible, setSaveModalVisible] = useState(false);
+  const [saveName, setSaveName] = useState('');
+  const [savedFlash, setSavedFlash] = useState(false);
 
-  if (!session || !session.rounds || !session.vibe || !session.time) {
+  if (!session || !session.rounds) {
     return (
       <View style={styles.empty}>
         <Text style={styles.emptyText}>No session generated yet.</Text>
@@ -57,20 +80,61 @@ export default function ResultScreen() {
     );
   }
 
-  const { rounds, vibe, time, manualSwapInRound, replaceSlotInRound,
-    getSwapSuggestionForRound, getBrowseOilsForRound, setRoundIncense } = session;
+  const { rounds, vibe, time, source } = session;
   const currentRound = rounds[activeRound];
 
-  const swapSuggestion = swapTarget?.kind === 'slot' && swapTarget.oil
-    ? getSwapSuggestionForRound(activeRound, swapTarget.oil.id)
-    : null;
-  const browseOils = swapTarget?.kind === 'slot'
-    ? getBrowseOilsForRound(activeRound, swapTarget.oil?.id ?? null)
-    : [];
+  // Compute directly from data properties — avoids stale closures when loaded from saved sessions
+  const roundOilIds = useMemo(() =>
+    (rounds[activeRound].slots as SessionSlot[])
+      .filter((s): s is { kind: 'oil'; oil: EssentialOil } => s.kind === 'oil')
+      .map(s => s.oil.id),
+    [rounds, activeRound],
+  );
+
+  const swapSuggestion: SwapCandidate | null = useMemo(() => {
+    if (swapTarget?.kind !== 'slot' || !swapTarget.oil || !vibe || !time) return null;
+    return suggestSwap(swapTarget.oil.id, roundOilIds, vibe, time, allOils);
+  }, [swapTarget, roundOilIds, vibe, time, allOils]);
+
+  const browseOils = useMemo(() => {
+    if (swapTarget?.kind !== 'slot') return [];
+    if (!vibe || !time) {
+      return allOils
+        .filter(o => !roundOilIds.includes(o.id))
+        .map(o => ({ ...o, compatibilityScore: 0 as number }));
+    }
+    return getCompatibleOils(roundOilIds, swapTarget.oil?.id ?? '', vibe, time, allOils);
+  }, [swapTarget, roundOilIds, vibe, time, allOils]);
 
   const handleRegenerate = () => {
     session.regenerateRound(activeRound);
   };
+
+  const handleSavePress = () => {
+    const dateStr = shortDate(Date.now());
+    const defaultName = vibe && time
+      ? `${cap(vibe)} ${cap(time)} · ${dateStr}`
+      : source === 'built'
+      ? `Custom Build · ${dateStr}`
+      : `Session · ${dateStr}`;
+    setSaveName(defaultName);
+    setSaveModalVisible(true);
+  };
+
+  const handleConfirmSave = () => {
+    saveSession({
+      name: saveName.trim() || `Session · ${shortDate(Date.now())}`,
+      source: source ?? 'generated',
+      vibe: vibe ?? null,
+      time: time ?? null,
+      rounds,
+    });
+    setSaveModalVisible(false);
+    setSavedFlash(true);
+    setTimeout(() => setSavedFlash(false), 2000);
+  };
+
+  const canRegenerate = !!(vibe && time);
 
   return (
     <View style={styles.container}>
@@ -82,15 +146,37 @@ export default function ResultScreen() {
         <View style={styles.headerCenter}>
           <Text style={styles.screenTitle}>Your Session</Text>
           <Text style={styles.headerMeta}>
-            {vibe.charAt(0).toUpperCase() + vibe.slice(1)} · {time.charAt(0).toUpperCase() + time.slice(1)} · 3 rounds
+            {vibe && time
+              ? `${cap(vibe)} · ${cap(time)} · 3 rounds`
+              : source === 'built'
+              ? 'Custom Build · 3 rounds'
+              : '3 rounds'}
           </Text>
         </View>
-        <TouchableOpacity onPress={handleRegenerate} style={styles.regenBtn}>
-          <Ionicons name="refresh-outline" size={20} color={Colors.textSecondary} />
-        </TouchableOpacity>
+        <View style={styles.headerActions}>
+          {savedFlash ? (
+            <View style={styles.savedBadge}>
+              <Ionicons name="checkmark" size={14} color={Colors.gold} />
+              <Text style={styles.savedBadgeText}>Saved</Text>
+            </View>
+          ) : (
+            <TouchableOpacity onPress={handleSavePress} style={styles.actionBtn}>
+              <Ionicons name="bookmark-outline" size={20} color={Colors.textSecondary} />
+            </TouchableOpacity>
+          )}
+          {canRegenerate && (
+            <TouchableOpacity onPress={handleRegenerate} style={styles.actionBtn}>
+              <Ionicons name="refresh-outline" size={20} color={Colors.textSecondary} />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
-      <ScrollView style={styles.scroll} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
 
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Round tabs */}
         <View style={styles.roundTabs}>
           {rounds.map((_, i) => (
@@ -234,26 +320,83 @@ export default function ResultScreen() {
         }
         onUseOil={oil => {
           if (swapTarget?.kind === 'slot') {
-            if (swapTarget.oil) {
-              manualSwapInRound(activeRound, swapTarget.oil.id, oil);
-            } else {
-              replaceSlotInRound(activeRound, swapTarget.slotIndex, { kind: 'oil', oil });
-            }
+            const oilId = swapTarget.oil?.id;
+            const slotIdx = swapTarget.slotIndex;
+            const newRounds = (rounds as SessionTrio[]).map((r, i) => i !== activeRound ? r : {
+              ...r,
+              slots: (r.slots as SessionSlot[]).map((s, j) =>
+                oilId
+                  ? (s.kind === 'oil' && s.oil.id === oilId ? { kind: 'oil' as const, oil } : s)
+                  : (j === slotIdx ? { kind: 'oil' as const, oil } : s)
+              ),
+            });
+            setSharedSession({ ...session, rounds: newRounds });
           }
           setSwapTarget(null);
         }}
         onUseBlend={blend => {
           if (swapTarget?.kind === 'slot') {
-            replaceSlotInRound(activeRound, swapTarget.slotIndex, { kind: 'blend', blend });
+            const slotIdx = swapTarget.slotIndex;
+            const newRounds = (rounds as SessionTrio[]).map((r, i) => i !== activeRound ? r : {
+              ...r,
+              slots: (r.slots as SessionSlot[]).map((s, j) =>
+                j === slotIdx ? { kind: 'blend' as const, blend } : s
+              ),
+            });
+            setSharedSession({ ...session, rounds: newRounds });
           }
           setSwapTarget(null);
         }}
         onUseIncense={incense => {
-          setRoundIncense(activeRound, incense);
+          const newRounds = (rounds as SessionTrio[]).map((r, i) =>
+            i !== activeRound ? r : { ...r, incense }
+          );
+          setSharedSession({ ...session, rounds: newRounds });
           setSwapTarget(null);
         }}
         onClose={() => setSwapTarget(null)}
       />
+
+      {/* Save Session Modal */}
+      <Modal
+        visible={saveModalVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setSaveModalVisible(false)}
+      >
+        <Pressable style={styles.saveOverlay} onPress={() => setSaveModalVisible(false)}>
+          <Pressable style={styles.saveModal} onPress={e => e.stopPropagation()}>
+            <Text style={styles.saveModalTitle}>Save Session</Text>
+            <Text style={styles.saveModalLabel}>Name</Text>
+            <TextInput
+              style={styles.saveModalInput}
+              value={saveName}
+              onChangeText={setSaveName}
+              placeholder="Session name…"
+              placeholderTextColor={Colors.textMuted}
+              autoFocus
+              selectTextOnFocus
+            />
+            <View style={styles.saveModalActions}>
+              <TouchableOpacity
+                style={styles.saveModalCancel}
+                onPress={() => setSaveModalVisible(false)}
+                activeOpacity={0.75}
+              >
+                <Text style={styles.saveModalCancelText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.saveModalConfirm}
+                onPress={handleConfirmSave}
+                activeOpacity={0.85}
+              >
+                <Ionicons name="bookmark" size={15} color={Colors.bg} />
+                <Text style={styles.saveModalConfirmText}>Save</Text>
+              </TouchableOpacity>
+            </View>
+          </Pressable>
+        </Pressable>
+      </Modal>
     </View>
   );
 }
@@ -313,15 +456,36 @@ const styles = StyleSheet.create({
     color: Colors.textSecondary,
     textTransform: 'capitalize',
   },
-  regenBtn: {
-    width: 40,
-    height: 40,
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  actionBtn: {
+    width: 36,
+    height: 36,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: Radius.full,
     borderWidth: 1,
     borderColor: Colors.border,
     backgroundColor: Colors.bgCard,
+  },
+  savedBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    paddingHorizontal: Spacing.sm,
+    paddingVertical: 5,
+    borderRadius: Radius.full,
+    borderWidth: 1,
+    borderColor: Colors.goldDim,
+    backgroundColor: Colors.bgCard,
+  },
+  savedBadgeText: {
+    fontFamily: Typography.sansMedium,
+    fontSize: FontSize.xs,
+    color: Colors.gold,
   },
   roundTabs: {
     flexDirection: 'row',
@@ -496,5 +660,79 @@ const styles = StyleSheet.create({
     fontSize: FontSize.sm,
     lineHeight: 21,
     color: Colors.textSecondary,
+  },
+  // Save modal
+  saveOverlay: {
+    flex: 1,
+    backgroundColor: Colors.bgOverlay,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: Spacing.lg,
+  },
+  saveModal: {
+    width: '100%',
+    backgroundColor: '#1a1208',
+    borderRadius: Radius.lg,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    padding: Spacing.lg,
+    gap: Spacing.sm,
+  },
+  saveModalTitle: {
+    fontFamily: Typography.serifBold,
+    fontSize: FontSize.xl,
+    color: Colors.textPrimary,
+    marginBottom: Spacing.xs,
+  },
+  saveModalLabel: {
+    fontFamily: Typography.sansBold,
+    fontSize: FontSize.xs,
+    color: Colors.textMuted,
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+  },
+  saveModalInput: {
+    backgroundColor: Colors.bgCard,
+    borderRadius: Radius.md,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    paddingHorizontal: Spacing.md,
+    paddingVertical: Spacing.sm,
+    fontFamily: Typography.sans,
+    fontSize: FontSize.md,
+    color: Colors.textPrimary,
+  },
+  saveModalActions: {
+    flexDirection: 'row',
+    gap: Spacing.sm,
+    marginTop: Spacing.xs,
+  },
+  saveModalCancel: {
+    flex: 1,
+    paddingVertical: Spacing.sm,
+    borderRadius: Radius.md,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    alignItems: 'center',
+  },
+  saveModalCancelText: {
+    fontFamily: Typography.sansMedium,
+    fontSize: FontSize.md,
+    color: Colors.textSecondary,
+  },
+  saveModalConfirm: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    paddingVertical: Spacing.sm,
+    borderRadius: Radius.md,
+    backgroundColor: Colors.gold,
+  },
+  saveModalConfirmText: {
+    fontFamily: Typography.sansBold,
+    fontSize: FontSize.md,
+    color: Colors.bg,
   },
 });

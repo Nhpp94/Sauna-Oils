@@ -5,6 +5,7 @@ import { Blend, BLENDS } from '../data/blends';
 import { Incense } from '../data/incense';
 import { useMyOils } from './useMyOils';
 import { useMyIncense } from './useMyIncense';
+import { SavedSession } from '../context/SavedSessionsContext';
 
 export function useSession(customOils: EssentialOil[] = []) {
   const { ownedIds } = useMyOils();
@@ -13,6 +14,7 @@ export function useSession(customOils: EssentialOil[] = []) {
   const [vibe, setVibe] = useState<Vibe | null>(null);
   const [time, setTime] = useState<TimeOfDay | null>(null);
   const [rounds, setRounds] = useState<SessionTrio[] | null>(null);
+  const [source, setSource] = useState<'generated' | 'built'>('generated');
 
   const allOils = useMemo(() => [...OILS, ...customOils], [customOils]);
 
@@ -30,6 +32,7 @@ export function useSession(customOils: EssentialOil[] = []) {
 
   const generateRounds = useCallback(() => {
     if (!vibe || !time) return;
+    setSource('generated');
     const generated: SessionTrio[] = [];
     const usedIds = new Set<string>();
     for (let r = 0; r < 3; r++) {
@@ -46,6 +49,26 @@ export function useSession(customOils: EssentialOil[] = []) {
     generated.forEach(trio => { trio.incense = sessionIncense; });
     setRounds(generated);
   }, [vibe, time, oilPool, kitOnly, ownedIds, ownedIncenseIds]);
+
+  const initBuildRounds = useCallback((builtRounds: SessionTrio[], v?: Vibe | null, t?: TimeOfDay | null) => {
+    setSource('built');
+    if (v !== undefined) setVibe(v);
+    if (t !== undefined) setTime(t);
+    setRounds(builtRounds);
+  }, []);
+
+  const hydrateFromSaved = useCallback((saved: SavedSession) => {
+    setSource(saved.source);
+    setVibe(saved.vibe);
+    setTime(saved.time);
+    const normalizedRounds = saved.rounds.map(r => ({
+      ...r,
+      slots: r.slots.length >= 3
+        ? r.slots
+        : [...r.slots, ...Array(3 - r.slots.length).fill({ kind: 'empty' as const })],
+    }));
+    setRounds(normalizedRounds);
+  }, []);
 
   const manualSwapInRound = useCallback((roundIndex: number, oilIdToReplace: string, newOil: EssentialOil) => {
     setRounds(prev => prev?.map((r, i) => i !== roundIndex ? r : {
@@ -70,10 +93,15 @@ export function useSession(customOils: EssentialOil[] = []) {
   }, [rounds, vibe, time, allOils]);
 
   const getBrowseOilsForRound = useCallback((roundIndex: number, oilId: string | null) => {
-    if (!rounds || !vibe || !time) return [];
+    if (!rounds) return [];
     const roundOilIds = rounds[roundIndex].slots
       .filter((s): s is { kind: 'oil'; oil: EssentialOil } => s.kind === 'oil')
       .map(s => s.oil.id);
+    if (!vibe || !time) {
+      return allOils
+        .filter(o => !roundOilIds.includes(o.id))
+        .map(o => ({ ...o, compatibilityScore: 0 as number }));
+    }
     return getCompatibleOils(roundOilIds, oilId ?? '', vibe, time, allOils);
   }, [rounds, vibe, time, allOils]);
 
@@ -122,7 +150,10 @@ export function useSession(customOils: EssentialOil[] = []) {
     kitBlendCount,
     kitIncenseCount: ownedIncenseIds.size,
     rounds,
+    source,
     generateRounds,
+    initBuildRounds,
+    hydrateFromSaved,
     regenerateRound,
     manualSwapInRound,
     replaceSlotInRound,

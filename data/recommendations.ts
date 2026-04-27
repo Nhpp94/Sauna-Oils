@@ -4,7 +4,8 @@ import { INCENSE, Incense } from './incense';
 
 export type SessionSlot =
   | { kind: 'oil';   oil:   EssentialOil }
-  | { kind: 'blend'; blend: Blend        };
+  | { kind: 'blend'; blend: Blend        }
+  | { kind: 'empty'                      };
 
 export interface SessionTrio {
   slots: SessionSlot[];

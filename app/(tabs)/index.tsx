@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ImageBackground } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { getDailyFact } from '../../data/funFacts';
@@ -52,7 +51,7 @@ export default function HomeScreen() {
             activeOpacity={0.85}
           >
             <Text style={styles.mainCtaTitle}>Build Your Session</Text>
-            <Text style={styles.mainCtaSubtitle}>Choose vibe + time → get 3 perfect oils</Text>
+            <Text style={styles.mainCtaSubtitle}>Generate or build your own · 3 perfect rounds</Text>
           </TouchableOpacity>
 
         </View>
