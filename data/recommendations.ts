@@ -103,12 +103,14 @@ export function generateSession(
   roundPosition: 'opening' | 'core' | 'closing' = 'core',
   ownedIds?: Set<string>,
   ownedIncenseIds?: Set<string>,
+  allBlends: Blend[] = BLENDS,
+  allIncense: Incense[] = INCENSE,
 ): SessionTrio {
   const narrative = VIBE_NARRATIVES[vibe][time];
-  const incense = pickIncense(vibe, time, ownedIncenseIds);
+  const incense = pickIncense(vibe, time, ownedIncenseIds, allIncense);
   const blendPool = ownedIds
-    ? BLENDS.filter(b => b.oils.every(bo => ownedIds!.has(bo.id)))
-    : BLENDS;
+    ? allBlends.filter(b => b.oils.every(bo => ownedIds!.has(bo.id)))
+    : allBlends;
 
   const noteBias: Record<string, number> =
     roundPosition === 'opening' ? { top: 2, middle: 0, base: -1 } :
@@ -201,8 +203,8 @@ export function generateSession(
   return { slots: oils.map(o => ({ kind: 'oil' as const, oil: o })), narrative, incense };
 }
 
-function pickIncense(vibe: Vibe, time: TimeOfDay, ownedIncenseIds?: Set<string>): Incense | undefined {
-  const allPool = ownedIncenseIds ? INCENSE.filter(i => ownedIncenseIds.has(i.id)) : INCENSE;
+function pickIncense(vibe: Vibe, time: TimeOfDay, ownedIncenseIds?: Set<string>, incensePool: Incense[] = INCENSE): Incense | undefined {
+  const allPool = ownedIncenseIds ? incensePool.filter(i => ownedIncenseIds.has(i.id)) : incensePool;
   if (allPool.length === 0) return undefined;
   const matches = allPool.filter(i => i.vibes.includes(vibe) && i.timeOfDay.includes(time));
   const pool = matches.length > 0 ? matches : allPool.filter(i => i.vibes.includes(vibe));

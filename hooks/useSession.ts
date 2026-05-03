@@ -1,7 +1,8 @@
 import { useState, useCallback, useMemo } from 'react';
-import { Vibe, TimeOfDay, EssentialOil, OILS } from '../data/oils';
+import { Vibe, TimeOfDay, EssentialOil } from '../data/oils';
 import { generateSession, SessionTrio, SessionSlot, suggestSwap, getCompatibleOils, SwapCandidate } from '../data/recommendations';
-import { Blend, BLENDS } from '../data/blends';
+import { Blend } from '../data/blends';
+import { useRemoteData } from '../context/RemoteDataContext';
 import { Incense } from '../data/incense';
 import { useMyOils } from './useMyOils';
 import { useMyIncense } from './useMyIncense';
@@ -10,13 +11,14 @@ import { SavedSession } from '../context/SavedSessionsContext';
 export function useSession(customOils: EssentialOil[] = []) {
   const { ownedIds } = useMyOils();
   const { ownedIncenseIds } = useMyIncense();
+  const { oils: remoteOils, blends: remoteBlends, incense: remoteIncense } = useRemoteData();
   const [kitOnly, setKitOnly] = useState(false);
   const [vibe, setVibe] = useState<Vibe | null>(null);
   const [time, setTime] = useState<TimeOfDay | null>(null);
   const [rounds, setRounds] = useState<SessionTrio[] | null>(null);
   const [source, setSource] = useState<'generated' | 'built'>('generated');
 
-  const allOils = useMemo(() => [...OILS, ...customOils], [customOils]);
+  const allOils = useMemo(() => [...remoteOils, ...customOils], [remoteOils, customOils]);
 
   const oilPool = useMemo(() => {
     if (kitOnly) return allOils.filter(o => ownedIds.has(o.id));
@@ -25,8 +27,8 @@ export function useSession(customOils: EssentialOil[] = []) {
 
   const kitBlendCount = useMemo(() => {
     if (!kitOnly) return 0;
-    return BLENDS.filter(b => b.oils.every(bo => ownedIds.has(bo.id))).length;
-  }, [kitOnly, ownedIds]);
+    return remoteBlends.filter(b => b.oils.every(bo => ownedIds.has(bo.id))).length;
+  }, [kitOnly, remoteBlends, ownedIds]);
 
   const ROUND_POSITIONS = ['opening', 'core', 'closing'] as const;
 
@@ -38,7 +40,7 @@ export function useSession(customOils: EssentialOil[] = []) {
     for (let r = 0; r < 3; r++) {
       const pool = oilPool.filter(o => !usedIds.has(o.id));
       const effectivePool = pool.length >= 3 ? pool : oilPool;
-      const trio = generateSession(vibe, time, effectivePool, 3, ROUND_POSITIONS[r], kitOnly ? ownedIds : undefined, kitOnly ? ownedIncenseIds : undefined);
+      const trio = generateSession(vibe, time, effectivePool, 3, ROUND_POSITIONS[r], kitOnly ? ownedIds : undefined, kitOnly ? ownedIncenseIds : undefined, remoteBlends, remoteIncense);
       generated.push(trio);
       trio.slots.forEach(s => {
         if (s.kind === 'oil') usedIds.add(s.oil.id);

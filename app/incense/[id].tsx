@@ -6,8 +6,8 @@ import {
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { INCENSE } from '../../data/incense';
 import { useMyIncense } from '../../hooks/useMyIncense';
+import { useRemoteData } from '../../context/RemoteDataContext';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
 import { FORM_META, IncenseForm } from '../../constants/incenseForms';
 import { VIBE_ICONS, VIBE_COLORS, TIME_ICONS } from '../../constants/icons';
@@ -54,8 +54,9 @@ export default function IncenseDetailScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { ownedIncenseIds, toggleOwnedIncense } = useMyIncense();
+  const { incense: allIncense } = useRemoteData();
 
-  const incense = INCENSE.find(i => i.id === id);
+  const incense = allIncense.find(i => i.id === id);
 
   if (!incense) {
     return (

@@ -6,6 +6,7 @@ import { Typography, FontSize } from '../constants/theme';
 import { CustomLibraryProvider } from '../context/CustomLibraryContext';
 import { MyKitProvider } from '../context/MyKitContext';
 import { SavedSessionsProvider } from '../context/SavedSessionsContext';
+import { RemoteDataProvider } from '../context/RemoteDataContext';
 import {
   Inter_400Regular,
   Inter_600SemiBold,
@@ -30,6 +31,7 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
+    <RemoteDataProvider>
     <MyKitProvider>
     <CustomLibraryProvider>
     <SavedSessionsProvider>
@@ -65,5 +67,6 @@ export default function RootLayout() {
     </SavedSessionsProvider>
     </CustomLibraryProvider>
     </MyKitProvider>
+    </RemoteDataProvider>
   );
 }

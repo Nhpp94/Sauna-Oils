@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "nordic-forest",
+    "name": "Nordic Forest",
+    "description": "The quintessential Scandinavian sauna experience — a trio of forest trees that transport you deep into a pine wood. Grounding, clean, and timeless.",
+    "saunaNote": "Fills the room with a rich, resinous forest atmosphere. The three wood notes layer beautifully. Classic and universally loved.",
+    "oils": [
+      {
+        "id": "pine",
+        "name": "Scots Pine",
+        "drops": 4
+      },
+      {
+        "id": "cedarwood",
+        "name": "Cedarwood",
+        "drops": 3
+      },
+      {
+        "id": "juniper",
+        "name": "Juniper Berry",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "grounding",
+      "energizing"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Forest bathing",
+      "Grounding",
+      "Respiratory",
+      "Clarity"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Avoid with kidney disorders",
+      "Dilute well"
+    ],
+    "color": "#406030",
+    "emoji": "🌲"
+  },
+  {
+    "id": "sunrise-citrus",
+    "name": "Sunrise Citrus",
+    "description": "A bright morning awakening. Bergamot adds floral complexity to the sharpness of lemon, while rosemary anchors the blend with herbal clarity. The perfect start to a productive day.",
+    "saunaNote": "Effervescent and uplifting — the room immediately brightens. Great for waking up a group.",
+    "oils": [
+      {
+        "id": "lemon",
+        "name": "Lemon",
+        "drops": 4
+      },
+      {
+        "id": "bergamot",
+        "name": "Bergamot",
+        "drops": 3
+      },
+      {
+        "id": "rosemary",
+        "name": "Rosemary",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "energizing",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning"
+    ],
+    "benefits": [
+      "Mental clarity",
+      "Mood lift",
+      "Focus",
+      "Energy"
+    ],
+    "precautions": [
+      "Phototoxic — avoid skin before sun exposure",
+      "Avoid during pregnancy and with epilepsy",
+      "Dilute well"
+    ],
+    "color": "#e8a020",
+    "emoji": "🌅"
+  },
+  {
+    "id": "temple-ritual",
+    "name": "Temple Ritual",
+    "description": "Three of the most sacred oils on earth, used for thousands of years in ceremony and prayer. This blend transforms the sauna into a sacred space and invites deep contemplation.",
+    "saunaNote": "Rich, balsamic, and holy. Deepens the breath and creates profound stillness. For intentional, ceremonial sessions.",
+    "oils": [
+      {
+        "id": "frankincense",
+        "name": "Frankincense",
+        "drops": 3
+      },
+      {
+        "id": "sandalwood",
+        "name": "Sandalwood",
+        "drops": 2
+      },
+      {
+        "id": "myrrh",
+        "name": "Myrrh",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "meditative",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "benefits": [
+      "Meditation",
+      "Deep breathing",
+      "Spiritual focus",
+      "Cortisol"
+    ],
+    "precautions": [
+      "Avoid during first trimester of pregnancy",
+      "Generally safe at sauna concentrations",
+      "Dilute well"
+    ],
+    "color": "#c09050",
+    "emoji": "🕯️"
+  },
+  {
+    "id": "winter-immunity",
+    "name": "Winter Immunity",
+    "description": "A powerful antimicrobial trio that harnesses the sauna's heat to build and strengthen the immune system. Eucalyptus opens the airways, thyme kills pathogens, and cinnamon warms the body to its core.",
+    "saunaNote": "Bold and medicinal — best reserved for cold season or when the immune system needs serious support. Very potent.",
+    "oils": [
+      {
+        "id": "eucalyptus",
+        "name": "Eucalyptus",
+        "drops": 4
+      },
+      {
+        "id": "thyme",
+        "name": "Thyme",
+        "drops": 1
+      },
+      {
+        "id": "cinnamon",
+        "name": "Cinnamon Bark",
+        "drops": 1
+      }
+    ],
+    "vibes": [
+      "immune",
+      "energizing"
+    ],
+    "timeOfDay": [
+      "morning"
+    ],
+    "benefits": [
+      "Immune boost",
+      "Antimicrobial",
+      "Respiratory",
+      "Warmth"
+    ],
+    "precautions": [
+      "Very potent — max 6 drops total per session",
+      "Avoid during pregnancy",
+      "Not for children under 6"
+    ],
+    "color": "#c04030",
+    "emoji": "🛡️"
+  },
+  {
+    "id": "deep-detox",
+    "name": "Deep Detox",
+    "description": "A cleansing blend designed to amplify the detoxifying power of sweating. Juniper stimulates the kidneys, grapefruit activates the lymphatic system, and lemongrass purifies from within.",
+    "saunaNote": "Fresh, tart, and cleansing. Pair with a cold plunge after for maximum effect.",
+    "oils": [
+      {
+        "id": "juniper",
+        "name": "Juniper Berry",
+        "drops": 3
+      },
+      {
+        "id": "grapefruit",
+        "name": "Grapefruit",
+        "drops": 4
+      },
+      {
+        "id": "lemongrass",
+        "name": "Lemongrass",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "detox",
+      "energizing"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Detoxification",
+      "Lymphatic drainage",
+      "Kidney support",
+      "Cleansing"
+    ],
+    "precautions": [
+      "Avoid during pregnancy and with kidney disease",
+      "Phototoxic — avoid skin before UV exposure",
+      "Lemongrass is a skin sensitiser — dilute well"
+    ],
+    "color": "#60a040",
+    "emoji": "🌿"
+  },
+  {
+    "id": "evening-surrender",
+    "name": "Evening Surrender",
+    "description": "The perfect end to any day. Lavender calms the nervous system, chamomile dissolves irritability, and cedarwood anchors the blend with deep, sedative warmth. Promotes sleep and emotional peace.",
+    "saunaNote": "Soft, comforting, and deeply restful. Use in the last round of an evening session. Almost impossibly calming.",
+    "oils": [
+      {
+        "id": "lavender",
+        "name": "Lavender",
+        "drops": 4
+      },
+      {
+        "id": "chamomile",
+        "name": "Roman Chamomile",
+        "drops": 2
+      },
+      {
+        "id": "cedarwood",
+        "name": "Cedarwood",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "benefits": [
+      "Sleep quality",
+      "Anxiety relief",
+      "Emotional peace",
+      "Deep rest"
+    ],
+    "precautions": [
+      "Avoid during first trimester of pregnancy",
+      "Avoid if allergic to ragweed family (Asteraceae)",
+      "Sedating — allow time before driving"
+    ],
+    "color": "#9070b0",
+    "emoji": "🌙"
+  },
+  {
+    "id": "spice-market",
+    "name": "Spice Market",
+    "description": "Inspired by the warm, exotic bazaars of the East. Sweet orange brings joy, ginger adds fire and courage, and cardamom bridges the two with its unique spiced-floral complexity.",
+    "saunaNote": "Warm, inviting, and exotic. The combination creates a rich oriental atmosphere. A crowd-pleasing favourite for mixed groups.",
+    "oils": [
+      {
+        "id": "orange",
+        "name": "Sweet Orange",
+        "drops": 4
+      },
+      {
+        "id": "ginger",
+        "name": "Ginger",
+        "drops": 2
+      },
+      {
+        "id": "cardamom",
+        "name": "Cardamom",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "energizing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Joy",
+      "Circulation",
+      "Digestion",
+      "Creativity"
+    ],
+    "precautions": [
+      "May cause skin sensitisation — dilute well",
+      "Avoid direct skin contact",
+      "Avoid with children under 3"
+    ],
+    "color": "#d07020",
+    "emoji": "🫙"
+  },
+  {
+    "id": "forest-bathing",
+    "name": "Forest Bathing",
+    "description": "A trio of conifer oils that recreates the profound calm of Shinrin-yoku — Japanese forest bathing. Each oil contributes a different layer of the boreal forest, from needle to resin to bark.",
+    "saunaNote": "Rich, balsamic, and deeply restorative. Ideal for burnout recovery or any time you need to come home to yourself.",
+    "oils": [
+      {
+        "id": "fir",
+        "name": "Silver Fir",
+        "drops": 4
+      },
+      {
+        "id": "pine",
+        "name": "Scots Pine",
+        "drops": 3
+      },
+      {
+        "id": "spruce",
+        "name": "Black Spruce",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "grounding"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "benefits": [
+      "Adrenal support",
+      "Burnout recovery",
+      "Muscle recovery",
+      "Forest calm"
+    ],
+    "precautions": [
+      "Avoid with kidney disorders",
+      "Generally safe; dilute well",
+      "May irritate skin undiluted"
+    ],
+    "color": "#305040",
+    "emoji": "🌲"
+  },
+  {
+    "id": "creative-flow",
+    "name": "Creative Flow",
+    "description": "A blend for artists, thinkers, and makers. Bergamot loosens mental rigidity, basil sharpens focus, and spearmint adds a playful, uplifting lift that keeps ideas flowing freely.",
+    "saunaNote": "Fresh, herbal-citrus with a creative spark. Uplifting without being sharp. The blend that makes you reach for a notebook afterwards.",
+    "oils": [
+      {
+        "id": "bergamot",
+        "name": "Bergamot",
+        "drops": 4
+      },
+      {
+        "id": "basil",
+        "name": "Basil",
+        "drops": 2
+      },
+      {
+        "id": "spearmint",
+        "name": "Spearmint",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "creative",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Creativity",
+      "Focus",
+      "Mental clarity",
+      "Inspiration"
+    ],
+    "precautions": [
+      "Phototoxic — avoid skin before sun exposure",
+      "Avoid during pregnancy",
+      "Avoid with estrogen-sensitive conditions"
+    ],
+    "color": "#c060a0",
+    "emoji": "✨"
+  },
+  {
+    "id": "rose-garden",
+    "name": "Rose Garden",
+    "description": "A deeply feminine and heart-opening blend. Rose heals emotional wounds, geranium balances the hormonal system, and ylang ylang adds a sensual depth that invites you into the present moment.",
+    "saunaNote": "Exquisitely beautiful — one of the most special blends in the collection. Use for women's wellness sessions or intimate ceremonies.",
+    "oils": [
+      {
+        "id": "rose",
+        "name": "Rose Otto",
+        "drops": 2
+      },
+      {
+        "id": "geranium",
+        "name": "Rose Geranium",
+        "drops": 3
+      },
+      {
+        "id": "ylang-ylang",
+        "name": "Ylang Ylang",
+        "drops": 1
+      }
+    ],
+    "vibes": [
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "benefits": [
+      "Emotional healing",
+      "Hormonal balance",
+      "Heart opening",
+      "Self-worth"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Ylang ylang may cause headache at high dose — use only 1 drop",
+      "Use with care if you have low blood pressure"
+    ],
+    "color": "#d04060",
+    "emoji": "🌹"
+  },
+  {
+    "id": "breath-of-life",
+    "name": "Breath of Life",
+    "description": "The ultimate respiratory trio. Eucalyptus opens the bronchi, peppermint creates a cooling contrast that amplifies the sensation, and pine fills the lungs with forest air. Transformative for the breath.",
+    "saunaNote": "Intensely respiratory — the room fills immediately with a bold, medicinal clarity. Best for early morning or immune sessions.",
+    "oils": [
+      {
+        "id": "eucalyptus",
+        "name": "Eucalyptus",
+        "drops": 4
+      },
+      {
+        "id": "peppermint",
+        "name": "Peppermint",
+        "drops": 2
+      },
+      {
+        "id": "pine",
+        "name": "Scots Pine",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "energizing",
+      "immune",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning"
+    ],
+    "benefits": [
+      "Respiratory clarity",
+      "Immune boost",
+      "Bronchodilator",
+      "Awakening"
+    ],
+    "precautions": [
+      "Not for children under 6",
+      "Avoid near face of young children",
+      "Avoid with kidney disorders — use peppermint sparingly"
+    ],
+    "color": "#30a080",
+    "emoji": "❄️"
+  },
+  {
+    "id": "zen-moment",
+    "name": "Zen Moment",
+    "description": "Inspired by the Japanese tea ceremony and the concept of ichi-go ichi-e (one time, one meeting). A minimalist, contemplative blend that cultivates presence and quiet awareness.",
+    "saunaNote": "Almost atmospheric — subtle, clean, and deeply mindful. Creates an onsen atmosphere. Perfect for solo sessions.",
+    "oils": [
+      {
+        "id": "sandalwood",
+        "name": "Sandalwood",
+        "drops": 2
+      },
+      {
+        "id": "green-tea",
+        "name": "Green Tea",
+        "drops": 3
+      },
+      {
+        "id": "ho-wood",
+        "name": "Ho Wood",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "meditative",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "benefits": [
+      "Mindfulness",
+      "Focused calm",
+      "Meditation",
+      "Presence"
+    ],
+    "precautions": [
+      "Avoid if sandalwood allergy suspected",
+      "Generally safe; dilute well",
+      "Use sustainably sourced sandalwood"
+    ],
+    "color": "#80b060",
+    "emoji": "🍵"
+  },
+  {
+    "id": "adrenal-reset",
+    "name": "Adrenal Reset",
+    "description": "Designed for those running on empty. Black spruce is the premier adrenal tonic oil, rosemary restores mental energy, and black pepper activates the body without further depleting reserves.",
+    "saunaNote": "Deep forest meets warming spice. Energising yet grounding — the rare blend that restores without overstimulating.",
+    "oils": [
+      {
+        "id": "spruce",
+        "name": "Black Spruce",
+        "drops": 4
+      },
+      {
+        "id": "rosemary",
+        "name": "Rosemary",
+        "drops": 3
+      },
+      {
+        "id": "black-pepper",
+        "name": "Black Pepper",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "energizing",
+      "warming"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Adrenal support",
+      "Burnout recovery",
+      "Cortisol balance",
+      "Energy restore"
+    ],
+    "precautions": [
+      "Avoid during pregnancy and with epilepsy",
+      "Skin irritant — dilute well",
+      "Stimulating — avoid in late evening"
+    ],
+    "color": "#4a7c5e",
+    "emoji": "💚"
+  },
+  {
+    "id": "sacred-night",
+    "name": "Sacred Night",
+    "description": "A deep, ceremonial night blend rooted in ancient traditions. Vetiver grounds the spirit into the body, frankincense opens the breath and the mind, and benzoin wraps everything in warm, sacred sweetness.",
+    "saunaNote": "Smoky, warm, and profound. Best in the last session of the night. Transforms the sauna into a sanctuary.",
+    "oils": [
+      {
+        "id": "vetiver",
+        "name": "Vetiver",
+        "drops": 1
+      },
+      {
+        "id": "frankincense",
+        "name": "Frankincense",
+        "drops": 3
+      },
+      {
+        "id": "benzoin",
+        "name": "Benzoin",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "meditative",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "benefits": [
+      "Deep grounding",
+      "Nervous system",
+      "Meditation",
+      "Ancestral connection"
+    ],
+    "precautions": [
+      "Avoid during first trimester of pregnancy",
+      "Deeply sedating — allow time before driving",
+      "Use sparingly; vetiver is very viscous"
+    ],
+    "color": "#7060a0",
+    "emoji": "🌌"
+  },
+  {
+    "id": "tropical-awakening",
+    "name": "Tropical Awakening",
+    "description": "A vibrant, high-energy tropical trio. Lime cuts through with razor-sharp freshness, lemongrass adds herbal depth and muscle relief, and ginger fires up circulation and courage. Electrifying.",
+    "saunaNote": "Intense and invigorating — fills the room immediately with tropical energy. One of the most awakening blends in the collection.",
+    "oils": [
+      {
+        "id": "lime",
+        "name": "Lime",
+        "drops": 3
+      },
+      {
+        "id": "lemongrass",
+        "name": "Lemongrass",
+        "drops": 2
+      },
+      {
+        "id": "ginger",
+        "name": "Ginger",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "awakening",
+      "energizing",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning"
+    ],
+    "benefits": [
+      "Immune stimulation",
+      "Muscle activation",
+      "Lymphatic",
+      "Courage"
+    ],
+    "precautions": [
+      "Phototoxic — avoid skin before UV exposure",
+      "Strong skin sensitiser from lemongrass — dilute well",
+      "Max 7 drops total per session"
+    ],
+    "color": "#70c030",
+    "emoji": "🌴"
+  },
+  {
+    "id": "the-rescuer",
+    "name": "The Rescuer",
+    "description": "The classic anxiety duo of aromatherapy. Bergamot addresses the cognitive layer — reducing cortisol, lifting mood, softening mental rigidity. Frankincense works deeper, calming the primitive fear response and instinctively deepening the breath. Two oils, two levels, one profound result.",
+    "saunaNote": "Bergamot lifts the room instantly; frankincense anchors and deepens it. The combination feels like a deep exhale. Ideal when a guest walks in carrying visible tension.",
+    "oils": [
+      {
+        "id": "bergamot",
+        "name": "Bergamot",
+        "drops": 4
+      },
+      {
+        "id": "frankincense",
+        "name": "Frankincense",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "relaxing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "benefits": [
+      "Anxiety relief",
+      "Cortisol reduction",
+      "Deep breathing",
+      "Emotional rescue"
+    ],
+    "precautions": [
+      "Bergamot is phototoxic — avoid skin before sun exposure",
+      "Avoid during first trimester of pregnancy",
+      "Dilute well"
+    ],
+    "color": "#a06030",
+    "emoji": "🫶"
+  },
+  {
+    "id": "moon-dew",
+    "name": "Moon Dew",
+    "description": "The most powerful two-oil hormonal blend in the collection. Clary sage contains sclareol — a compound that mimics estrogen and amplifies lavender's already potent nervine effect. Together they ease cramps, smooth mood swings, soften perimenopause, and prepare the body for deep, restorative sleep.",
+    "saunaNote": "Earthy-lavender with a dreamy, slightly euphoric quality. Guests often grow visibly quiet and heavy. Best used in the final round of an evening session.",
+    "oils": [
+      {
+        "id": "lavender",
+        "name": "Lavender",
+        "drops": 4
+      },
+      {
+        "id": "sage",
+        "name": "Clary Sage",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "relaxing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "benefits": [
+      "Hormonal balance",
+      "PMS relief",
+      "Sleep support",
+      "Emotional softening"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Avoid with estrogen-sensitive conditions",
+      "Clary sage amplifies alcohol effects — do not use after drinking"
+    ],
+    "color": "#8090c0",
+    "emoji": "🌙"
+  },
+  {
+    "id": "vascular-flow",
+    "name": "Vascular Flow",
+    "description": "A precise circulatory duo. Cypress tones and strengthens venous walls, improving venous return and reducing the appearance of varicose veins. Grapefruit activates the lymphatic system from the cellular level and boosts metabolism. Together they form a circulatory synergy that the sauna's heat amplifies dramatically.",
+    "saunaNote": "Tart, fresh, and medicinal. Best in a morning or midday session alongside vigorous brushing or a cold plunge. Noticeably activating.",
+    "oils": [
+      {
+        "id": "cypress",
+        "name": "Cypress",
+        "drops": 3
+      },
+      {
+        "id": "grapefruit",
+        "name": "Grapefruit",
+        "drops": 4
+      }
+    ],
+    "vibes": [
+      "detox",
+      "energizing"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Venous circulation",
+      "Lymphatic drainage",
+      "Edema relief",
+      "Detox"
+    ],
+    "precautions": [
+      "Grapefruit is mildly phototoxic — avoid skin before UV exposure",
+      "Avoid during pregnancy",
+      "Dilute well"
+    ],
+    "color": "#50a860",
+    "emoji": "🌿"
+  },
+  {
+    "id": "earth-and-sun",
+    "name": "Earth & Sun",
+    "description": "A polarity blend — the oldest and most intuitive pairing principle in aromatherapy. Patchouli is earth: heavy, grounding, deeply rooted. Sweet orange is sun: bright, warm, uplifting. In the sauna heat, the orange caramelises and tames the patchouli's earthiness into something invitingly warm and balancing. Anchors without sedating.",
+    "saunaNote": "Surprisingly crowd-pleasing — warm, sweet-earthy, and comforting. The two-oil simplicity creates a rich, complex scent that evolves over the session.",
+    "oils": [
+      {
+        "id": "orange",
+        "name": "Sweet Orange",
+        "drops": 5
+      },
+      {
+        "id": "patchouli",
+        "name": "Patchouli",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "grounding",
+      "energizing",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "benefits": [
+      "Grounding",
+      "Mood lift",
+      "Anti-anxiety",
+      "Skin regeneration"
+    ],
+    "precautions": [
+      "Patchouli is very potent — do not exceed 2 drops",
+      "Dilute well; blend with citrus to balance intensity",
+      "Avoid undiluted skin contact"
+    ],
+    "color": "#c07840",
+    "emoji": "🌍"
+  },
+  {
+    "id": "sacred-union",
+    "name": "Sacred Union",
+    "description": "A perfumer's classic for heart-opening ceremony. Neroli calms nervous palpitations and induces immediate spiritual lightness. Jasmine opens the heart and generates alpha brain waves associated with relaxed confidence. Sandalwood holds everything in warm, sacred depth. A perfect fragrance pyramid — top, middle, base — for intimacy, ceremony, and self-love.",
+    "saunaNote": "Exquisitely complex — floral-citrus brightness gives way to honeyed warmth and then deep woody resonance. Best for small, intimate evening sessions. One of the most beautiful blends in the collection.",
+    "oils": [
+      {
+        "id": "neroli",
+        "name": "Neroli",
+        "drops": 3
+      },
+      {
+        "id": "jasmine",
+        "name": "Jasmine Absolute",
+        "drops": 1
+      },
+      {
+        "id": "sandalwood",
+        "name": "Sandalwood",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "benefits": [
+      "Heart opening",
+      "Deep calm",
+      "Confidence",
+      "Romantic atmosphere"
+    ],
+    "precautions": [
+      "Avoid during pregnancy — all three oils are contraindicated",
+      "Jasmine maximum 1 drop — very intense",
+      "Deeply sedating — allow time before driving"
+    ],
+    "color": "#c0a050",
+    "emoji": "🕯️"
+  },
+  {
+    "id": "tender-healer",
+    "name": "The Tender Healer",
+    "description": "The tissue repair trinity of classical aromatherapy. Helichrysum (immortelle) is the premier wound-healer and cellular regenerator — and emotionally, it processes grief. Lavender calms and balances universally. Roman chamomile reduces inflammation and soothes the nervous system. Their synergy is greater than the sum of the parts. For recovery, skin renewal, or the sessions that follow something difficult.",
+    "saunaNote": "Warm honey-floral with a green chamomile note. Gentle, nourishing, and deeply comforting. The scent alone signals to the body that it is safe to heal.",
+    "oils": [
+      {
+        "id": "helichrysum",
+        "name": "Helichrysum",
+        "drops": 2
+      },
+      {
+        "id": "lavender",
+        "name": "Lavender",
+        "drops": 4
+      },
+      {
+        "id": "chamomile",
+        "name": "Roman Chamomile",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "benefits": [
+      "Anti-inflammatory",
+      "Tissue repair",
+      "Emotional healing",
+      "Skin regeneration"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Chamomile — avoid with ragweed (Asteraceae) allergy",
+      "Helichrysum is expensive — use sparingly"
+    ],
+    "color": "#d09820",
+    "emoji": "🌼"
+  },
+  {
+    "id": "hormonal-harmony",
+    "name": "Hormonal Harmony",
+    "description": "Three oils that target the female endocrine system at different levels. Clary sage contributes sclareol — a phytoestrogen that modulates hormonal fluctuation directly. Rose geranium regulates the adrenal cortex and balances all hormones generally. Palmarosa tones and adapts, supporting skin and emotional resilience through cycle shifts. The holistic women's wellness blend.",
+    "saunaNote": "Rose-herbal with earthy depth and a green freshness. All middle notes — the fragrance opens gradually and lingers beautifully. Perfect for women's group sessions or hormonal support protocols.",
+    "oils": [
+      {
+        "id": "sage",
+        "name": "Clary Sage",
+        "drops": 2
+      },
+      {
+        "id": "geranium",
+        "name": "Rose Geranium",
+        "drops": 3
+      },
+      {
+        "id": "palmarosa",
+        "name": "Palmarosa",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "relaxing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "benefits": [
+      "Hormonal balance",
+      "Cycle support",
+      "Perimenopause",
+      "Emotional resilience"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Avoid with estrogen-sensitive conditions",
+      "Clary sage amplifies alcohol effects — do not use after drinking"
+    ],
+    "color": "#b04880",
+    "emoji": "🌸"
+  },
+  {
+    "id": "deep-root",
+    "name": "Deep Root",
+    "description": "One of the most studied duos in clinical aromatherapy — vetiver and lavender together are used for PTSD support, ADHD calming, and trauma processing. Vetiver alone can be overwhelming; lavender opens the emotional body and softens the approach. In return, vetiver gives lavender an unusual earthed depth that no other oil can replicate.",
+    "saunaNote": "Smoky earth with soft lavender over the top. The combination produces a profound quietness in the room. For sessions where guests need to truly land in their bodies.",
+    "oils": [
+      {
+        "id": "vetiver",
+        "name": "Vetiver",
+        "drops": 1
+      },
+      {
+        "id": "lavender",
+        "name": "Lavender",
+        "drops": 5
+      }
+    ],
+    "vibes": [
+      "grounding",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "benefits": [
+      "Deep grounding",
+      "Trauma support",
+      "ADHD calm",
+      "Nervous system"
+    ],
+    "precautions": [
+      "Vetiver is extremely viscous — dilute in a carrier before adding to water",
+      "Deeply sedating — allow time before driving",
+      "Avoid during first trimester of pregnancy"
+    ],
+    "color": "#706050",
+    "emoji": "🌱"
+  },
+  {
+    "id": "sacred-smoke",
+    "name": "Sacred Smoke",
+    "description": "The oldest recorded therapeutic pairing in history — used together in ancient Egypt, the Levant, and throughout the incense road for thousands of years. Frankincense deepens the breath and opens the mind; myrrh anchors the body and soul. Two base resins, no distractions. The pure ceremonial experience.",
+    "saunaNote": "Dense, balsamic, and ancient. The room transforms into a temple. Best for intentional ceremonies, group ritual, or deep solo meditation. Use sparingly — the presence is immediate.",
+    "oils": [
+      {
+        "id": "frankincense",
+        "name": "Frankincense",
+        "drops": 3
+      },
+      {
+        "id": "myrrh",
+        "name": "Myrrh",
+        "drops": 2
+      }
+    ],
+    "vibes": [
+      "meditative",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "benefits": [
+      "Deep meditation",
+      "Ceremonial presence",
+      "Respiratory depth",
+      "Ancestral connection"
+    ],
+    "precautions": [
+      "Avoid during first trimester of pregnancy",
+      "Very resinous — dilute well before adding to water",
+      "Generally safe at sauna concentrations"
+    ],
+    "color": "#906030",
+    "emoji": "🪔"
+  },
+  {
+    "id": "clear-mind",
+    "name": "Clear Mind",
+    "description": "Two oils with published scientific studies behind them. Rosemary increases cerebral blood flow and has been shown to measurably improve memory and test performance. Lemon sharpens alertness and lifts mental fatigue through limbic stimulation. A clean top+middle pairing — the cognitive performance duo.",
+    "saunaNote": "Bright, herbal, and crisp. Fills the room with focused clarity. Ideal before work, study, or any session that requires sharp thinking afterwards.",
+    "oils": [
+      {
+        "id": "lemon",
+        "name": "Lemon",
+        "drops": 4
+      },
+      {
+        "id": "rosemary",
+        "name": "Rosemary",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "energizing",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Memory",
+      "Cognitive performance",
+      "Mental clarity",
+      "Focus"
+    ],
+    "precautions": [
+      "Lemon is phototoxic — avoid skin before sun exposure",
+      "Avoid during pregnancy and with epilepsy",
+      "Dilute well"
+    ],
+    "color": "#c8c020",
+    "emoji": "🧠"
+  },
+  {
+    "id": "inner-fire",
+    "name": "Inner Fire",
+    "description": "The two warming spices of aromatherapy, combined. Ginger heats the body from within and mobilises circulation. Black pepper penetrates deep into muscles and joints, amplifying ginger's warmth and adding a fierce, activating quality. The sauna's heat turns both oils incandescent. For cold mornings, pre-sport activation, or any time the body needs to ignite.",
+    "saunaNote": "Intensely warming — the room fills with a spicy, peppery heat that compounds the physical warmth of the sauna. Very activating. Not for sensitive guests or late-evening use.",
+    "oils": [
+      {
+        "id": "ginger",
+        "name": "Ginger",
+        "drops": 3
+      },
+      {
+        "id": "black-pepper",
+        "name": "Black Pepper",
+        "drops": 3
+      }
+    ],
+    "vibes": [
+      "energizing",
+      "warming"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "benefits": [
+      "Circulation",
+      "Muscle warming",
+      "Joint relief",
+      "Physical activation"
+    ],
+    "precautions": [
+      "Both are strong skin sensitisers — dilute thoroughly",
+      "Avoid on sensitive or damaged skin",
+      "Use with caution for guests prone to overheating"
+    ],
+    "color": "#c05020",
+    "emoji": "🔥"
+  }
+]

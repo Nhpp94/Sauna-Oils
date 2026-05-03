@@ -4,7 +4,8 @@ import {
   ScrollView, FlatList, StyleSheet, KeyboardAvoidingView, Platform, Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { OILS, EssentialOil } from '../data/oils';
+import { EssentialOil } from '../data/oils';
+import { useRemoteData } from '../context/RemoteDataContext';
 import { Blend, BlendOil } from '../data/blends';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../constants/theme';
 import { CATEGORY_META } from '../constants/categories';
@@ -28,8 +29,9 @@ export function AddBlendModal({ visible, onClose, onSave, customOils = [] }: Pro
   const [selectedOils, setSelectedOils] = useState<SelectedOil[]>([]);
   const [search, setSearch] = useState('');
   const [showPicker, setShowPicker] = useState(false);
+  const { oils: remoteOils } = useRemoteData();
 
-  const allOils = useMemo(() => [...OILS, ...customOils], [customOils]);
+  const allOils = useMemo(() => [...remoteOils, ...customOils], [remoteOils, customOils]);
 
   const filteredOils = useMemo(() => {
     const q = search.toLowerCase();

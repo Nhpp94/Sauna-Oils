@@ -4,8 +4,9 @@ import {
   Modal, FlatList, TextInput,
 } from 'react-native';
 import { EssentialOil, Vibe, TimeOfDay, NoteType } from '../data/oils';
-import { Blend, BLENDS } from '../data/blends';
-import { Incense, INCENSE } from '../data/incense';
+import { Blend } from '../data/blends';
+import { Incense } from '../data/incense';
+import { useRemoteData } from '../context/RemoteDataContext';
 import { SwapCandidate } from '../data/recommendations';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../constants/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -60,12 +61,12 @@ interface Props {
 
 export function SwapModal({ visible, oilToReplace, suggestion, browseOils, customBlends, ownedIds, ownedIncenseIds, initialTab, onUseOil, onUseBlend, onUseIncense, onClose }: Props) {
   const [tab, setTab] = useState<Tab>('oils');
+  const { blends: remoteBlends, incense: remoteIncense } = useRemoteData();
   const [search, setSearch] = useState('');
   const [kitOnly, setKitOnly] = useState(false);
   const [categoryFilter, setCategoryFilter] = useState<Category | null>(null);
   const [noteFilter, setNoteFilter] = useState<NoteType | null>(null);
   const [openDropdown, setOpenDropdown] = useState<'category' | 'note' | null>(null);
-  const [dropdownTop, setDropdownTop] = useState(0);
 
   function toggleDropdown(key: 'category' | 'note') {
     setOpenDropdown(prev => prev === key ? null : key);
@@ -107,7 +108,7 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
       ]
     : browseOilsList.map(o => ({ type: 'oil' as const, oil: o }));
 
-  const sortedBlends = [...BLENDS, ...(customBlends ?? [])]
+  const sortedBlends = [...remoteBlends, ...(customBlends ?? [])]
     .filter(b => !kitOnly || b.oils.every(bo => ownedIds.has(bo.id)))
     .filter(b => {
       const q = search.toLowerCase();
@@ -115,7 +116,7 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
     })
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const sortedIncense = [...INCENSE]
+  const sortedIncense = [...remoteIncense]
     .filter(i => !kitOnly || ownedIncenseIds.has(i.id))
     .filter(i => {
       const q = search.toLowerCase();
@@ -195,10 +196,7 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
 
         {/* Oil filters */}
         {tab === 'oils' && (
-          <View
-            style={styles.filterArea}
-            onLayout={(e) => setDropdownTop(e.nativeEvent.layout.y + e.nativeEvent.layout.height)}
-          >
+          <View style={styles.filterArea}>
             <View style={styles.filterRow}>
               <TouchableOpacity
                 style={[styles.filterPill, !!categoryFilter && styles.filterPillActive]}
@@ -229,12 +227,7 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
                 )}
               </TouchableOpacity>
             </View>
-          </View>
-        )}
 
-        {/* Dropdown overlay — absolutely positioned so it never affects SectionList height */}
-        {tab === 'oils' && openDropdown && dropdownTop > 0 && (
-          <View style={[styles.dropdownOverlay, { top: dropdownTop }]}>
             {openDropdown === 'category' && (
               <View style={styles.dropdown}>
                 <TouchableOpacity style={styles.dropdownOption} onPress={() => { setCategoryFilter(null); setOpenDropdown(null); }}>
@@ -258,6 +251,7 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
                 })}
               </View>
             )}
+
             {openDropdown === 'note' && (
               <View style={styles.dropdown}>
                 <TouchableOpacity style={styles.dropdownOption} onPress={() => { setNoteFilter(null); setOpenDropdown(null); }}>
@@ -620,12 +614,8 @@ const styles = StyleSheet.create({
   filterArea: {
     paddingHorizontal: Spacing.lg,
     paddingBottom: Spacing.sm,
-  },
-  dropdownOverlay: {
-    position: 'absolute',
-    left: Spacing.lg,
-    right: Spacing.lg,
-    zIndex: 100,
+    gap: Spacing.xs,
+    zIndex: 10,
   },
   filterRow: {
     flexDirection: 'row',

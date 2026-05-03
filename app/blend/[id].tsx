@@ -7,8 +7,8 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { BLENDS } from '../../data/blends';
 import { useCustomLibrary } from '../../context/CustomLibraryContext';
+import { useRemoteData } from '../../context/RemoteDataContext';
 import { useMyOils } from '../../hooks/useMyOils';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
 import { VIBE_ICONS, VIBE_COLORS, TIME_ICONS } from '../../constants/icons';
@@ -43,8 +43,9 @@ export default function BlendDetailScreen() {
   const insets = useSafeAreaInsets();
   const { customBlends } = useCustomLibrary();
   const { ownedIds } = useMyOils();
+  const { blends } = useRemoteData();
 
-  const allBlends = [...BLENDS, ...customBlends];
+  const allBlends = [...blends, ...customBlends];
   const blend = allBlends.find(b => b.id === id);
 
   if (!blend) {

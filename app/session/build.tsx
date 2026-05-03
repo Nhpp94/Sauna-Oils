@@ -8,7 +8,8 @@ import GrainOverlay from '../../components/GrainOverlay';
 import { SwapModal } from '../../components/SwapModal';
 import { TrioResult } from '../../components/TrioResult';
 import { SessionSlot, SessionTrio } from '../../data/recommendations';
-import { OILS, Vibe, TimeOfDay, EssentialOil } from '../../data/oils';
+import { Vibe, TimeOfDay, EssentialOil } from '../../data/oils';
+import { useRemoteData } from '../../context/RemoteDataContext';
 import { Blend } from '../../data/blends';
 import { Incense } from '../../data/incense';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
@@ -52,6 +53,7 @@ export default function BuildScreen() {
   const { ownedIds } = useMyOils();
   const { ownedIncenseIds } = useMyIncense();
   const { customOils, customBlends } = useCustomLibrary();
+  const { oils: remoteOils } = useRemoteData();
 
   const [localRounds, setLocalRounds] = useState<BuildRoundState[]>([
     emptyRound(), emptyRound(), emptyRound(),
@@ -63,8 +65,8 @@ export default function BuildScreen() {
   const [showContext, setShowContext] = useState(false);
 
   const allOils = useMemo(
-    () => [...OILS, ...customOils].map(o => ({ ...o, compatibilityScore: 0 as number })),
-    [customOils],
+    () => [...remoteOils, ...customOils].map(o => ({ ...o, compatibilityScore: 0 as number })),
+    [remoteOils, customOils],
   );
 
   const canStart = localRounds.every(r => r.slots.some(s => s !== null));

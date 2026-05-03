@@ -1,0 +1,516 @@
+[
+  {
+    "id": "palo-santo",
+    "name": "Palo Santo",
+    "latinName": "Bursera graveolens",
+    "origin": "South America",
+    "form": "wood",
+    "vibes": [
+      "grounding",
+      "meditative",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "evening"
+    ],
+    "description": "Sacred wood from the Andes, revered for millennia in indigenous ceremony. Its smoke carries a sweet, warm resin scent that clears stagnant energy and opens the mind.",
+    "saunaNote": "Light a stick before the session begins and let the smoke settle the room. The lingering sweetness pairs beautifully with woody or earthy oil blends.",
+    "benefits": [
+      "Energy clearing",
+      "Mental focus",
+      "Stress relief",
+      "Spiritual grounding"
+    ],
+    "precautions": [
+      "Ensure adequate ventilation",
+      "Avoid prolonged exposure with asthma or COPD",
+      "Do not burn inside an occupied sauna cabin"
+    ],
+    "color": "#a06830",
+    "emoji": "🪵"
+  },
+  {
+    "id": "white-sage",
+    "name": "White Sage",
+    "latinName": "Salvia apiana",
+    "origin": "North America",
+    "form": "herb",
+    "vibes": [
+      "detox",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "description": "The classic cleansing herb of Native American tradition. Pungent, herbaceous smoke that purifies both space and spirit, making it the ideal opening ritual.",
+    "saunaNote": "Bundle-burn at the entrance before guests enter. The sharp herbal smoke neutralises stale air and creates a clean, sacred atmosphere before the first aufguss.",
+    "benefits": [
+      "Air purification",
+      "Antimicrobial",
+      "Mental clarity",
+      "Ritual cleansing"
+    ],
+    "precautions": [
+      "Ensure good airflow before guests enter",
+      "Not suitable for those with respiratory conditions",
+      "Use outside or adjacent to sauna — not inside cabin"
+    ],
+    "color": "#7a9060",
+    "emoji": "🌿"
+  },
+  {
+    "id": "frankincense-resin",
+    "name": "Frankincense Resin",
+    "latinName": "Boswellia sacra",
+    "origin": "Oman & Somalia",
+    "form": "resin",
+    "vibes": [
+      "meditative",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "description": "The most sacred resin on earth. Burned on charcoal, the slow-curling smoke opens the breath, deepens contemplation, and has been used in temples and ceremonies for 5,000 years.",
+    "saunaNote": "Place granules on a charcoal disc outside the sauna door. The ceremonial quality transforms the entire experience. Pairs perfectly with sandalwood or myrrh oil sessions.",
+    "benefits": [
+      "Deep breathing",
+      "Anti-anxiety",
+      "Meditation aid",
+      "Immune support"
+    ],
+    "precautions": [
+      "Keep charcoal disc on a heatproof non-flammable surface",
+      "Never burn inside the sauna cabin",
+      "Avoid prolonged smoke inhalation"
+    ],
+    "color": "#c09050",
+    "emoji": "🕯️"
+  },
+  {
+    "id": "myrrh-resin",
+    "name": "Myrrh Resin",
+    "latinName": "Commiphora myrrha",
+    "origin": "East Africa & Arabia",
+    "form": "resin",
+    "vibes": [
+      "meditative",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "description": "Dark, balsamic, and ancient. Myrrh resin has been used for healing and ceremony since antiquity. Its complex, slightly bitter smoke grounds the mind and supports deep tissue recovery.",
+    "saunaNote": "Use after an intense session on a charcoal burner. The warm, medicinal smoke supports the body's recovery process and encourages deep rest.",
+    "benefits": [
+      "Recovery",
+      "Anti-inflammatory",
+      "Grounding",
+      "Skin healing"
+    ],
+    "precautions": [
+      "Avoid during pregnancy at high concentrations",
+      "Ensure adequate ventilation",
+      "Use charcoal outdoors or in an adjacent space"
+    ],
+    "color": "#8b4513",
+    "emoji": "🫙"
+  },
+  {
+    "id": "copal-resin",
+    "name": "Copal Blanco",
+    "latinName": "Bursera bipinnata",
+    "origin": "Mexico",
+    "form": "resin",
+    "vibes": [
+      "energizing",
+      "awakening",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "description": "The resin of the gods in Mesoamerican culture — lighter and citrusy compared to frankincense. Its bright, clean smoke energises the space and lifts collective mood.",
+    "saunaNote": "Burn at the start of a morning session. The fresh, slightly citrus-pine smoke pairs brilliantly with energising oil selections and wakes up a group beautifully.",
+    "benefits": [
+      "Energy boost",
+      "Mood lift",
+      "Focus",
+      "Spiritual cleansing"
+    ],
+    "precautions": [
+      "Ensure ventilation",
+      "May trigger sensitivity in those with pine or resin allergies",
+      "Use outside or adjacent to sauna cabin"
+    ],
+    "color": "#d4a840",
+    "emoji": "✨"
+  },
+  {
+    "id": "cedar-chips",
+    "name": "Cedar Wood Chips",
+    "latinName": "Cedrus atlantica",
+    "origin": "Atlas Mountains",
+    "form": "wood",
+    "vibes": [
+      "grounding",
+      "energizing",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "description": "Coarse cedar chips placed on a dedicated stone or burner release a rich, dry forest aroma that echoes the sauna's own wooden shell. Classic Nordic simplicity.",
+    "saunaNote": "Place a small handful on a flat sauna stone away from the löyly rocks. The dry heat slowly vaporises the aromatic compounds, filling the room with a sustained forest note.",
+    "benefits": [
+      "Respiratory",
+      "Grounding",
+      "Antimicrobial",
+      "Forest bathing"
+    ],
+    "precautions": [
+      "Avoid if allergic to cedar",
+      "Do not place on main löyly stones",
+      "Ensure good airflow throughout the session"
+    ],
+    "color": "#b06040",
+    "emoji": "🌲"
+  },
+  {
+    "id": "mugwort",
+    "name": "Mugwort",
+    "latinName": "Artemisia vulgaris",
+    "origin": "Europe & Asia",
+    "form": "herb",
+    "vibes": [
+      "meditative",
+      "creative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "description": "The dream herb of European herbalism. Used for centuries in saunas and sweat lodges across cultures, mugwort's complex, slightly bitter smoke heightens sensory awareness.",
+    "saunaNote": "Burn small bundles in a heatproof dish near the sauna entrance. Its calming, otherworldly smoke enhances introspective sessions and pairs well with lavender or chamomile.",
+    "benefits": [
+      "Dream enhancement",
+      "Nervous system",
+      "Intuition",
+      "Relaxation"
+    ],
+    "precautions": [
+      "Avoid during pregnancy — uterine stimulant",
+      "Avoid if allergic to ragweed family (Asteraceae)",
+      "Ensure good ventilation"
+    ],
+    "color": "#6a8040",
+    "emoji": "🌙"
+  },
+  {
+    "id": "dragons-blood",
+    "name": "Dragon's Blood",
+    "latinName": "Dracaena draco",
+    "origin": "Canary Islands",
+    "form": "resin",
+    "vibes": [
+      "creative",
+      "energizing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "description": "The vivid crimson resin from the dragon tree — bold, slightly sweet, and earthy with a faintly floral depth. One of the most striking resins for ceremony and atmosphere.",
+    "saunaNote": "A little goes a long way. Burn a small piece on charcoal to fill the room with rich, assertive smoke. Creates a powerful, ceremonial atmosphere for group sessions.",
+    "benefits": [
+      "Creativity",
+      "Protection energy",
+      "Mood elevation",
+      "Ritual focus"
+    ],
+    "precautions": [
+      "Ensure good ventilation",
+      "Use in small amounts — very potent smoke",
+      "Do not burn inside an occupied sauna cabin"
+    ],
+    "color": "#a02020",
+    "emoji": "🔴"
+  },
+  {
+    "id": "benzoin-resin",
+    "name": "Benzoin Resin",
+    "latinName": "Styrax benzoin",
+    "origin": "Sumatra",
+    "form": "resin",
+    "vibes": [
+      "relaxing",
+      "warming"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "description": "Sweet vanilla-balsamic resin with one of the warmest, most comforting smoke profiles in the aromatic world. Benzoin soothes the nervous system and wraps the room in softness.",
+    "saunaNote": "Ideal for slow, restorative evening sessions. Burn on charcoal while the sauna heats — the sweet, soft smoke settles in perfectly and prepares guests for deep relaxation.",
+    "benefits": [
+      "Calming",
+      "Skin soothing",
+      "Nervous system",
+      "Warmth"
+    ],
+    "precautions": [
+      "Possible sensitisation with prolonged smoke exposure",
+      "Ensure ventilation",
+      "Do not burn inside the sauna cabin"
+    ],
+    "color": "#c8a060",
+    "emoji": "🍯"
+  },
+  {
+    "id": "sandalwood-chips",
+    "name": "Sandalwood Chips",
+    "latinName": "Santalum album",
+    "origin": "Mysore, India",
+    "form": "wood",
+    "vibes": [
+      "meditative",
+      "relaxing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "description": "Among the most revered aromatics in both eastern and western traditions. Sandalwood chips burn slowly and steadily, releasing a creamy, woody smoke that quiets the mind.",
+    "saunaNote": "Place chips in a small heatproof dish near (not on) the sauna stones. The gentle, persistent smoke complements any meditative or grounding oil session beautifully.",
+    "benefits": [
+      "Meditation",
+      "Mental quiet",
+      "Skin healing",
+      "Spiritual focus"
+    ],
+    "precautions": [
+      "Ensure ventilation",
+      "Source sustainably — Santalum album is endangered",
+      "Do not place directly on löyly stones"
+    ],
+    "color": "#d4a060",
+    "emoji": "🪵"
+  },
+  {
+    "id": "oud",
+    "name": "Oud",
+    "latinName": "Aquilaria malaccensis",
+    "origin": "Southeast Asia & Arabia",
+    "form": "wood",
+    "vibes": [
+      "meditative",
+      "grounding",
+      "creative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "description": "The most prized aromatic wood on earth — oud (agarwood) forms when Aquilaria trees produce a dark, resinous heartwood in response to fungal infection. Traded for millennia across Arabia, India, and East Asia, it carries an extraordinary complex profile: leathery, woody, balsamic, animalic, and slightly sweet all at once. A single small chip is worth more than gold by weight.",
+    "saunaNote": "Place a small sliver of oud chip on a charcoal disc or dedicated stone. The dense, complex smoke transforms the sauna into a royal ceremonial space. Pairs powerfully with frankincense or rose for extraordinary evening rituals. Use sparingly — a little goes an immense way.",
+    "benefits": [
+      "Deep meditative atmosphere",
+      "Stress reduction",
+      "Nervous system grounding",
+      "Ceremonial depth"
+    ],
+    "precautions": [
+      "Use very sparingly — extremely potent",
+      "Ensure good ventilation",
+      "Source from sustainably farmed Aquilaria only"
+    ],
+    "color": "#5a3020",
+    "emoji": "🪵"
+  },
+  {
+    "id": "hinoki",
+    "name": "Hinoki",
+    "latinName": "Chamaecyparis obtusa",
+    "origin": "Japan",
+    "form": "wood",
+    "vibes": [
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "description": "The sacred wood of Japan — hinoki cypress is the material of choice for traditional Japanese bath culture (ofuro) and has been used in Shinto shrines for over a thousand years. Studies on hinoki aromatherapy confirm reductions in cortisol, blood pressure, and sympathetic nervous activity. The clean, woody-citrus-green aroma is among the most instantly calming in the aromatic world.",
+    "saunaNote": "Hinge chips or a small hinoki block on the sauna bench or near the heat source. Its aromatic compounds volatilize slowly and elegantly, creating a Japanese forest bathing (shinrin-yoku) atmosphere throughout the session. Pairs beautifully with yuzu or mandarin oils.",
+    "benefits": [
+      "Cortisol reduction (documented)",
+      "Blood pressure lowering",
+      "Sympathetic nervous system calm",
+      "Forest bathing (shinrin-yoku)"
+    ],
+    "precautions": [
+      "Generally safe; ensure adequate airflow",
+      "Do not place directly on löyly stones",
+      "Avoid if allergic to cypress family (Cupressaceae)"
+    ],
+    "color": "#c0a870",
+    "emoji": "🎋"
+  },
+  {
+    "id": "pine-resin",
+    "name": "Pine Resin",
+    "latinName": "Pinus sylvestris",
+    "origin": "Scandinavia & Northern Europe",
+    "form": "resin",
+    "vibes": [
+      "energizing",
+      "grounding",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "description": "The original Nordic sauna aromatic — pine resin has been collected and burned in Scandinavian saunas and healing traditions for thousands of years. Raw pine resin on hot stones releases α-pinene and β-pinene vapors that reduce airway inflammation, stimulate the adrenal glands, and create the unmistakable deep forest atmosphere of a traditional Finnish sauna.",
+    "saunaNote": "Place a small piece of raw resin directly on a flat sauna stone (not the main löyly stones). The slow melt releases a continuous forest aroma throughout the session. This is the most authentically Nordic aromatic experience possible — simple, powerful, and deeply grounding.",
+    "benefits": [
+      "Anti-inflammatory (α-pinene)",
+      "Respiratory opening",
+      "Adrenal stimulation",
+      "Immune support"
+    ],
+    "precautions": [
+      "Flammable — never leave unattended",
+      "Do not place on main löyly stones — fire risk",
+      "Use only on a flat heatproof stone away from flames"
+    ],
+    "color": "#a08040",
+    "emoji": "🌲"
+  },
+  {
+    "id": "sweetgrass",
+    "name": "Sweetgrass",
+    "latinName": "Hierochloe odorata",
+    "origin": "North America & Northern Europe",
+    "form": "herb",
+    "vibes": [
+      "meditative",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "description": "One of the four sacred plants of many Indigenous North American traditions, sweetgrass is used for purification, welcoming positive energies, and spiritual connection. Its braided, honey-vanilla smoke is unlike any other aromatic in the world — simultaneously sweet, grassy, and deeply cleansing. Studies on coumarin (its main aromatic compound) confirm anti-inflammatory and mild anxiolytic properties.",
+    "saunaNote": "Light the tip of a sweetgrass braid and let the smoke drift through the sauna before guests enter, or use during the session for ceremonial openings. The soft, sweet smoke pairs beautifully with sage or cedar for a full cleansing ritual.",
+    "benefits": [
+      "Ceremonial purification",
+      "Anti-inflammatory (coumarin)",
+      "Mild anxiolytic",
+      "Spiritual welcoming"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Contains coumarin — avoid high doses with blood-thinning medication",
+      "Ensure good ventilation"
+    ],
+    "color": "#a0b870",
+    "emoji": "🌾"
+  },
+  {
+    "id": "labdanum",
+    "name": "Labdanum",
+    "latinName": "Cistus ladaniferus",
+    "origin": "Mediterranean (Crete, Spain, Morocco)",
+    "form": "resin",
+    "vibes": [
+      "grounding",
+      "meditative",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "description": "The ancient amber of the Mediterranean — labdanum resin has been collected from the sticky leaves of rock rose since antiquity. It was one of the earliest traded aromatics and is believed to be what ancient texts called \"stacte,\" used in sacred incense formulas. Its rich, ambery, leathery, slightly sweet smoke grounds the mind and warms the spirit. In modern perfumery, labdanum is the primary component of the classic \"amber\" accord.",
+    "saunaNote": "Burn small pieces on a charcoal disc or in a heatproof dish near the sauna entrance. The warm, resinous smoke pairs beautifully with frankincense or cedarwood oil sessions, adding depth and a distinctly ancient Mediterranean quality to the ritual.",
+    "benefits": [
+      "Grounding (amber archetype)",
+      "Antimicrobial (α-pinene, viridiflorol)",
+      "Skin healing (traditional)",
+      "Antiviral properties"
+    ],
+    "precautions": [
+      "Ensure ventilation",
+      "May cause allergic reaction in those sensitive to rock rose",
+      "Do not burn inside an occupied sauna cabin"
+    ],
+    "color": "#b8803a",
+    "emoji": "🟤"
+  },
+  {
+    "id": "chamomile-flowers",
+    "name": "Dried Chamomile Flowers",
+    "latinName": "Matricaria chamomilla",
+    "origin": "Central Europe & Western Asia",
+    "form": "herb",
+    "vibes": [
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "description": "The most beloved calming herb in European folk medicine. Dried chamomile flowers release a warm, apple-honey sweetness when heated — a scent scientifically linked to apigenin receptor binding, the same pathway as mild anxiolytics. Studies confirm reduced cortisol and improved sleep onset from chamomile inhalation.",
+    "saunaNote": "Sprinkle a small handful of dried flowers directly onto a flat sauna stone (not the löyly stones) or place in a heatproof dish near the heat source. The gentle warmth slowly volatilises the essential oils — bisabolol, chamazulene, and apigenin — without burning them. Ideal for the final, quieting round of an evening aufguss.",
+    "benefits": [
+      "Anxiolytic (apigenin binding)",
+      "Anti-inflammatory (chamazulene)",
+      "Sleep onset support",
+      "Nervous system calming"
+    ],
+    "precautions": [
+      "Avoid if allergic to ragweed or daisy family (Asteraceae)",
+      "Do not place on main löyly stones — fire risk",
+      "Use only in a heatproof dish"
+    ],
+    "color": "#c8a830",
+    "emoji": "🌼"
+  },
+  {
+    "id": "nag-champa",
+    "name": "Nag Champa",
+    "origin": "India",
+    "form": "stick",
+    "vibes": [
+      "meditative",
+      "grounding",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "description": "The iconic Indian incense — nag champa is a traditional blend of champaca flower (Magnolia champaca), sandalwood, and binding resins, originating from Indian ashram and temple traditions. Its distinctive, earthy-floral smoke has become globally associated with meditation, yoga, and spiritual practice. The champaca flower note is scientifically linked to mood elevation and reduced anxiety.",
+    "saunaNote": "Light a stick outside the sauna or in an adjacent relaxation room — nag champa smoke is rich and should not be used inside the sauna cabin itself. Let the smoke drift in through a ventilation gap to add subtle spiritual fragrance to the session.",
+    "benefits": [
+      "Meditation support",
+      "Mood elevation (champaca)",
+      "Stress relief",
+      "Spiritual atmosphere"
+    ],
+    "precautions": [
+      "Use outside sauna cabin only — do not burn inside",
+      "Ensure ventilation in adjacent areas",
+      "Rich smoke — sensitive individuals should use sparingly"
+    ],
+    "color": "#9a6080",
+    "emoji": "🕯️"
+  }
+]

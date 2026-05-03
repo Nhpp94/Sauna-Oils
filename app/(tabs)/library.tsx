@@ -5,10 +5,9 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter, useLocalSearchParams } from 'expo-router';
-import { OILS } from '../../data/oils';
-import { BLENDS, Blend } from '../../data/blends';
-import { INCENSE } from '../../data/incense';
+import { Blend } from '../../data/blends';
 import { useMyOils } from '../../hooks/useMyOils';
+import { useRemoteData } from '../../context/RemoteDataContext';
 import { useMyIncense } from '../../hooks/useMyIncense';
 import { useCustomLibrary } from '../../context/CustomLibraryContext';
 import { OilCard } from '../../components/OilCard';
@@ -31,6 +30,7 @@ export default function LibraryScreen() {
   const { ownedIds, isOwned, toggleOwned } = useMyOils();
   const { ownedIncenseIds, isOwnedIncense, toggleOwnedIncense } = useMyIncense();
   const { customOils, customBlends, addCustomOil, removeCustomOil, addCustomBlend, removeCustomBlend } = useCustomLibrary();
+  const { oils: remoteOils, blends: remoteBlends, incense: remoteIncense } = useRemoteData();
   const [activeTab, setActiveTab] = useState<Tab>('oils');
 
   useEffect(() => {
@@ -50,8 +50,8 @@ export default function LibraryScreen() {
   const [showAddOil, setShowAddOil] = useState(false);
   const [showAddBlend, setShowAddBlend] = useState(false);
 
-  const allOils = useMemo(() => [...OILS, ...customOils], [customOils]);
-  const allBlends = useMemo(() => [...BLENDS, ...customBlends], [customBlends]);
+  const allOils = useMemo(() => [...remoteOils, ...customOils], [remoteOils, customOils]);
+  const allBlends = useMemo(() => [...remoteBlends, ...customBlends], [remoteBlends, customBlends]);
 
   const filteredOils = useMemo(() => {
     return allOils.filter(oil => {
@@ -80,7 +80,7 @@ export default function LibraryScreen() {
   }, [allBlends, search]);
 
   const filteredIncense = useMemo(() => {
-    return INCENSE.filter(i => {
+    return remoteIncense.filter(i => {
       if (!search) return true;
       const q = search.toLowerCase();
       return (
@@ -157,7 +157,7 @@ export default function LibraryScreen() {
           </Text>
           <View style={[styles.segmentBadge, activeTab === 'incense' && styles.segmentBadgeActive]}>
             <Text style={[styles.segmentBadgeText, activeTab === 'incense' && styles.segmentBadgeTextActive]}>
-              {INCENSE.length}
+              {remoteIncense.length}
             </Text>
           </View>
         </TouchableOpacity>

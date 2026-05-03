@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Blend } from '../data/blends';
-import { OILS } from '../data/oils';
+import { useRemoteData } from '../context/RemoteDataContext';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../constants/theme';
 import { CATEGORY_META } from '../constants/categories';
 import { VIBE_ICONS, VIBE_COLORS, TIME_ICONS } from '../constants/icons';
@@ -21,6 +21,7 @@ interface Props {
 
 export function BlendCard({ blend, onPress }: Props) {
   const [expanded, setExpanded] = useState(false);
+  const { oils } = useRemoteData();
 
   return (
     <View style={styles.card}>
@@ -47,7 +48,7 @@ export function BlendCard({ blend, onPress }: Props) {
             {/* Oil chips — always visible */}
             <View style={styles.oilsRow}>
               {blend.oils.map((o, i) => {
-                const oilData = OILS.find(oil => oil.id === o.id);
+                const oilData = oils.find(oil => oil.id === o.id);
                 const chipColor = oilData ? CATEGORY_META[oilData.category].color : blend.color;
                 return (
                   <React.Fragment key={o.id}>

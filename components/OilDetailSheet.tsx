@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { EssentialOil } from '../data/oils';
-import { OILS } from '../data/oils';
+import { useRemoteData } from '../context/RemoteDataContext';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../constants/theme';
 import { CATEGORY_META } from '../constants/categories';
 import { VIBE_ICONS, VIBE_COLORS, TIME_ICONS, NOTE_ICONS } from '../constants/icons';
@@ -56,9 +56,10 @@ const VIBE_BG: Record<string, string> = {
 };
 
 export function OilDetailSheet({ oil, visible, onClose, owned, onToggleOwned }: Props) {
+  const { oils } = useRemoteData();
   if (!oil) return null;
   const meta = CATEGORY_META[oil.category];
-  const pairOils = oil.pairsWith.map(id => OILS.find(o => o.id === id)).filter(Boolean) as EssentialOil[];
+  const pairOils = oil.pairsWith.map(id => oils.find(o => o.id === id)).filter(Boolean) as EssentialOil[];
 
   return (
     <Modal

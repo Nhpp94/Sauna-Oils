@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { OILS } from '../../data/oils';
-import { INCENSE } from '../../data/incense';
 import { useMyOils } from '../../hooks/useMyOils';
+import { useRemoteData } from '../../context/RemoteDataContext';
 import { useMyIncense } from '../../hooks/useMyIncense';
 import { useSavedSessions, SavedSession } from '../../context/SavedSessionsContext';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
@@ -48,8 +47,9 @@ export default function MyOilsScreen() {
   const { isOwnedIncense, toggleOwnedIncense } = useMyIncense();
   const { savedSessions, deleteSession } = useSavedSessions();
 
-  const ownedOils = OILS.filter(o => isOwned(o.id)).sort((a, b) => a.name.localeCompare(b.name));
-  const ownedIncense = INCENSE.filter(i => isOwnedIncense(i.id)).sort((a, b) => a.name.localeCompare(b.name));
+  const { oils, incense } = useRemoteData();
+  const ownedOils = oils.filter(o => isOwned(o.id)).sort((a, b) => a.name.localeCompare(b.name));
+  const ownedIncense = incense.filter(i => isOwnedIncense(i.id)).sort((a, b) => a.name.localeCompare(b.name));
   const [activeTab, setActiveTab] = useState<'oils' | 'incense' | 'sessions'>('oils');
 
   const handleLoadSession = (session: SavedSession) => {

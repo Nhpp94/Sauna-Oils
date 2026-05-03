@@ -16,7 +16,8 @@ import { SwapModal } from '../../components/SwapModal';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
 import { FORM_META, IncenseForm } from '../../constants/incenseForms';
 import { BotanicalIcon } from '../../components/BotanicalIcon';
-import { EssentialOil, OILS } from '../../data/oils';
+import { EssentialOil } from '../../data/oils';
+import { useRemoteData } from '../../context/RemoteDataContext';
 import { useSharedSession, setSharedSession, getActiveSavedSessionId } from '../../store/sessionStore';
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -50,8 +51,9 @@ export default function ResultScreen() {
   const { ownedIds } = useMyOils();
   const { ownedIncenseIds } = useMyIncense();
   const { customBlends, customOils } = useCustomLibrary();
-  const allOils = useMemo(() => [...OILS, ...customOils], [customOils]);
-  const { saveSession, updateSession } = useSavedSessions();
+  const { oils: remoteOils } = useRemoteData();
+  const allOils = useMemo(() => [...remoteOils, ...customOils], [remoteOils, customOils]);
+  const { saveSession, updateSession, renameSession, savedSessions } = useSavedSessions();
   const session = useSharedSession();
 
   const activeSavedIdRef = useRef(getActiveSavedSessionId());
@@ -67,6 +69,8 @@ export default function ResultScreen() {
   const [saveModalVisible, setSaveModalVisible] = useState(false);
   const [saveName, setSaveName] = useState('');
   const [savedFlash, setSavedFlash] = useState(false);
+  const [renameModalVisible, setRenameModalVisible] = useState(false);
+  const [renameName, setRenameName] = useState('');
 
   if (!session || !session.rounds) {
     return (
@@ -134,6 +138,22 @@ export default function ResultScreen() {
     setTimeout(() => setSavedFlash(false), 2000);
   };
 
+  const activeSavedSession = activeSavedIdRef.current
+    ? savedSessions.find(s => s.id === activeSavedIdRef.current) ?? null
+    : null;
+
+  const handleRenamePress = () => {
+    setRenameName(activeSavedSession?.name ?? '');
+    setRenameModalVisible(true);
+  };
+
+  const handleConfirmRename = () => {
+    if (activeSavedIdRef.current) {
+      renameSession(activeSavedIdRef.current, renameName.trim() || (activeSavedSession?.name ?? ''));
+    }
+    setRenameModalVisible(false);
+  };
+
   const canRegenerate = !!(vibe && time);
 
   return (
@@ -144,7 +164,14 @@ export default function ResultScreen() {
           <Ionicons name="chevron-back" size={26} color="#f0e4c8" />
         </Pressable>
         <View style={styles.headerCenter}>
-          <Text style={styles.screenTitle}>Your Session</Text>
+          {activeSavedSession ? (
+            <TouchableOpacity style={styles.sessionNameRow} onPress={handleRenamePress} activeOpacity={0.75}>
+              <Text style={styles.screenTitle} numberOfLines={1}>{activeSavedSession.name}</Text>
+              <Ionicons name="create-outline" size={15} color={Colors.textMuted} />
+            </TouchableOpacity>
+          ) : (
+            <Text style={styles.screenTitle}>Your Session</Text>
+          )}
           <Text style={styles.headerMeta}>
             {vibe && time
               ? `${cap(vibe)} · ${cap(time)} · 3 rounds`
@@ -357,6 +384,47 @@ export default function ResultScreen() {
         onClose={() => setSwapTarget(null)}
       />
 
+      {/* Rename Session Modal */}
+      <Modal
+        visible={renameModalVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setRenameModalVisible(false)}
+      >
+        <Pressable style={styles.saveOverlay} onPress={() => setRenameModalVisible(false)}>
+          <Pressable style={styles.saveModal} onPress={e => e.stopPropagation()}>
+            <Text style={styles.saveModalTitle}>Rename Session</Text>
+            <Text style={styles.saveModalLabel}>Name</Text>
+            <TextInput
+              style={styles.saveModalInput}
+              value={renameName}
+              onChangeText={setRenameName}
+              placeholder="Session name…"
+              placeholderTextColor={Colors.textMuted}
+              autoFocus
+              selectTextOnFocus
+            />
+            <View style={styles.saveModalActions}>
+              <TouchableOpacity
+                style={styles.saveModalCancel}
+                onPress={() => setRenameModalVisible(false)}
+                activeOpacity={0.75}
+              >
+                <Text style={styles.saveModalCancelText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.saveModalConfirm}
+                onPress={handleConfirmRename}
+                activeOpacity={0.85}
+              >
+                <Ionicons name="checkmark" size={15} color={Colors.bg} />
+                <Text style={styles.saveModalConfirmText}>Rename</Text>
+              </TouchableOpacity>
+            </View>
+          </Pressable>
+        </Pressable>
+      </Modal>
+
       {/* Save Session Modal */}
       <Modal
         visible={saveModalVisible}
@@ -418,6 +486,11 @@ const styles = StyleSheet.create({
     fontFamily: Typography.serifBold,
     fontSize: FontSize.xl,
     color: '#f0e4c8',
+  },
+  sessionNameRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
   },
   scroll: { flex: 1 },
   content: {
@@ -671,7 +744,7 @@ const styles = StyleSheet.create({
   },
   saveModal: {
     width: '100%',
-    backgroundColor: '#1a1208',
+    backgroundColor: Colors.bg,
     borderRadius: Radius.lg,
     borderWidth: 1,
     borderColor: Colors.border,

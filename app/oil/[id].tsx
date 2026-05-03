@@ -6,8 +6,8 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { OILS } from '../../data/oils';
 import { useMyOils } from '../../hooks/useMyOils';
+import { useRemoteData } from '../../context/RemoteDataContext';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
 import { CATEGORY_META } from '../../constants/categories';
 import { VIBE_ICONS, VIBE_COLORS, TIME_ICONS, NOTE_ICONS } from '../../constants/icons';
@@ -55,7 +55,8 @@ export default function OilDetailScreen() {
   const { isOwned, toggleOwned } = useMyOils();
 
   const insets = useSafeAreaInsets();
-  const oil = OILS.find(o => o.id === id);
+  const { oils } = useRemoteData();
+  const oil = oils.find(o => o.id === id);
   if (!oil) {
     return (
       <View style={[styles.gradient, { backgroundColor: Colors.bg, flex: 1 }]}>
@@ -72,7 +73,7 @@ export default function OilDetailScreen() {
   }
   const owned = isOwned(oil.id);
   const meta = CATEGORY_META[oil.category];
-  const pairOils = oil.pairsWith.map(pid => OILS.find(o => o.id === pid)).filter(Boolean);
+  const pairOils = oil.pairsWith.map(pid => oils.find(o => o.id === pid)).filter(Boolean);
 
   return (
     <View style={[styles.gradient, { backgroundColor: Colors.bg }]}>
