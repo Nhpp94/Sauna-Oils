@@ -322,7 +322,7 @@ export default function ResultScreen() {
             <Text style={styles.guideTitle}>How to Use</Text>
           </View>
           <Text style={styles.guideText}>
-            Add 4–8 drops total to your ladle of water. Use a ratio guided by the intensity of each oil — lighter oils can go up to 4 drops each, strong oils 1–2 drops only. Swirl gently before pouring over the sauna stones.
+            Add 8–10 drops total to each cup of water. Use a ratio guided by the intensity of each oil — lighter oils can go up to 4 drops each, strong oils 1–2 drops only. Swirl gently before pouring over the sauna stones.
           </Text>
         </View>
 
