@@ -1,0 +1,2694 @@
+[
+  {
+    "id": "lemon",
+    "name": "Lemon",
+    "latinName": "Citrus limon",
+    "category": "citrus",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "awakening",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Sharpens mental clarity and lifts mood instantly. The crisp citrus molecules stimulate the limbic system, reducing mental fatigue and sparking alertness. A natural antioxidant that supports the immune system during heat exposure.",
+    "saunaNote": "Bright and clean in steam — opens the sinuses and fills the room with a fresh, uplifting brightness. Use 4–6 drops per ladle.",
+    "benefits": [
+      "Mental clarity",
+      "Immune support",
+      "Mood lift",
+      "Antioxidant"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "peppermint",
+      "rosemary",
+      "ginger",
+      "bergamot"
+    ],
+    "precautions": [
+      "Phototoxic — avoid skin before sun",
+      "Dilute well (max 2 drops/litre)",
+      "Avoid undiluted contact"
+    ],
+    "color": "#e8a020",
+    "emoji": "🍋"
+  },
+  {
+    "id": "orange",
+    "name": "Sweet Orange",
+    "latinName": "Citrus sinensis",
+    "category": "citrus",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "relaxing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Warm and joyful, sweet orange eases anxiety and promotes a sense of happiness and wellbeing. It gently stimulates circulation and supports lymphatic drainage, making it ideal after exercise.",
+    "saunaNote": "Sweet and warm in the heat — slightly caramelized. Very crowd-pleasing and universally loved. Pairs beautifully with spices.",
+    "benefits": [
+      "Anti-anxiety",
+      "Circulation",
+      "Joy & wellbeing",
+      "Lymphatic support"
+    ],
+    "pairsWith": [
+      "cinnamon",
+      "clove",
+      "frankincense",
+      "lavender",
+      "black-pepper"
+    ],
+    "precautions": [
+      "Generally safe; avoid undiluted skin contact",
+      "May irritate sensitive skin",
+      "Use in well-ventilated space"
+    ],
+    "color": "#e87020",
+    "emoji": "🍊"
+  },
+  {
+    "id": "grapefruit",
+    "name": "Grapefruit",
+    "latinName": "Citrus paradisi",
+    "category": "citrus",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Invigorating and metabolism-boosting. Grapefruit activates the sympathetic nervous system in a gentle way, curbing appetite and energising the body. Known to reduce water retention and support detoxification.",
+    "saunaNote": "Tart and bright in steam — more complex than lemon with a slight bitter edge. Excellent for morning sessions.",
+    "benefits": [
+      "Metabolism boost",
+      "Detox support",
+      "Energy",
+      "Appetite regulation"
+    ],
+    "pairsWith": [
+      "peppermint",
+      "rosemary",
+      "lemon",
+      "juniper",
+      "cypress"
+    ],
+    "precautions": [
+      "Mildly phototoxic — avoid skin before UV exposure",
+      "Dilute well",
+      "Avoid oxidised oil"
+    ],
+    "color": "#e05060",
+    "emoji": "🍊"
+  },
+  {
+    "id": "bergamot",
+    "name": "Bergamot",
+    "latinName": "Citrus bergamia",
+    "category": "citrus",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "meditative",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The sophisticated citrus — bergamot sits between uplifting and calming. It reduces cortisol levels while maintaining alertness. Used in aromatherapy for anxiety, depression, and stress relief. Has a floral depth that distinguishes it from other citrus.",
+    "saunaNote": "Floral-citrus complexity that develops beautifully in heat. The characteristic tea-like quality makes it elegant and refined.",
+    "benefits": [
+      "Stress reduction",
+      "Cortisol balance",
+      "Mood uplift",
+      "Anxiety relief"
+    ],
+    "pairsWith": [
+      "lavender",
+      "ylang-ylang",
+      "jasmine",
+      "cedarwood",
+      "frankincense"
+    ],
+    "precautions": [
+      "Highly phototoxic — avoid skin before sun",
+      "Dilute to max 1%",
+      "May cause headache at high concentration"
+    ],
+    "color": "#c0d030",
+    "emoji": "🍋"
+  },
+  {
+    "id": "lime",
+    "name": "Lime",
+    "latinName": "Citrus aurantifolia",
+    "category": "citrus",
+    "note": "top",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "awakening",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Sharp and revitalizing — lime cuts through mental fog with intensity. The high limonene content stimulates the immune system and has antimicrobial properties that benefit the respiratory tract in the steam environment.",
+    "saunaNote": "One of the most intense citrus oils in heat. Use sparingly — 3–4 drops is enough. Fresh, tropical, and incredibly awakening.",
+    "benefits": [
+      "Immune stimulation",
+      "Antimicrobial",
+      "Mental clarity",
+      "Respiratory"
+    ],
+    "pairsWith": [
+      "coconut",
+      "ginger",
+      "lemongrass",
+      "peppermint",
+      "eucalyptus"
+    ],
+    "precautions": [
+      "Phototoxic (cold-pressed) — avoid skin before UV",
+      "Use sparingly — max 3–4 drops",
+      "Steam-distilled is safer topically"
+    ],
+    "color": "#70c030",
+    "emoji": "🍈"
+  },
+  {
+    "id": "eucalyptus",
+    "name": "Eucalyptus",
+    "latinName": "Eucalyptus globulus",
+    "category": "minty",
+    "note": "top",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "awakening",
+      "immune",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The ultimate respiratory oil. Eucalyptol (1,8-cineole) opens the bronchial passages, reduces inflammation in the airways, and helps clear congestion. In sauna heat, it becomes a powerful bronchodilator. Also antimicrobial and immune-boosting.",
+    "saunaNote": "Bold and medicinal in the heat — the signature sauna scent. Start with 4–5 drops; it amplifies strongly with steam. A crowd favourite.",
+    "benefits": [
+      "Respiratory clarity",
+      "Antimicrobial",
+      "Immune boost",
+      "Bronchodilator"
+    ],
+    "pairsWith": [
+      "peppermint",
+      "lemon",
+      "rosemary",
+      "pine",
+      "tea-tree"
+    ],
+    "precautions": [
+      "Avoid with children under 2",
+      "Do not ingest",
+      "Keep away from eyes and mucous membranes"
+    ],
+    "color": "#30a080",
+    "emoji": "❄️"
+  },
+  {
+    "id": "peppermint",
+    "name": "Peppermint",
+    "latinName": "Mentha piperita",
+    "category": "minty",
+    "note": "top",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Cooling and stimulating simultaneously — the menthol in peppermint activates cold receptors while improving circulation, creating a powerful contrast sensation with the sauna heat. Sharpens focus, relieves headaches, and aids digestion.",
+    "saunaNote": "Creates a stunning thermal contrast in the sauna. The cooling sensation against the heat is deeply satisfying. Use very sparingly — 2–3 drops maximum.",
+    "benefits": [
+      "Mental focus",
+      "Circulation",
+      "Cooling effect",
+      "Headache relief"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "lemon",
+      "rosemary",
+      "lavender",
+      "tea-tree"
+    ],
+    "precautions": [
+      "Avoid near face of children under 6",
+      "Use sparingly — max 2–3 drops",
+      "May cause skin irritation undiluted"
+    ],
+    "color": "#20b890",
+    "emoji": "🌿"
+  },
+  {
+    "id": "spearmint",
+    "name": "Spearmint",
+    "latinName": "Mentha spicata",
+    "category": "minty",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "relaxing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Gentler than peppermint — spearmint uplifts without overwhelming. Carvone, its main compound, soothes digestive issues and eases nausea. Mentally refreshing but soft enough for evening use.",
+    "saunaNote": "A softer, sweeter mint presence in the heat. More approachable for mixed groups. Blends beautifully with floral oils.",
+    "benefits": [
+      "Digestive ease",
+      "Gentle refresh",
+      "Nausea relief",
+      "Mood lift"
+    ],
+    "pairsWith": [
+      "lavender",
+      "lemon",
+      "bergamot",
+      "chamomile",
+      "geranium"
+    ],
+    "precautions": [
+      "Avoid with children under 6",
+      "Generally milder than peppermint",
+      "Dilute well"
+    ],
+    "color": "#40c870",
+    "emoji": "🌱"
+  },
+  {
+    "id": "tea-tree",
+    "name": "Tea Tree",
+    "latinName": "Melaleuca alternifolia",
+    "category": "minty",
+    "note": "top",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "immune",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Powerful antimicrobial and immune-strengthening. Tea tree kills airborne pathogens in the sauna environment, making it particularly useful in public saunas. Supports skin health and respiratory immunity.",
+    "saunaNote": "Clean and medicinal in steam. Creates a hygienic, clinical freshness. Best combined with softer oils to balance its intensity.",
+    "benefits": [
+      "Antimicrobial",
+      "Immune support",
+      "Skin health",
+      "Air purification"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "lavender",
+      "lemon",
+      "pine",
+      "rosemary"
+    ],
+    "precautions": [
+      "Toxic if ingested",
+      "Avoid eye contact",
+      "Dilute for sensitive skin"
+    ],
+    "color": "#38c8a0",
+    "emoji": "🌿"
+  },
+  {
+    "id": "cedarwood",
+    "name": "Cedarwood",
+    "latinName": "Cedrus atlantica",
+    "category": "woody",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Deeply grounding and sedative. Cedrol, the main compound, activates GABA receptors, promoting calmness similar to some anxiolytic medications but naturally. Supports deep, restful sleep and sustained nervous system calm during and after intense heat exposure.",
+    "saunaNote": "Warm and rich in the heat — evokes ancient forest baths. Lingers long in the steam. A foundational base note for evening sessions.",
+    "benefits": [
+      "Deep relaxation",
+      "Sleep support",
+      "Grounding",
+      "GABA activation"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "sandalwood",
+      "lavender",
+      "orange",
+      "bergamot"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Keep away from eyes",
+      "Dilute well"
+    ],
+    "color": "#8b6040",
+    "emoji": "🌲"
+  },
+  {
+    "id": "pine",
+    "name": "Scots Pine",
+    "latinName": "Pinus sylvestris",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "grounding",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Forest bathing in a bottle — pine activates the parasympathetic nervous system while sharpening the senses. Rich in alpha-pinene which reduces inflammation, supports adrenal function, and improves memory and alertness.",
+    "saunaNote": "The quintessential Nordic sauna scent. Brings the forest inside. Works at any temperature and enhances the wood sauna experience authentically.",
+    "benefits": [
+      "Forest bathing",
+      "Anti-inflammatory",
+      "Adrenal support",
+      "Memory"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "juniper",
+      "rosemary",
+      "cedarwood",
+      "fir"
+    ],
+    "precautions": [
+      "Avoid with kidney disorders",
+      "May irritate skin undiluted",
+      "Dilute well"
+    ],
+    "color": "#406030",
+    "emoji": "🌲"
+  },
+  {
+    "id": "fir",
+    "name": "Silver Fir",
+    "latinName": "Abies alba",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Balsamic and deeply calming. Silver fir promotes respiratory ease and a sense of spaciousness in the chest. Reduces muscle tension and supports recovery after physical activity.",
+    "saunaNote": "Softer than pine — a delicate, balsamic forest note that unfolds slowly in heat. Beautiful in long, contemplative sessions.",
+    "benefits": [
+      "Muscle recovery",
+      "Respiratory ease",
+      "Stress relief",
+      "Deep calm"
+    ],
+    "pairsWith": [
+      "pine",
+      "cedarwood",
+      "frankincense",
+      "lavender",
+      "juniper"
+    ],
+    "precautions": [
+      "Generally safe; dilute well",
+      "May cause skin sensitivity in rare cases",
+      "Avoid high concentration on sensitive skin"
+    ],
+    "color": "#507040",
+    "emoji": "🌲"
+  },
+  {
+    "id": "juniper",
+    "name": "Juniper Berry",
+    "latinName": "Juniperus communis",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "energizing",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Detoxifying and purifying — juniper stimulates the lymphatic system and supports kidney function, making it ideal for sauna detox sessions. Its high alpha-pinene and sabinene content has a mentally clarifying, refreshing quality that sharpens focus and promotes decisiveness after deep relaxation.",
+    "saunaNote": "Crisp, berry-woody with a slight gin-like character in the heat. Uplifting yet grounded. Enhances the detox effect of sweating.",
+    "benefits": [
+      "Detoxification",
+      "Lymphatic support",
+      "Clarity",
+      "Kidney support"
+    ],
+    "pairsWith": [
+      "pine",
+      "grapefruit",
+      "black-pepper",
+      "lemon",
+      "cypress"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Avoid with kidney disease",
+      "Dilute well"
+    ],
+    "color": "#607850",
+    "emoji": "🫐"
+  },
+  {
+    "id": "cypress",
+    "name": "Cypress",
+    "latinName": "Cupressus sempervirens",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "relaxing",
+      "detox"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The oil of transitions — cypress supports the body and mind through change. Improves circulation, reduces varicose veins, and strengthens venous walls. Emotionally, it helps release what no longer serves.",
+    "saunaNote": "Medicinal woody with balsamic depth. Builds beautifully in the heat room over multiple rounds. Very therapeutic character.",
+    "benefits": [
+      "Circulation",
+      "Venous health",
+      "Emotional release",
+      "Grounding"
+    ],
+    "pairsWith": [
+      "cedarwood",
+      "lavender",
+      "frankincense",
+      "bergamot",
+      "sandalwood"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Dilute well",
+      "Generally safe at sauna concentrations"
+    ],
+    "color": "#506840",
+    "emoji": "🌿"
+  },
+  {
+    "id": "sandalwood",
+    "name": "Sandalwood",
+    "latinName": "Santalum album",
+    "category": "woody",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "One of the most sacred oils — sandalwood deeply calms the nervous system and quiets mental chatter. Promotes meditation and introspection. The main compound alpha-santalol has documented sedative and anti-inflammatory properties.",
+    "saunaNote": "Creamy, warm, and spiritual in the heat. Transforms the sauna into a meditation space. Use in small amounts — its presence is profound.",
+    "benefits": [
+      "Meditation",
+      "Deep calm",
+      "Anti-inflammatory",
+      "Spiritual focus"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "rose",
+      "ylang-ylang",
+      "cedarwood",
+      "bergamot"
+    ],
+    "precautions": [
+      "Possible skin sensitisation — test first",
+      "Avoid if sandalwood allergy suspected",
+      "Dilute well"
+    ],
+    "color": "#c09060",
+    "emoji": "🪵"
+  },
+  {
+    "id": "rosemary",
+    "name": "Rosemary",
+    "latinName": "Rosmarinus officinalis",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The memory herb — rosemary increases cerebral blood flow and has been shown in studies to improve memory and cognitive performance. Also improves circulation, reduces muscle pain, and stimulates hair growth when used topically after the sauna.",
+    "saunaNote": "Medicinal and herbaceous in the heat — clears the head instantly. One of the best pre-workout sauna oils for mental and physical activation.",
+    "benefits": [
+      "Memory",
+      "Cognitive boost",
+      "Circulation",
+      "Muscle recovery"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "lemon",
+      "peppermint",
+      "pine",
+      "black-pepper"
+    ],
+    "precautions": [
+      "Avoid during pregnancy and with epilepsy",
+      "Not for children under 2",
+      "Stimulating — avoid in evening"
+    ],
+    "color": "#5a8040",
+    "emoji": "🌿"
+  },
+  {
+    "id": "lavender",
+    "name": "Lavender",
+    "latinName": "Lavandula angustifolia",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The most versatile and beloved of all essential oils. Linalool and linalyl acetate calm the nervous system, reduce anxiety, improve sleep quality, and ease pain. In the sauna, it promotes profound relaxation and emotional balance.",
+    "saunaNote": "Soft and floral in steam — comforting and universally loved. Creates a spa-like atmosphere. Works at any intensity level.",
+    "benefits": [
+      "Sleep quality",
+      "Anxiety relief",
+      "Pain relief",
+      "Emotional balance"
+    ],
+    "pairsWith": [
+      "bergamot",
+      "chamomile",
+      "cedarwood",
+      "frankincense",
+      "ylang-ylang"
+    ],
+    "precautions": [
+      "Generally very safe",
+      "Avoid undiluted on sensitive skin",
+      "Minimal amounts during pregnancy"
+    ],
+    "color": "#9070b0",
+    "emoji": "💜"
+  },
+  {
+    "id": "chamomile",
+    "name": "Roman Chamomile",
+    "latinName": "Chamaemelum nobile",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 1,
+    "vibes": [
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "The gentlest and most soothing oil. Roman chamomile is rich in calming esters — primarily isobutyl angelate and 2-methylbutyl angelate — which give it a notably anti-spasmodic, skin-soothing, and nervine quality. Small amounts of alpha-bisabolol contribute to its mild anti-inflammatory action. Emotionally, it dissolves irritability, anger, and restlessness.",
+    "saunaNote": "Soft, apple-like sweetness in the heat. Best for the final round of an evening session. Almost sedative in its gentleness.",
+    "benefits": [
+      "Anti-inflammatory",
+      "Skin soothing",
+      "Anger release",
+      "Deep rest"
+    ],
+    "pairsWith": [
+      "lavender",
+      "rose",
+      "bergamot",
+      "cedarwood",
+      "sandalwood"
+    ],
+    "precautions": [
+      "Avoid if allergic to ragweed family (Asteraceae)",
+      "Generally very gentle",
+      "Dilute well"
+    ],
+    "color": "#d0b040",
+    "emoji": "🌼"
+  },
+  {
+    "id": "lemongrass",
+    "name": "Lemongrass",
+    "latinName": "Cymbopogon citratus",
+    "category": "herbal",
+    "note": "top",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "grounding",
+      "awakening",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Sharply refreshing and deeply cleansing. Lemongrass stimulates the lymphatic system, reduces inflammation, and has powerful analgesic properties for sore muscles. Also acts as a natural insect repellent and deodorant.",
+    "saunaNote": "Intense, lemony-herbal that fills the room quickly. Use sparingly — 3 drops is plenty. Pairs beautifully with tropical and spice oils.",
+    "benefits": [
+      "Lymphatic drainage",
+      "Muscle pain",
+      "Anti-inflammatory",
+      "Cleansing"
+    ],
+    "pairsWith": [
+      "ginger",
+      "lime",
+      "geranium",
+      "basil",
+      "black-pepper"
+    ],
+    "precautions": [
+      "Strong skin sensitiser — dilute well",
+      "Use sparingly in sauna (max 3 drops)",
+      "Avoid on broken or sensitive skin"
+    ],
+    "color": "#a0c030",
+    "emoji": "🌾"
+  },
+  {
+    "id": "basil",
+    "name": "Basil",
+    "latinName": "Ocimum basilicum",
+    "category": "herbal",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "awakening",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The herb of focus — basil contains eugenol and linalool that together reduce mental fatigue, sharpen concentration, and ease nervous tension. Traditional Ayurvedic herb for mental clarity and vitality.",
+    "saunaNote": "Green, sweet, and slightly spicy in the heat. Fresh and culinary. Works beautifully in Mediterranean herb blends.",
+    "benefits": [
+      "Focus",
+      "Mental fatigue",
+      "Concentration",
+      "Vitality"
+    ],
+    "pairsWith": [
+      "lemon",
+      "rosemary",
+      "thyme",
+      "bergamot",
+      "sage"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Avoid with estrogen-sensitive conditions",
+      "Dilute well"
+    ],
+    "color": "#60a040",
+    "emoji": "🌿"
+  },
+  {
+    "id": "thyme",
+    "name": "Thyme",
+    "latinName": "Thymus vulgaris",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "immune",
+      "warming"
+    ],
+    "timeOfDay": [
+      "morning"
+    ],
+    "bodyImpact": "Powerfully antimicrobial and immune-supporting. Thymol, its main compound, is one of the strongest natural antiseptics — active against a broad spectrum of bacteria and fungi. Inhaled thymol supports respiratory immunity through its direct antimicrobial action in the airways and by modulating inflammatory pathways. Used traditionally against respiratory infections and still respected in modern phytotherapy.",
+    "saunaNote": "Strong and medicinal — use very sparingly. Best in winter immunity sessions. Combine with honey and lemon for a traditional remedy sauna.",
+    "benefits": [
+      "Immune support",
+      "Antimicrobial",
+      "Respiratory",
+      "Phytotherapy"
+    ],
+    "pairsWith": [
+      "lemon",
+      "eucalyptus",
+      "rosemary",
+      "sage",
+      "pine"
+    ],
+    "precautions": [
+      "Strong skin and mucous membrane irritant",
+      "Avoid during pregnancy",
+      "Use very sparingly — max 1–2 drops"
+    ],
+    "color": "#709050",
+    "emoji": "🌿"
+  },
+  {
+    "id": "sage",
+    "name": "Clary Sage",
+    "latinName": "Salvia sclarea",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "grounding",
+      "creative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Hormonal balancer and euphoria-inducer. Clary sage contains sclareol, a compound that mimics estrogen and helps balance hormonal fluctuations. Also acts as a mild antidepressant and produces a dreamy, euphoric state.",
+    "saunaNote": "Earthy, slightly nutty, and herbaceous. Produces a noticeably altered, relaxed state in the heat. Great for women's wellness sessions.",
+    "benefits": [
+      "Hormonal balance",
+      "Euphoria",
+      "Antidepressant",
+      "PMS relief"
+    ],
+    "pairsWith": [
+      "lavender",
+      "geranium",
+      "bergamot",
+      "cedarwood",
+      "frankincense"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Avoid with estrogen-sensitive conditions",
+      "Amplifies alcohol effects — avoid after drinking"
+    ],
+    "color": "#8080a0",
+    "emoji": "🌿"
+  },
+  {
+    "id": "geranium",
+    "name": "Rose Geranium",
+    "latinName": "Pelargonium graveolens",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "detox"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Emotional balancer and skin regenerator. Geranium regulates the nervous system and adrenal glands, easing anxiety and mood swings. Excellent for lymphatic drainage and as an astringent skin toner — the sauna heat amplifies its skin benefits.",
+    "saunaNote": "Rose-like with a green, earthy undertone. More complex than rose alone. Lovely in floral blends and relaxation sessions.",
+    "benefits": [
+      "Emotional balance",
+      "Skin health",
+      "Adrenal support",
+      "Lymphatic"
+    ],
+    "pairsWith": [
+      "lavender",
+      "rose",
+      "bergamot",
+      "clary-sage",
+      "chamomile"
+    ],
+    "precautions": [
+      "Avoid during first trimester",
+      "Generally well tolerated",
+      "Dilute well"
+    ],
+    "color": "#d06080",
+    "emoji": "🌸"
+  },
+  {
+    "id": "verbena",
+    "name": "Lemon Verbena",
+    "latinName": "Aloysia citrodora",
+    "category": "herbal",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "relaxing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "A sophisticated citrus-herb bridge. Verbena relaxes the digestive tract, eases anxiety, and has anti-inflammatory properties. Less common than other herbs, it adds an elegant, refined quality to blends.",
+    "saunaNote": "Fresh, green-citrusy with herbal depth. Sophisticated and uplifting without being sharp. Versatile across all session types.",
+    "benefits": [
+      "Digestive ease",
+      "Anti-anxiety",
+      "Anti-inflammatory",
+      "Refined uplift"
+    ],
+    "pairsWith": [
+      "lavender",
+      "bergamot",
+      "geranium",
+      "lemon",
+      "chamomile"
+    ],
+    "precautions": [
+      "May cause photosensitivity",
+      "Dilute well",
+      "Generally gentle"
+    ],
+    "color": "#b0c040",
+    "emoji": "🌿"
+  },
+  {
+    "id": "rose",
+    "name": "Rose Otto",
+    "latinName": "Rosa damascena",
+    "category": "floral",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The queen of oils — rose acts directly on the emotional center of the brain, promoting feelings of love, self-worth, and deep emotional healing. Reduces cortisol, supports hormonal balance, and is one of the most powerful antidepressants in aromatherapy.",
+    "saunaNote": "Exquisitely beautiful in heat. Transform the sauna into a rose garden. Very expensive — even one drop is impactful. Best in intimate evening sessions.",
+    "benefits": [
+      "Emotional healing",
+      "Cortisol reduction",
+      "Self-worth",
+      "Heart opening"
+    ],
+    "pairsWith": [
+      "sandalwood",
+      "bergamot",
+      "ylang-ylang",
+      "geranium",
+      "frankincense"
+    ],
+    "precautions": [
+      "Avoid during first trimester of pregnancy",
+      "Very concentrated — 1 drop maximum",
+      "Dilute well; expensive"
+    ],
+    "color": "#d04060",
+    "emoji": "🌹"
+  },
+  {
+    "id": "ylang-ylang",
+    "name": "Ylang Ylang",
+    "latinName": "Cananga odorata",
+    "category": "floral",
+    "note": "middle",
+    "intensity": 3,
+    "vibes": [
+      "relaxing",
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "Deeply sensual and calming — ylang ylang lowers blood pressure and heart rate, making it one of the most effective oils for managing stress-related hypertension. Strongly euphoric and sedative in larger quantities.",
+    "saunaNote": "Heady and exotic in the heat — use very sparingly (1–2 drops) as it can be overwhelming. Beautiful in tiny amounts.",
+    "benefits": [
+      "Blood pressure",
+      "Heart rate",
+      "Euphoria",
+      "Deep sensuality"
+    ],
+    "pairsWith": [
+      "sandalwood",
+      "bergamot",
+      "rose",
+      "jasmine",
+      "cedarwood"
+    ],
+    "precautions": [
+      "May cause headache or nausea at high concentration",
+      "Use 1–2 drops maximum",
+      "Avoid with low blood pressure"
+    ],
+    "color": "#e0b020",
+    "emoji": "🌸"
+  },
+  {
+    "id": "jasmine",
+    "name": "Jasmine Absolute",
+    "latinName": "Jasminum grandiflorum",
+    "category": "floral",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "Euphoric and deeply warming. Jasmine increases alpha brain waves associated with relaxed alertness. Relieves depression, builds confidence, and is one of the most powerful natural antidepressants. Also has uterotonic properties — not for pregnant women.",
+    "saunaNote": "Rich, honeyed, and intoxicating in the heat. Creates an exotic, sensual atmosphere. Best for intimate or ceremonial evening sessions.",
+    "benefits": [
+      "Confidence",
+      "Antidepressant",
+      "Alpha brain waves",
+      "Warming"
+    ],
+    "pairsWith": [
+      "rose",
+      "sandalwood",
+      "ylang-ylang",
+      "bergamot",
+      "orange"
+    ],
+    "precautions": [
+      "Avoid during pregnancy — uterotonic",
+      "Use 1 drop maximum — very intense",
+      "Avoid with low blood pressure"
+    ],
+    "color": "#e8c880",
+    "emoji": "🌼"
+  },
+  {
+    "id": "black-pepper",
+    "name": "Black Pepper",
+    "latinName": "Piper nigrum",
+    "category": "spicy",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "grounding",
+      "warming"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The activator — black pepper essential oil is rich in beta-caryophyllene, a sesquiterpene that acts as a selective CB2 receptor agonist, producing warming, mild analgesic, and circulation-boosting effects without psychoactivity. Alpha-pinene and limonene add mental stimulation and respiratory opening. Deeply warming to the muscles and mentally sharpening. Used by athletes for pre-workout activation.",
+    "saunaNote": "Warm, dry, spicy heat within the heat. Excellent pre-workout or morning activation oil. Amplifies other oils' effects.",
+    "benefits": [
+      "Circulation",
+      "Muscle warming",
+      "CB2 activation",
+      "Athletic activation"
+    ],
+    "pairsWith": [
+      "orange",
+      "lemon",
+      "juniper",
+      "ginger",
+      "rosemary"
+    ],
+    "precautions": [
+      "Skin irritant at high concentrations",
+      "Dilute well",
+      "Avoid undiluted skin contact"
+    ],
+    "color": "#605040",
+    "emoji": "🫙"
+  },
+  {
+    "id": "ginger",
+    "name": "Ginger",
+    "latinName": "Zingiber officinale",
+    "category": "spicy",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "grounding",
+      "warming"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Warming and invigorating — ginger essential oil is rich in sesquiterpenes, principally zingiberene and beta-sesquiphellandrene, which create its characteristic deep, fiery warmth and improve circulation to the extremities. Inhaled ginger has documented anti-nausea effects via olfactory pathways and eases digestive discomfort. The mechanism differs from ingested ginger's gingerols, but the warming and settling effects in the sauna are real and well-regarded. Emotionally, ginger builds courage and willpower.",
+    "saunaNote": "Fiery and warm in steam — perfect for cold winter days. Amplifies the heating effect of the sauna and reaches deep into the muscles.",
+    "benefits": [
+      "Circulatory warmth",
+      "Nausea relief",
+      "Digestive ease",
+      "Courage & willpower"
+    ],
+    "pairsWith": [
+      "orange",
+      "lemon",
+      "lemongrass",
+      "black-pepper",
+      "cardamom"
+    ],
+    "precautions": [
+      "Possible skin sensitiser — dilute well",
+      "Avoid direct skin contact",
+      "Use sparingly in sauna heat"
+    ],
+    "color": "#d07020",
+    "emoji": "🫙"
+  },
+  {
+    "id": "cinnamon",
+    "name": "Cinnamon Bark",
+    "latinName": "Cinnamomum verum",
+    "category": "spicy",
+    "note": "base",
+    "intensity": 3,
+    "vibes": [
+      "grounding",
+      "immune",
+      "warming"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Intensely warming and activating. Cinnamaldehyde, the dominant compound in cinnamon bark oil, is a powerful circulatory stimulant that warms the body from within — accelerating blood flow and amplifying the heating effect of the sauna. Also strongly antimicrobial, making winter immunity sessions especially effective. Emotionally warm and comforting — evokes safety and abundance.",
+    "saunaNote": "Extremely potent — 1–2 drops maximum. Warming and spicy, fills the room immediately. Best in winter or cold-morning sessions.",
+    "benefits": [
+      "Circulation",
+      "Warming",
+      "Antimicrobial",
+      "Comfort & warmth"
+    ],
+    "pairsWith": [
+      "orange",
+      "clove",
+      "cardamom",
+      "frankincense",
+      "black-pepper"
+    ],
+    "precautions": [
+      "Strong skin and mucous membrane irritant",
+      "Max 1–2 drops total — can cause burns undiluted",
+      "Avoid during pregnancy"
+    ],
+    "color": "#c06030",
+    "emoji": "🪵"
+  },
+  {
+    "id": "clove",
+    "name": "Clove Bud",
+    "latinName": "Syzygium aromaticum",
+    "category": "spicy",
+    "note": "base",
+    "intensity": 3,
+    "vibes": [
+      "grounding",
+      "immune",
+      "warming"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The most powerful antioxidant oil. Eugenol in clove has extremely high ORAC value and is strongly antimicrobial and analgesic. Relieves tooth and joint pain, boosts immunity, and has antifungal properties.",
+    "saunaNote": "Rich, warm, and medicinal in the heat. Very strong — dilute well or use 1 drop only. Creates a deep, winter spice atmosphere.",
+    "benefits": [
+      "Antioxidant",
+      "Pain relief",
+      "Antifungal",
+      "Immunity"
+    ],
+    "pairsWith": [
+      "orange",
+      "cinnamon",
+      "frankincense",
+      "cardamom",
+      "black-pepper"
+    ],
+    "precautions": [
+      "Potent irritant — max 1 drop per session",
+      "Avoid during pregnancy",
+      "May trigger sensitisation with repeated exposure"
+    ],
+    "color": "#804030",
+    "emoji": "🫙"
+  },
+  {
+    "id": "cardamom",
+    "name": "Cardamom",
+    "latinName": "Elettaria cardamomum",
+    "category": "spicy",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "relaxing",
+      "creative",
+      "warming"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The versatile spice — cardamom stimulates digestion, eases respiratory issues, and has a warming yet clarifying effect on the mind. A bridge between energizing and relaxing, making it one of the most versatile sauna oils.",
+    "saunaNote": "Warm, sweet, spicy complexity in the heat. A beautiful middle ground oil that works in almost any session. Very aromatic and long-lasting.",
+    "benefits": [
+      "Digestion",
+      "Respiratory",
+      "Mental clarity",
+      "Versatile energy"
+    ],
+    "pairsWith": [
+      "orange",
+      "ginger",
+      "cinnamon",
+      "frankincense",
+      "bergamot"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Avoid with children under 3"
+    ],
+    "color": "#90a030",
+    "emoji": "🫙"
+  },
+  {
+    "id": "frankincense",
+    "name": "Frankincense",
+    "latinName": "Boswellia sacra",
+    "category": "resinous",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Sacred and profound. Steam-distilled frankincense is rich in alpha-pinene, limonene, and incensole acetate — volatile compounds that slow and deepen the breath, ease nervous tension, and promote a meditative state. Incensole acetate in particular has been shown to activate ion channels in the brain associated with warmth and calmness. Reduces cortisol and has been used in every major spiritual tradition for thousands of years.",
+    "saunaNote": "Warm, balsamic, and holy in the heat. Elevates any session into a ritual. Deepens breathing and creates stillness in the room.",
+    "benefits": [
+      "Deep breathing",
+      "Meditation",
+      "Cortisol balance",
+      "Nervous system calm"
+    ],
+    "pairsWith": [
+      "myrrh",
+      "sandalwood",
+      "cedarwood",
+      "lavender",
+      "rose"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Avoid during first trimester of pregnancy",
+      "Dilute well"
+    ],
+    "color": "#c09050",
+    "emoji": "🫙"
+  },
+  {
+    "id": "myrrh",
+    "name": "Myrrh",
+    "latinName": "Commiphora myrrha",
+    "category": "resinous",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "Ancient healer — myrrh has profound wound-healing, antimicrobial, and thyroid-supporting properties. Emotionally, it releases deep-seated grief, supports acceptance, and promotes groundedness. Works slowly but deeply.",
+    "saunaNote": "Smoky, earthy, and ancient in the heat. Complex and mysterious. Pairs powerfully with frankincense for ceremonial sessions.",
+    "benefits": [
+      "Wound healing",
+      "Thyroid support",
+      "Grief release",
+      "Acceptance"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "sandalwood",
+      "cedarwood",
+      "rose",
+      "lavender"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Dilute well",
+      "Generally safe at sauna concentrations"
+    ],
+    "color": "#906040",
+    "emoji": "🫙"
+  },
+  {
+    "id": "benzoin",
+    "name": "Benzoin",
+    "latinName": "Styrax benzoin",
+    "category": "resinous",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "warming"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "Vanilla-like, warm, and comforting. Benzoin soothes cracked or irritated skin, warms the respiratory tract, and produces a deeply comforting, almost womb-like sense of safety and warmth.",
+    "saunaNote": "Sweet, warm vanilla-resin in the heat. Creates the most comforting and welcoming sauna atmosphere. Beautiful in winter sessions.",
+    "benefits": [
+      "Skin healing",
+      "Respiratory warmth",
+      "Comfort",
+      "Emotional safety"
+    ],
+    "pairsWith": [
+      "orange",
+      "frankincense",
+      "sandalwood",
+      "lavender",
+      "cinnamon"
+    ],
+    "precautions": [
+      "Possible sensitiser with prolonged use",
+      "Dilute well",
+      "Generally gentle and safe"
+    ],
+    "color": "#d0a060",
+    "emoji": "🍯"
+  },
+  {
+    "id": "copal",
+    "name": "Copal White",
+    "latinName": "Bursera copallifera",
+    "category": "resinous",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The sacred cleanser of the Americas. Copal's volatile terpenes have documented antimicrobial properties that genuinely freshen the air — a quality that likely underlies its deep ceremonial role in Mesoamerican purification rituals. Mildly euphoric and grounding simultaneously. Its traditional use for promoting spiritual clarity spans millennia, making it one of the most culturally significant aromatic resins in the world.",
+    "saunaNote": "Lighter than frankincense — fresh resin with a lemon undertone. Cleansing and elevating in the heat room.",
+    "benefits": [
+      "Air purification",
+      "Spiritual clarity",
+      "Mild euphoria",
+      "Grounding"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "cedarwood",
+      "sage",
+      "pine",
+      "juniper"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Avoid with children under 3"
+    ],
+    "color": "#d0b070",
+    "emoji": "🌟"
+  },
+  {
+    "id": "sea-buckthorn",
+    "name": "Sea Buckthorn",
+    "latinName": "Hippophae rhamnoides",
+    "category": "aquatic",
+    "note": "middle",
+    "intensity": 1,
+    "vibes": [
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Nutrient-dense coastal berry — rich in omega-7 and antioxidants that nourish and regenerate skin during the sauna heat. Calming and skin-supportive with a unique coastal character.",
+    "saunaNote": "Subtle, fruity-oceanic note. Gentle and skin-nurturing. Best as a background note in complex blends.",
+    "benefits": [
+      "Skin nutrition",
+      "Antioxidant",
+      "Omega-7",
+      "Skin regeneration"
+    ],
+    "pairsWith": [
+      "lavender",
+      "geranium",
+      "chamomile",
+      "rose",
+      "bergamot"
+    ],
+    "precautions": [
+      "Can stain surfaces/skin orange if undiluted",
+      "Dilute well",
+      "Generally safe"
+    ],
+    "color": "#e08030",
+    "emoji": "🌊"
+  },
+  {
+    "id": "green-tea",
+    "name": "Green Tea",
+    "latinName": "Camellia sinensis",
+    "category": "aquatic",
+    "note": "top",
+    "intensity": 1,
+    "vibes": [
+      "relaxing",
+      "energizing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Clean and meditative. Green tea essential oil carries volatile terpenes and aromatic alcohols — including linalool, geraniol, and aldehydes — that produce a genuinely calming, clarifying effect via the olfactory-limbic pathway. The fresh, barely-there note settles the mind without heaviness, inducing a clear, present awareness well-suited to mindful sauna sessions.",
+    "saunaNote": "Very subtle and fresh — almost atmospheric. Creates a Japanese onsen feeling. Best in minimalist, mindful sessions.",
+    "benefits": [
+      "Focused calm",
+      "Clarifying",
+      "Mood lift",
+      "Mindfulness"
+    ],
+    "pairsWith": [
+      "bergamot",
+      "jasmine",
+      "spearmint",
+      "lemon",
+      "cedarwood"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Very gentle — one of the safest oils"
+    ],
+    "color": "#80b060",
+    "emoji": "🍵"
+  },
+  {
+    "id": "cucumber",
+    "name": "Cucumber",
+    "latinName": "Cucumis sativus",
+    "category": "aquatic",
+    "note": "top",
+    "intensity": 1,
+    "vibes": [
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Cooling and hydrating effect on the skin even in the hot environment. Cucumber cools inflammation, soothes the nervous system, and has a deeply refreshing quality that counters heat stress.",
+    "saunaNote": "Cool, watery, and refreshing in the heat — a beautiful contrast. Perfect for summer sessions or when guests need relief from intensity.",
+    "benefits": [
+      "Skin cooling",
+      "Heat stress relief",
+      "Hydration feel",
+      "Soothing"
+    ],
+    "pairsWith": [
+      "spearmint",
+      "lavender",
+      "green-tea",
+      "chamomile",
+      "lemon"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Keep bottle refrigerated for freshness"
+    ],
+    "color": "#70b050",
+    "emoji": "🥒"
+  },
+  {
+    "id": "patchouli",
+    "name": "Patchouli",
+    "latinName": "Pogostemon cablin",
+    "category": "woody",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "relaxing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The earth oil — deeply grounding and aphrodisiac. Patchouli reduces inflammation, regenerates skin cells, and has powerful anti-anxiety properties. Connects to body and earth energy. Often called the hippie oil, but its therapeutic depth is extraordinary.",
+    "saunaNote": "Rich, earthy, sweet-musty in heat. Very distinctive — some love it deeply, some find it strong. Use minimally and pair with citrus.",
+    "benefits": [
+      "Grounding",
+      "Skin regeneration",
+      "Anti-anxiety",
+      "Aphrodisiac"
+    ],
+    "pairsWith": [
+      "orange",
+      "cedarwood",
+      "frankincense",
+      "bergamot",
+      "rose"
+    ],
+    "precautions": [
+      "Avoid undiluted on skin",
+      "Very strong — use sparingly",
+      "Dilute with citrus to balance intensity"
+    ],
+    "color": "#706040",
+    "emoji": "🌍"
+  },
+  {
+    "id": "vetiver",
+    "name": "Vetiver",
+    "latinName": "Chrysopogon zizanioides",
+    "category": "woody",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "The oil of tranquility — vetiver is one of the most deeply grounding oils. It calms an overactive mind, supports the nervous system in trauma recovery, and has documented effects on ADHD. Root oil in every sense.",
+    "saunaNote": "Smoky, earthy, complex root character in the heat. A meditation oil. Use in tiny amounts as an anchor for lighter top notes.",
+    "benefits": [
+      "Deep grounding",
+      "ADHD calm",
+      "Trauma support",
+      "Nervous system"
+    ],
+    "pairsWith": [
+      "lavender",
+      "frankincense",
+      "cedarwood",
+      "sandalwood",
+      "rose"
+    ],
+    "precautions": [
+      "Extremely viscous — dilute before adding to water",
+      "Use 1–2 drops max",
+      "Generally safe"
+    ],
+    "color": "#807050",
+    "emoji": "🌱"
+  },
+  {
+    "id": "neroli",
+    "name": "Neroli",
+    "latinName": "Citrus aurantium",
+    "category": "floral",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Blossom of the bitter orange — neroli is one of the great antidepressants. It reduces heart palpitations, relieves insomnia, and promotes cellular regeneration. The sweet floral note induces immediate calm.",
+    "saunaNote": "Exquisite floral-citrus in the heat. Elevates the spirit immediately. A luxury oil for special evening ceremonies.",
+    "benefits": [
+      "Antidepressant",
+      "Heart palpitations",
+      "Insomnia",
+      "Cell regeneration"
+    ],
+    "pairsWith": [
+      "lavender",
+      "rose",
+      "jasmine",
+      "bergamot",
+      "sandalwood"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Sedative at high doses",
+      "Generally very gentle"
+    ],
+    "color": "#e8c040",
+    "emoji": "🌸"
+  },
+  {
+    "id": "helichrysum",
+    "name": "Helichrysum",
+    "latinName": "Helichrysum italicum",
+    "category": "floral",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The immortelle — helichrysum promotes cellular regeneration and is one of the most powerful anti-aging and scar-healing oils. Also powerfully anti-inflammatory and emotionally, it supports processing grief and emotional wounds.",
+    "saunaNote": "Curry-honey-floral complexity in heat. Unusual and deeply interesting. For those who want a truly therapeutic sauna experience.",
+    "benefits": [
+      "Cell regeneration",
+      "Scar healing",
+      "Anti-aging",
+      "Grief processing"
+    ],
+    "pairsWith": [
+      "lavender",
+      "rose",
+      "frankincense",
+      "bergamot",
+      "geranium"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Expensive — use sparingly"
+    ],
+    "color": "#d0a020",
+    "emoji": "🌼"
+  },
+  {
+    "id": "palmarosa",
+    "name": "Palmarosa",
+    "latinName": "Cymbopogon martini",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Rose-like but herbal — palmarosa hydrates and tones the skin (excellent for sauna skin care), balances sebum production, and emotionally promotes adaptability and open-heartedness.",
+    "saunaNote": "Fresh rose-grass note in heat. Clean, versatile, and skin-nourishing. One of the best oils for skin-focused sauna sessions.",
+    "benefits": [
+      "Skin hydration",
+      "Sebum balance",
+      "Adaptability",
+      "Open heart"
+    ],
+    "pairsWith": [
+      "geranium",
+      "lavender",
+      "lemon",
+      "bergamot",
+      "rose"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Avoid undiluted skin contact"
+    ],
+    "color": "#d08060",
+    "emoji": "🌹"
+  },
+  {
+    "id": "spruce",
+    "name": "Black Spruce",
+    "latinName": "Picea mariana",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The adrenal tonic — black spruce supports cortisol regulation and adrenal function, making it ideal for those experiencing burnout or fatigue. Also opens the respiratory system and promotes primal connection to nature.",
+    "saunaNote": "Deep forest character — richer and more resinous than pine. Grounds and energises simultaneously. Excellent for burnout recovery sessions.",
+    "benefits": [
+      "Adrenal support",
+      "Burnout recovery",
+      "Cortisol regulation",
+      "Forest energy"
+    ],
+    "pairsWith": [
+      "pine",
+      "fir",
+      "cedarwood",
+      "frankincense",
+      "eucalyptus"
+    ],
+    "precautions": [
+      "Avoid with kidney disorders",
+      "Dilute well",
+      "Generally safe at sauna concentrations"
+    ],
+    "color": "#305040",
+    "emoji": "🌲"
+  },
+  {
+    "id": "ho-wood",
+    "name": "Ho Wood",
+    "latinName": "Cinnamomum camphora",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 1,
+    "vibes": [
+      "relaxing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Rosewood's sustainable alternative — ho wood has the same calming, centering, linalool-rich profile as rosewood. Deeply grounding, anti-bacterial, and emotionally stabilising without being sedating.",
+    "saunaNote": "Soft, woody-floral warmth in the heat. Gentle and elegant. Perfect as a background wood note in any relaxation blend.",
+    "benefits": [
+      "Centering",
+      "Antibacterial",
+      "Emotional stability",
+      "Gentle calm"
+    ],
+    "pairsWith": [
+      "lavender",
+      "bergamot",
+      "frankincense",
+      "cedarwood",
+      "rose"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Sustainable — source responsibly"
+    ],
+    "color": "#a07050",
+    "emoji": "🪵"
+  },
+  {
+    "id": "osmanthus",
+    "name": "Osmanthus",
+    "latinName": "Osmanthus fragrans",
+    "category": "floral",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "creative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "The tea flower — osmanthus is a rare, exquisite floral with notes of peach, apricot, and tea. Deeply comforting and associated with good luck in Chinese culture. Anti-depressant and romantically uplifting.",
+    "saunaNote": "Extraordinary in heat — fruity floral complexity unlike anything else. A truly special oil for ceremonial evening sessions.",
+    "benefits": [
+      "Antidepressant",
+      "Romantic uplift",
+      "Comfort",
+      "Exotic beauty"
+    ],
+    "pairsWith": [
+      "sandalwood",
+      "bergamot",
+      "jasmine",
+      "cedarwood",
+      "rose"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Use sparingly — very potent"
+    ],
+    "color": "#e0a040",
+    "emoji": "🌸"
+  },
+  {
+    "id": "tobacco",
+    "name": "Tobacco Flower",
+    "latinName": "Nicotiana sylvestris",
+    "category": "herbal",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "The ceremonial herb — tobacco flower (not the harmful leaf smoke) has a deeply grounding, slightly sweet, ancestral quality. Used in shamanic and ceremonial contexts for connection to heritage and depth of presence.",
+    "saunaNote": "Sweet, deep, slightly vanilla-tobacco in heat. Provocative and ceremonial. Best for intentional, ritual evening sessions.",
+    "benefits": [
+      "Grounding",
+      "Ancestral connection",
+      "Presence",
+      "Ceremonial depth"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "myrrh",
+      "cedarwood",
+      "patchouli",
+      "vetiver"
+    ],
+    "precautions": [
+      "Ceremonial use only; for atmosphere not therapeutic dosing",
+      "Dilute well",
+      "Not related to harmful tobacco leaf smoke"
+    ],
+    "color": "#a06040",
+    "emoji": "🌿"
+  },
+  {
+    "id": "marjoram",
+    "name": "Sweet Marjoram",
+    "latinName": "Origanum majorana",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "immune",
+      "warming"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Nervine herb and antispasmodic — rich in terpinen-4-ol and cis-sabinene hydrate, compounds confirmed in peer-reviewed studies to calm the nervous system and relax smooth muscle. A zebrafish model study (MDPI 2025) documented AChE inhibitory activity relevant for anxiety reduction. Multiple papers confirm antioxidant, cardioprotective (antiplatelet, vasodilatory), and broad antimicrobial properties. In herbal tradition, marjoram is known as the \"herb of comfort\" — it warms, soothes, and reduces the stress response without sedating.",
+    "saunaNote": "Warm, herbaceous-spicy with a soft pepperiness in the heat. Excellent for evening restorative sessions. Pairs beautifully with lavender and cedarwood for a deeply comforting atmosphere.",
+    "benefits": [
+      "Antispasmodic (smooth muscle)",
+      "Nervous system calm",
+      "Cardioprotective (antiplatelet)",
+      "Antimicrobial"
+    ],
+    "pairsWith": [
+      "lavender",
+      "rosemary",
+      "eucalyptus",
+      "cedarwood",
+      "frankincense"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Sedating at high doses — allow time before driving",
+      "Dilute well"
+    ],
+    "color": "#7a9050",
+    "emoji": "🌿"
+  },
+  {
+    "id": "ravintsara",
+    "name": "Ravintsara",
+    "latinName": "Cinnamomum camphora ct. cineole",
+    "category": "minty",
+    "note": "top",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "immune",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The antiviral eucalyptus — ravintsara contains 50–65% 1,8-cineole (eucalyptol), one of the most clinically validated terpene oxides in aromatherapy, with documented bronchodilation, mucosal decongestant action, and antiviral inhibition of respiratory viruses including influenza and herpes simplex. Crucially, ravintsara contains less than 1% camphor (unlike camphor oil) — making it entirely safe for inhalation. The cornerstone of French medical aromatherapy (aromatologie) for viral ENT infections. Immunomodulatory effects include macrophage stimulation and cytokine modulation.",
+    "saunaNote": "Performs like a higher-complexity eucalyptus — clean, crisp, medicinal, and powerfully respiratory-opening. Excellent for winter immunity sessions. Use 4–5 drops per ladle.",
+    "benefits": [
+      "Antiviral (influenza, herpes simplex)",
+      "Bronchodilation",
+      "Immune modulation",
+      "Mucosal decongestant"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "pine",
+      "thyme",
+      "tea-tree",
+      "myrtle"
+    ],
+    "precautions": [
+      "Avoid with children under 3",
+      "Do not confuse with camphor oil",
+      "Generally safe at sauna concentrations"
+    ],
+    "color": "#50b080",
+    "emoji": "❄️"
+  },
+  {
+    "id": "niaouli",
+    "name": "Niaouli",
+    "latinName": "Melaleuca quinquenervia",
+    "category": "minty",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Commission E-approved respiratory oil — niaouli is recognized in the German Commission E Monographs for respiratory use, combining 1,8-cineole (40–65%) with its defining compound viridiflorol for both airway-clearing and immune-stimulating effects. In vitro studies confirm antibacterial activity against S. aureus and E. coli, and antiviral activity against influenza and herpes simplex. Notably gentler than tea tree on sensitive skin — the preferred choice in French medical aromatherapy for mucous membrane support and post-radiation skin care. Potentiates cell-mediated immunity via macrophage cytokine production.",
+    "saunaNote": "More complex than eucalyptus — medicinal yet slightly fruity-sweet. Immune-boosting and decongestant without harshness. Outstanding for group immunity sessions or when guests have sensitive airways.",
+    "benefits": [
+      "Respiratory decongestant (Commission E)",
+      "Immune stimulation (macrophage)",
+      "Antiviral",
+      "Gentle on sensitive skin"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "ravintsara",
+      "pine",
+      "thyme",
+      "cajeput"
+    ],
+    "precautions": [
+      "Avoid with children under 3",
+      "Generally gentle — safer than tea tree for sensitive skin",
+      "Dilute well"
+    ],
+    "color": "#40b098",
+    "emoji": "🌿"
+  },
+  {
+    "id": "cajeput",
+    "name": "Cajeput",
+    "latinName": "Melaleuca cajuputi",
+    "category": "minty",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "immune",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Southeast Asian medicinal staple — cajeput's 1,8-cineole dominant profile (40–65%) delivers proven antimicrobial activity against S. aureus, MRSA, K. pneumoniae, and E. coli. A 2024 review (Asian Journal of Medicine & Health Sciences) documented its anti-inflammatory action for muscle soreness and pain. Used for centuries in traditional Malay medicine for respiratory infections and joint pain. Analgesic and counterirritant effects are attributed to 1,8-cineole's anti-inflammatory mechanisms, which are amplified in the sauna's heat environment.",
+    "saunaNote": "Sharper and more penetrating than eucalyptus, with a faint fruity edge. Strong respiratory opener. Use 3–4 drops — its presence builds quickly. Excellent morning activation oil.",
+    "benefits": [
+      "Antimicrobial (MRSA-active)",
+      "Muscle anti-inflammatory",
+      "Respiratory opening",
+      "Analgesic (counterirritant)"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "niaouli",
+      "tea-tree",
+      "pine",
+      "lemon"
+    ],
+    "precautions": [
+      "Skin irritant undiluted — dilute well",
+      "Avoid with children under 3",
+      "Avoid near eyes and mucous membranes"
+    ],
+    "color": "#30b088",
+    "emoji": "🌿"
+  },
+  {
+    "id": "petitgrain",
+    "name": "Petitgrain",
+    "latinName": "Citrus aurantium var. amara",
+    "category": "herbal",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Nervous system balancer with clinical backing — petitgrain from the leaves of the bitter orange tree is 40–55% linalyl acetate and 15–25% linalool, two of the most studied aromatic compounds. A 2024 systematic review and meta-analysis of seven clinical trials (n=666) found Citrus aurantium aromatherapy produced significant anxiety reduction (p=0.004). Linalyl acetate inhalation measurably reduces cortisol and sympathetic nervous activity. Linalool is independently documented for antispasmodic (smooth muscle relaxant), antibacterial, and sedative effects. The \"green\" counterpart to neroli — woody, dry, and accessible.",
+    "saunaNote": "Woody, dry, faintly floral-herbal in the heat. Grounding and accessible. One of the best oils for calming anxious or first-time sauna guests. Works beautifully at any time of day.",
+    "benefits": [
+      "Anxiety reduction (meta-analysis supported)",
+      "Cortisol balance",
+      "Smooth muscle antispasmodic",
+      "Antibacterial"
+    ],
+    "pairsWith": [
+      "lavender",
+      "bergamot",
+      "neroli",
+      "cedarwood",
+      "frankincense"
+    ],
+    "precautions": [
+      "Generally very safe",
+      "Dilute well",
+      "Avoid undiluted skin contact"
+    ],
+    "color": "#b0c848",
+    "emoji": "🌿"
+  },
+  {
+    "id": "mandarin",
+    "name": "Mandarin",
+    "latinName": "Citrus reticulata",
+    "category": "citrus",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "energizing"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The sedative citrus — mandarin's limonene-rich profile (65–80% d-limonene) interacts with GABA receptors to produce dose-dependent anxiolysis. A PMC 2022 EEG study showed mandarin oil modified human brain wave patterns toward theta-dominant sedative states. A Frontiers in Pharmacology 2024 animal model confirmed antidepressant and anxiolytic pathways. Unlike other citrus oils, mandarin uniquely bridges energizing and calming — making it the most versatile citrus for evening or mixed-energy sessions. The characteristic methyl N-methyl anthranilate gives it a soft, slightly floral depth.",
+    "saunaNote": "Sweet, soft, tangy citrus with a faintly floral quality. More gentle than lemon or lime — beautiful in the evening or when guests need calming without heaviness. Always use a fresh bottle to avoid oxidized limonene.",
+    "benefits": [
+      "Anxiolytic (GABA receptor)",
+      "Sedative (EEG-confirmed theta shift)",
+      "Antidepressant",
+      "Gentle mood uplift"
+    ],
+    "pairsWith": [
+      "lavender",
+      "bergamot",
+      "neroli",
+      "chamomile",
+      "sandalwood"
+    ],
+    "precautions": [
+      "Use fresh bottle — oxidised limonene sensitises",
+      "Generally gentle; dilute well",
+      "Mildly phototoxic — avoid skin before UV"
+    ],
+    "color": "#f0a020",
+    "emoji": "🍊"
+  },
+  {
+    "id": "lemon-myrtle",
+    "name": "Lemon Myrtle",
+    "latinName": "Backhousia citriodora",
+    "category": "citrus",
+    "note": "top",
+    "intensity": 3,
+    "vibes": [
+      "energizing",
+      "immune",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Nature's most potent antimicrobial citrus — lemon myrtle contains 85–98% citral (geranial + neral), the highest natural citral concentration of any essential oil. Multiple PubMed studies confirm antimicrobial activity exceeding tea tree oil against S. aureus, E. coli, MRSA, Pseudomonas aeruginosa, Candida albicans, and Aspergillus niger, via citral's membrane-disruption mechanism. Australian Standard 4941-2001 mandates minimum 85% citral. Persistently lemony and intensely aromatic from an Australian native with a long tradition of therapeutic use by Aboriginal peoples.",
+    "saunaNote": "⚠️ Use with care — 1–2 drops maximum per liter of water. High citral content can sensitize skin in the sauna where pores are dilated and absorption is elevated. Best in well-ventilated diffusion. Extraordinary antimicrobial effect even at micro-concentrations.",
+    "benefits": [
+      "Superior antimicrobial (exceeds tea tree)",
+      "Antifungal (MRSA-active)",
+      "Antibiofilm",
+      "Air purification"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "lime",
+      "tea-tree",
+      "lemon",
+      "peppermint"
+    ],
+    "precautions": [
+      "Strong sensitiser (high citral) — max 1–2 drops/litre",
+      "Avoid in high concentration on skin",
+      "Not for children under 6"
+    ],
+    "color": "#d8d020",
+    "emoji": "🌿"
+  },
+  {
+    "id": "myrtle",
+    "name": "Myrtle",
+    "latinName": "Myrtus communis",
+    "category": "herbal",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "immune",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "Mediterranean respiratory herb — myrtle combines α-pinene (30–40%) and 1,8-cineole (20–30%) for both pine-like alertness and eucalyptus-like airway opening. A 2020 PubMed study (Journal of Food Biochemistry) demonstrated myrtle EO protected thyroid oxidative metabolism in a hypothyroidism animal model — the scientific basis for its traditional thyroid-support use. Broad antimicrobial, antifungal, and antioxidant properties are confirmed in multiple peer-reviewed reviews. The astringent myrtenol content makes it excellent for skin toning in the sauna environment.",
+    "saunaNote": "Fresh, clean, herbal-camphoraceous with a faint blossom note. Lighter than eucalyptus, more complex than tea tree. A beautiful everyday respiratory sauna oil with Mediterranean character — evokes Greek islands.",
+    "benefits": [
+      "Respiratory support (1,8-cineole)",
+      "Thyroid antioxidant protection (animal model)",
+      "Antimicrobial",
+      "Skin astringent (myrtenol)"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "pine",
+      "thyme",
+      "rosemary",
+      "juniper"
+    ],
+    "precautions": [
+      "Avoid with children under 3",
+      "Dilute well",
+      "Generally safe at standard concentrations"
+    ],
+    "color": "#508848",
+    "emoji": "🌿"
+  },
+  {
+    "id": "copaiba",
+    "name": "Copaiba",
+    "latinName": "Copaifera officinalis",
+    "category": "resinous",
+    "note": "base",
+    "intensity": 1,
+    "vibes": [
+      "grounding",
+      "immune"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The endocannabinoid oil — copaiba contains 30–55% β-caryophyllene (BCP), the highest natural concentration of this compound in any essential oil. BCP is a selective CB2 receptor agonist confirmed in multiple pharmacology journals, producing anti-inflammatory, analgesic, and calming effects without CB1 psychoactivity. Peer-reviewed studies document reduction of pro-inflammatory cytokines, joint protection (MMP-3/MMP-9 expression reduction) in arthritis models, and wound-healing enhancement (PLOS One). Heavy sesquiterpene composition makes it exceptionally gentle and non-irritating — an ideal anti-inflammatory base for any blend.",
+    "saunaNote": "Warm, woody, mildly sweet-balsamic with earthy depth. Heavy sesquiterpenes are non-irritating and non-overpowering in heat — they work almost invisibly. An excellent grounding base note that supports recovery and reduces inflammation across long sessions.",
+    "benefits": [
+      "CB2 receptor activation (pharmacologically confirmed)",
+      "Anti-inflammatory (cytokine reduction)",
+      "Joint protection",
+      "Wound healing support"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "cedarwood",
+      "black-pepper",
+      "sandalwood",
+      "myrrh"
+    ],
+    "precautions": [
+      "Generally safe and non-irritating",
+      "Dilute well",
+      "One of the gentlest base oils"
+    ],
+    "color": "#c09848",
+    "emoji": "🫙"
+  },
+  {
+    "id": "bay-laurel",
+    "name": "Bay Laurel",
+    "latinName": "Laurus nobilis",
+    "category": "spicy",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "immune",
+      "detox"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The analgesic laureate — bay laurel EO's analgesic properties are among the most pharmacologically rigorous in herbal medicine: a Phytotherapy Research study found dose-dependent analgesic effects comparable to morphine and piroxicam in established pain models. The 1,8-cineole base (40–65%) delivers respiratory immunity, while α-terpinyl acetate, sabinene, and minor eugenol contribute anti-inflammatory and lymphatic-stimulating qualities. A PMC Molecules review confirmed antibacterial, antiviral, immunostimulant, and wound-healing properties. Ancient Mediterranean medicinal and culinary herb.",
+    "saunaNote": "Warm, spicy-herbal, culinary-familiar with medicinal depth. Outstanding for athletic recovery and pain-management sessions — the analgesic and anti-inflammatory effects are amplified by sauna heat. Excellent in morning activation blends.",
+    "benefits": [
+      "Analgesic (pharmacologically compared to morphine/piroxicam)",
+      "Anti-inflammatory",
+      "Lymphatic stimulant",
+      "Antimicrobial/antiviral"
+    ],
+    "pairsWith": [
+      "rosemary",
+      "eucalyptus",
+      "black-pepper",
+      "pine",
+      "juniper"
+    ],
+    "precautions": [
+      "Contains eugenol — dilute well",
+      "Skin irritant at high concentrations",
+      "Avoid during pregnancy"
+    ],
+    "color": "#788840",
+    "emoji": "🌿"
+  },
+  {
+    "id": "spikenard",
+    "name": "Spikenard",
+    "latinName": "Nardostachys jatamansi",
+    "category": "woody",
+    "note": "base",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "Ancient sedative with modern validation — spikenard has been used in Ayurveda for neurological and psychiatric conditions for millennia. A PMC 2020 comparative study found it had the highest AChE inhibitory activity among related species. The isolated compound valerena-4,7(11)-diene normalized hyperactivated mice to baseline and doubled sleep duration — an effect compared to chlorpromazine (antipsychotic). β-eudesmol provides neuromuscular muscle-relaxant effects via nicotinic acetylcholine receptor blockade. Neuroprotective properties with relevance to Alzheimer's and Parkinson's research.",
+    "saunaNote": "Deep, earthy, musty, woody — ancient and complex. Use 1–2 drops maximum. One of the most profoundly grounding oils for evening ceremonies and deep meditation sessions. Its nervous-system sedation is noticeable even at low concentrations.",
+    "benefits": [
+      "Sedative (pharmacologically documented)",
+      "Neuroprotective",
+      "Muscle relaxant (AChR blockade)",
+      "AChE inhibition"
+    ],
+    "pairsWith": [
+      "vetiver",
+      "frankincense",
+      "cedarwood",
+      "sandalwood",
+      "myrrh"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Sedative at low concentrations — use 1–2 drops max",
+      "Allow time before driving post-session"
+    ],
+    "color": "#7a6040",
+    "emoji": "🌱"
+  },
+  {
+    "id": "blue-tansy",
+    "name": "Blue Tansy",
+    "latinName": "Tanacetum annuum",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "immune"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The azure anti-inflammatory — blue tansy's striking deep blue color comes from chamazulene (3–5%), formed during steam distillation. Chamazulene inhibits COX enzymes and scavenges reactive oxygen species — the same anti-inflammatory mechanism as German chamomile, but with additional warming from ~17% camphor content. A radiation dermatitis study found an EO mixture containing chamazulene produced results comparable to corticosteroid treatment. PMC 2023 confirmed antifungal activity against Fusarium oxysporum. Analgesic, skin-soothing, and broadly calming.",
+    "saunaNote": "⚠️ Use minimally — 1–2 drops maximum. Sweet, herbal, mildly camphorous. The blue color is visible in the water and visually striking. Anti-inflammatory and skin-soothing in steam. Best as a supportive note rather than a primary oil.",
+    "benefits": [
+      "Anti-inflammatory (COX inhibition via chamazulene)",
+      "Antifungal",
+      "Skin soothing (comparable to corticosteroids in study)",
+      "Mild analgesic"
+    ],
+    "pairsWith": [
+      "lavender",
+      "chamomile",
+      "frankincense",
+      "geranium",
+      "helichrysum"
+    ],
+    "precautions": [
+      "Contains camphor (~17%) — avoid in pregnancy and epilepsy",
+      "Max 1–2 drops",
+      "Avoid with children under 6"
+    ],
+    "color": "#1870a0",
+    "emoji": "💙"
+  },
+  {
+    "id": "cistus",
+    "name": "Cistus",
+    "latinName": "Cistus ladaniferus",
+    "category": "resinous",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "meditative",
+      "immune"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Rock rose resin — cistus's α-pinene dominant profile (30–55%) grounds it in the conifer-family benefit space: anti-inflammatory, respiratory-supportive, and memory-relevant. PMC 2021 confirmed antibacterial and antifungal properties against both Gram-positive and Gram-negative bacteria and Candida. Antiviral activity documented against avian influenza A in cellular models. A human RCT of the related Cistus incanus showed reduction in influenza symptom duration. Wound-healing and hemostatic properties are supported by traditional use and preliminary evidence. Used in Mediterranean incense traditions for over 3,000 years.",
+    "saunaNote": "Warm, resinous-leathery, ambery with piney freshness — complex and unique. An excellent grounding resinous anchor for evening blends. Historically burned in temples and shrines across the ancient Mediterranean world.",
+    "benefits": [
+      "Antiviral (influenza activity, related species RCT)",
+      "Antibacterial/antifungal",
+      "Wound healing (hemostatic)",
+      "Immune support"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "cedarwood",
+      "pine",
+      "juniper",
+      "myrrh"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Dilute well",
+      "Generally safe at standard concentrations"
+    ],
+    "color": "#c09060",
+    "emoji": "🌸"
+  },
+  {
+    "id": "amyris",
+    "name": "Amyris",
+    "latinName": "Amyris balsamifera",
+    "category": "woody",
+    "note": "base",
+    "intensity": 1,
+    "vibes": [
+      "grounding",
+      "relaxing"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Caribbean sandalwood equivalent — amyris is approximately 82% oxygenated sesquiterpenes, one of the highest ratios of any essential oil. The dominant compounds — valerianol (20–25%), β-eudesmol, γ-eudesmol, and α-eudesmol (30–40% combined) — share the sedative, neuroprotective, and muscle-relaxant profile found in valerian and spikenard. A 2025 study confirmed amyris induces anesthesia via CNS depression in electrophysiological models. β-eudesmol acts as a non-competitive nicotinic acetylcholine receptor blocker, explaining its muscle-relaxant effect. A gentle, sustainable base note with profound restorative depth.",
+    "saunaNote": "Warm, creamy, woody with a sandalwood character — gentle and non-intrusive in the heat. Heavy sesquiterpenes are ideal for sauna: non-irritating, long-lasting, and profoundly grounding. The sustainable tropical alternative to sandalwood for evening sessions.",
+    "benefits": [
+      "Sedative/CNS calming (anesthetic model)",
+      "Muscle relaxant (nicotinic receptor)",
+      "Neuroprotective",
+      "Grounding"
+    ],
+    "pairsWith": [
+      "sandalwood",
+      "cedarwood",
+      "frankincense",
+      "vetiver",
+      "lavender"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Sedative — allow time before driving post-session",
+      "Dilute well"
+    ],
+    "color": "#b8844c",
+    "emoji": "🪵"
+  },
+  {
+    "id": "eucalyptus-radiata",
+    "name": "Eucalyptus Radiata",
+    "latinName": "Eucalyptus radiata",
+    "category": "minty",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "awakening",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The gentler eucalyptus — radiata contains the same active compound (1,8-cineole) as globulus but at lower concentrations and with a softer aromatic profile. It opens the respiratory passages, supports immunity, and clears congestion without the sharp medicinal edge. Widely preferred for families, children over 10, and people with sensitive airways.",
+    "saunaNote": "Slightly fruity-fresh eucalyptus in the heat — less clinical, more inviting than globulus. Excellent for mixed groups or evening sessions. Use 4–6 drops per ladle.",
+    "benefits": [
+      "Respiratory clarity",
+      "Immune support",
+      "Gentle bronchodilator",
+      "Child-friendly from age 10"
+    ],
+    "pairsWith": [
+      "peppermint",
+      "lemon",
+      "tea-tree",
+      "pine",
+      "lavender"
+    ],
+    "precautions": [
+      "Avoid with children under 10",
+      "Do not ingest",
+      "Gentler than globulus but still dilute well"
+    ],
+    "color": "#58c090",
+    "emoji": "❄️"
+  },
+  {
+    "id": "mountain-pine",
+    "name": "Mountain Pine",
+    "latinName": "Pinus mugo",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "grounding",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The Alpine classic — mountain pine (Pinus mugo) is one of the most celebrated oils in European sauna culture. High in α-pinene and β-phellandrene, it opens the airways, stimulates circulation, and delivers a powerful forest-energy hit. Its balsamic sweetness is warmer and richer than Scots pine, making it highly crowd-pleasing. Requires up to 300 kg of needles per litre of oil — a premium, labour-intensive product.",
+    "saunaNote": "Sweeter and more balsamic than Scots pine — a rich Alpine forest character that fills the room beautifully. One of the most universally loved sauna oils in European saunas. Use 3–5 drops per ladle.",
+    "benefits": [
+      "Respiratory opener",
+      "Circulation boost",
+      "Forest energy",
+      "Immune support"
+    ],
+    "pairsWith": [
+      "eucalyptus",
+      "fir",
+      "siberian-fir",
+      "lavender",
+      "juniper"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Dilute well",
+      "Generally safe at sauna concentrations"
+    ],
+    "color": "#507830",
+    "emoji": "🌲"
+  },
+  {
+    "id": "norway-spruce",
+    "name": "Norway Spruce",
+    "latinName": "Picea abies",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The quintessential European forest oil — Norway spruce (Picea abies) is native to Scandinavia and the Alps and has been part of Nordic wellness culture for centuries. Rich in α-pinene, β-pinene, and limonene, it stimulates the respiratory system, supports adrenal function, and delivers a crisp, resinous forest vitality. Crisper and more resinous than the North American black spruce (Picea mariana).",
+    "saunaNote": "Sharp, resinous Nordic forest in the heat — like stepping into a spruce grove in winter. Energising and purifying. Excellent for morning sessions or post-exercise recovery rounds. Use 3–5 drops per ladle.",
+    "benefits": [
+      "Respiratory stimulant",
+      "Forest energy",
+      "Adrenal support",
+      "Air purification"
+    ],
+    "pairsWith": [
+      "pine",
+      "fir",
+      "siberian-fir",
+      "juniper",
+      "eucalyptus"
+    ],
+    "precautions": [
+      "Avoid with kidney disorders",
+      "Dilute well",
+      "Generally safe at sauna concentrations"
+    ],
+    "color": "#385838",
+    "emoji": "🌲"
+  },
+  {
+    "id": "siberian-fir",
+    "name": "Siberian Fir",
+    "latinName": "Abies sibirica",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "grounding",
+      "relaxing",
+      "immune"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "The Russian sauna essential — Siberian fir is central to banya culture and has been used for centuries across Northern Russia and Scandinavia. Its unusually high bornyl acetate content (up to 40%) gives it proven antimicrobial and anti-inflammatory properties, while its fruity-balsamic character makes it one of the most pleasant conifer oils. Gentler on the system than pine, with a longer-lasting sweetness in steam.",
+    "saunaNote": "Fruity-balsamic evergreen with a soft sweetness — more delicate than pine or spruce. It lingers beautifully in the heat room. A natural choice for recovery or evening sessions. Use 3–5 drops per ladle.",
+    "benefits": [
+      "Antimicrobial (bornyl acetate)",
+      "Anti-inflammatory",
+      "Respiratory ease",
+      "Muscle recovery"
+    ],
+    "pairsWith": [
+      "pine",
+      "cedarwood",
+      "spruce",
+      "norway-spruce",
+      "frankincense"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Avoid high concentration on sensitive skin"
+    ],
+    "color": "#406850",
+    "emoji": "🌲"
+  },
+  {
+    "id": "larch",
+    "name": "Larch",
+    "latinName": "Larix decidua",
+    "category": "woody",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "grounding"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The only deciduous conifer — larch needle oil is a rare and distinctive sauna oil produced from the fresh needles of the European larch. Rich in α-pinene and bornyl acetate, it combines the respiratory clarity of pine with a subtly sweet, cinnamon-spiced warmth. Requires approximately 500 kg of chopped twigs per litre of oil, making it one of the most precious conifer oils. Traditionally associated with mountain wellness in Austria and the Tyrol region.",
+    "saunaNote": "Sweet pine with a faint cinnamon warmth — unique among conifer oils. Uncommon and special; it creates a distinctive Alpine feel in the heat room. Use 3–5 drops per ladle.",
+    "benefits": [
+      "Respiratory clarity",
+      "Alpine energy",
+      "Muscle support",
+      "Mood lift"
+    ],
+    "pairsWith": [
+      "pine",
+      "fir",
+      "siberian-fir",
+      "cardamom",
+      "frankincense"
+    ],
+    "precautions": [
+      "Generally safe",
+      "Dilute well",
+      "Rare oil — use mindfully"
+    ],
+    "color": "#a07840",
+    "emoji": "🌲"
+  },
+  {
+    "id": "birch",
+    "name": "Birch",
+    "latinName": "Betula pendula",
+    "category": "herbal",
+    "note": "top",
+    "intensity": 2,
+    "vibes": [
+      "energizing",
+      "detox",
+      "awakening"
+    ],
+    "timeOfDay": [
+      "morning",
+      "afternoon"
+    ],
+    "bodyImpact": "The soul of the Finnish sauna — birch leaf oil captures the essence of the traditional birch whisk (vihta), used for thousands of years to stimulate circulation, open pores, and clear the skin. Rich in methyl salicylate and betulinol, it is anti-inflammatory, mildly analgesic, and deeply detoxifying. The fresh, green, summery aroma is the most iconic sauna scent in Finnish culture.",
+    "saunaNote": "Fresh, lush, summery birch leaves in the heat — unmistakably Finnish. Instantly evokes the traditional sauna experience. Combines beautifully with the steam for a forest bathing effect. Use 3–5 drops per ladle.",
+    "benefits": [
+      "Skin detox",
+      "Circulation boost",
+      "Anti-inflammatory",
+      "Traditional Finnish sauna"
+    ],
+    "pairsWith": [
+      "juniper",
+      "pine",
+      "lemon",
+      "eucalyptus",
+      "norway-spruce"
+    ],
+    "precautions": [
+      "Avoid during pregnancy",
+      "Dilute well",
+      "May cause skin sensitivity in rare cases"
+    ],
+    "color": "#90c060",
+    "emoji": "🌿"
+  },
+  {
+    "id": "anise",
+    "name": "Anise",
+    "latinName": "Pimpinella anisum",
+    "category": "herbal",
+    "note": "middle",
+    "intensity": 2,
+    "vibes": [
+      "relaxing",
+      "warming"
+    ],
+    "timeOfDay": [
+      "afternoon",
+      "evening"
+    ],
+    "bodyImpact": "Sweet and warming — anise oil is dominated by trans-anethole (80–90%), a compound with documented antispasmodic, expectorant, and mildly estrogenic properties. It relaxes smooth muscle in the respiratory and digestive tracts, eases cramping, and promotes a warm, settled feeling. A traditional Nordic sauna scent, particularly popular in Finnish and Swedish sauna culture alongside juniper and birch.",
+    "saunaNote": "Sweet liquorice warmth in the heat — exotic and comforting. Opens the chest gently and creates a sense of deep relaxation. Popular in evening sessions. Use 3–5 drops per ladle.",
+    "benefits": [
+      "Antispasmodic",
+      "Expectorant",
+      "Digestive ease",
+      "Warming comfort"
+    ],
+    "pairsWith": [
+      "cardamom",
+      "orange",
+      "marjoram",
+      "lavender",
+      "ginger"
+    ],
+    "precautions": [
+      "Avoid during pregnancy (estrogenic)",
+      "Avoid with oestrogen-dependent conditions",
+      "Dilute well"
+    ],
+    "color": "#9080a0",
+    "emoji": "🌟"
+  },
+  {
+    "id": "birch-tar",
+    "name": "Birch Tar",
+    "latinName": "Pix betulina",
+    "category": "resinous",
+    "note": "base",
+    "intensity": 3,
+    "vibes": [
+      "grounding",
+      "meditative"
+    ],
+    "timeOfDay": [
+      "evening"
+    ],
+    "bodyImpact": "The ancient Finnish sauna tradition — birch tar (terva) is produced by the dry distillation of birch bark and has been used in Finnish saunas for millennia. Rich in phenols, cresols, and guaiacol, it is powerfully antimicrobial and traditionally used for skin conditions, wound healing, and respiratory ailments. The distinctive smoky, resinous, slightly phenolic aroma is deeply cultural — for Finns, it is the smell of healing and heritage.",
+    "saunaNote": "Deep, smoky, phenolic, and primal in the heat — a tervasauna (tar sauna) experience. Intensely grounding and meditative. Very powerful: use only 1–2 drops per ladle. Not for the uninitiated — this is old Finnish sauna medicine at its most elemental.",
+    "benefits": [
+      "Antimicrobial",
+      "Traditional skin healing",
+      "Deep grounding",
+      "Cultural heritage"
+    ],
+    "pairsWith": [
+      "frankincense",
+      "cedarwood",
+      "myrrh",
+      "pine",
+      "juniper"
+    ],
+    "precautions": [
+      "Use very sparingly — 1–2 drops maximum",
+      "Ensure good ventilation",
+      "Avoid with respiratory conditions at high doses"
+    ],
+    "color": "#5a3020",
+    "emoji": "🔥"
+  }
+]
