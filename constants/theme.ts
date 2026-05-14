@@ -32,8 +32,13 @@ export const Colors = {
 
   // UI
   border: 'rgba(234,226,205,0.12)',
+  borderSubtle: 'rgba(234,226,205,0.08)',
   borderGold: 'rgba(234,226,205,0.35)',
   success: '#5a8040',
+  iconOnAccent: 'rgba(245,240,232,0.9)',
+  errorBg: 'rgba(192,64,48,0.1)',
+  errorBorder: 'rgba(192,64,48,0.3)',
+  errorText: '#c04030',
   tabBar: '#0d0904',
 } as const;
 

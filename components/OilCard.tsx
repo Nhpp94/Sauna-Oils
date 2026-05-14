@@ -8,7 +8,7 @@ import { VIBE_ICONS, VIBE_COLORS } from '../constants/icons';
 import { OilIcon } from './OilIcon';
 
 const NOTE_LABEL: Record<string, string> = {
-  top: 'Top note', middle: 'Heart note', base: 'Base note',
+  top: 'Top note', middle: 'Middle note', base: 'Base note',
 };
 
 interface Props {

@@ -20,7 +20,7 @@ import GrainOverlay from '../../components/GrainOverlay';
 import { ALL_CATEGORIES, CATEGORY_META, Category } from '../../constants/categories';
 import { NOTE_ICONS } from '../../constants/icons';
 
-const NOTE_LABEL: Record<string, string> = { top: 'Top note', middle: 'Heart note', base: 'Base note' };
+const NOTE_LABEL: Record<string, string> = { top: 'Top note', middle: 'Middle note', base: 'Base note' };
 
 type Tab = 'oils' | 'blends' | 'incense';
 

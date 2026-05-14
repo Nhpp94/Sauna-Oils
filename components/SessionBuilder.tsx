@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Vibe, TimeOfDay } from '../data/oils';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../constants/theme';
-import { VIBE_ICONS, TIME_ICONS } from '../constants/icons';
+import { VIBE_META, VIBE_ICONS, TIME_ICONS } from '../constants/icons';
 
 interface Props {
   selectedVibe: Vibe | null;
@@ -11,22 +11,14 @@ interface Props {
   onVibeChange: (v: Vibe) => void;
   onTimeChange: (t: TimeOfDay) => void;
   onGenerate: () => void;
-  kitOnly: boolean;
-  onKitOnlyChange: (v: boolean) => void;
-  kitOilCount: number;
+  oilSource: 'all' | 'kit' | 'studio';
+  onOilSourceChange: (v: 'all' | 'kit' | 'studio') => void;
+  oilCount: number;
+  studioName?: string;
+  studioOilCount?: number;
 }
 
-const VIBES: { value: Vibe; label: string; desc: string; color: string }[] = [
-  { value: 'energizing',  label: 'Energizing',  desc: 'Awaken & activate',  color: '#e8a020' },
-  { value: 'relaxing',    label: 'Relaxing',    desc: 'Release & restore',  color: '#9070b0' },
-  { value: 'grounding',   label: 'Grounding',   desc: 'Root & centre',      color: '#5a8040' },
-  { value: 'meditative',  label: 'Meditative',  desc: 'Still & inward',     color: '#7060a0' },
-  { value: 'warming',     label: 'Warming',     desc: 'Kindle & heat',     color: '#d06030' },
-  { value: 'awakening',   label: 'Awakening',   desc: 'Sharp & clear',      color: '#30a8c0' },
-  { value: 'detox',       label: 'Detox',       desc: 'Cleanse & purge',    color: '#60a040' },
-  { value: 'creative',    label: 'Creative',    desc: 'Inspire & open',     color: '#c060a0' },
-  { value: 'immune',      label: 'Immune',      desc: 'Fortify & defend',   color: '#c04030' },
-];
+const VIBES = VIBE_META;
 
 const TIMES: { value: TimeOfDay; label: string; desc: string }[] = [
   { value: 'morning',   label: 'Morning',   desc: 'Sunrise ritual' },
@@ -34,7 +26,7 @@ const TIMES: { value: TimeOfDay; label: string; desc: string }[] = [
   { value: 'evening',   label: 'Evening',   desc: 'Wind-down' },
 ];
 
-export function SessionBuilder({ selectedVibe, selectedTime, onVibeChange, onTimeChange, onGenerate, kitOnly, onKitOnlyChange, kitOilCount }: Props) {
+export function SessionBuilder({ selectedVibe, selectedTime, onVibeChange, onTimeChange, onGenerate, oilSource, onOilSourceChange, oilCount, studioName, studioOilCount }: Props) {
   const canGenerate = !!selectedVibe && !!selectedTime;
 
   return (
@@ -95,23 +87,35 @@ export function SessionBuilder({ selectedVibe, selectedTime, onVibeChange, onTim
       <Text style={[styles.sectionLabel, { marginTop: Spacing.lg }]}>Select oils from</Text>
       <View style={styles.sourceToggle}>
         <TouchableOpacity
-          style={[styles.sourceSeg, !kitOnly && styles.sourceSegActive]}
-          onPress={() => onKitOnlyChange(false)}
+          style={[styles.sourceSeg, oilSource === 'all' && styles.sourceSegActive]}
+          onPress={() => onOilSourceChange('all')}
           activeOpacity={0.75}
         >
-          <Ionicons name="library-outline" size={13} color={!kitOnly ? Colors.gold : Colors.textMuted} />
-          <Text style={[styles.sourceSegText, !kitOnly && styles.sourceSegTextActive]}>Full Library</Text>
+          <Ionicons name="library-outline" size={13} color={oilSource === 'all' ? Colors.gold : Colors.textMuted} />
+          <Text style={[styles.sourceSegText, oilSource === 'all' && styles.sourceSegTextActive]}>Full Library</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={[styles.sourceSeg, kitOnly && styles.sourceSegActive]}
-          onPress={() => onKitOnlyChange(true)}
+          style={[styles.sourceSeg, oilSource === 'kit' && styles.sourceSegActive]}
+          onPress={() => onOilSourceChange('kit')}
           activeOpacity={0.75}
         >
-          <Ionicons name="briefcase-outline" size={13} color={kitOnly ? Colors.gold : Colors.textMuted} />
-          <Text style={[styles.sourceSegText, kitOnly && styles.sourceSegTextActive]}>
-            {kitOnly && kitOilCount > 0 ? `My Kit · ${kitOilCount}` : 'My Kit'}
+          <Ionicons name="briefcase-outline" size={13} color={oilSource === 'kit' ? Colors.gold : Colors.textMuted} />
+          <Text style={[styles.sourceSegText, oilSource === 'kit' && styles.sourceSegTextActive]}>
+            {oilSource === 'kit' && oilCount > 0 ? `My Kit · ${oilCount}` : 'My Kit'}
           </Text>
         </TouchableOpacity>
+        {studioName !== undefined && (
+          <TouchableOpacity
+            style={[styles.sourceSeg, oilSource === 'studio' && styles.sourceSegActive]}
+            onPress={() => onOilSourceChange('studio')}
+            activeOpacity={0.75}
+          >
+            <Ionicons name="business-outline" size={13} color={oilSource === 'studio' ? Colors.gold : Colors.textMuted} />
+            <Text style={[styles.sourceSegText, oilSource === 'studio' && styles.sourceSegTextActive]} numberOfLines={1}>
+              {studioOilCount ? `${studioName} · ${studioOilCount}` : studioName}
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
 
       {/* Generate Button */}

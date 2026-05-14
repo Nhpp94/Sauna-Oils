@@ -40,7 +40,7 @@ type Tab = 'oils' | 'blends' | 'incense';
 const FORM_LABEL: Record<string, string> = {
   wood: 'Wood', resin: 'Resin', herb: 'Herb', stick: 'Stick', cone: 'Cone',
 };
-const NOTE_LABEL: Record<string, string> = { top: 'Top note', middle: 'Heart note', base: 'Base note' };
+const NOTE_LABEL: Record<string, string> = { top: 'Top note', middle: 'Middle note', base: 'Base note' };
 
 interface Props {
   visible: boolean;
@@ -124,6 +124,9 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
     })
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  const modalTitle = oilToReplace ? 'Swap' : initialTab === 'incense' ? 'Atmosphere' : 'Choose';
+  const emptySlotSubtitle = initialTab === 'incense' ? 'Select incense' : 'Select an oil or blend';
+
   return (
     <Modal
       visible={visible}
@@ -135,17 +138,17 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
         {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity onPress={onClose} style={styles.closeBtn} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
-            <Ionicons name="chevron-back" size={26} color="#f0e4c8" />
+            <Ionicons name="chevron-back" size={26} color={Colors.textPrimary} />
           </TouchableOpacity>
           <View style={styles.headerCenter}>
-            <Text style={styles.title}>Swap</Text>
+            <Text style={styles.title}>{modalTitle}</Text>
             {oilToReplace ? (
               <View style={styles.subtitleRow}>
                 <OilIcon oil={oilToReplace} size={14} />
                 <Text style={styles.subtitle}> {oilToReplace.name}</Text>
               </View>
             ) : (
-              <Text style={styles.subtitle}>Replace blend slot</Text>
+              <Text style={styles.subtitle}>{emptySlotSubtitle}</Text>
             )}
           </View>
           <TouchableOpacity
@@ -334,7 +337,7 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
                   activeOpacity={0.75}
                 >
                   <View style={[styles.rowAccent, { backgroundColor: Colors.gold }]} />
-                  <BotanicalIcon botanicalKey={blendBotanical(item)} size={26} color="rgba(255,255,255,0.85)" />
+                  <BotanicalIcon botanicalKey={blendBotanical(item)} size={26} color={Colors.iconOnAccent} />
                   <View style={styles.rowInfo}>
                     <Text style={styles.rowName}>{item.name}</Text>
                     <View style={styles.rowMetaRow}>
@@ -367,7 +370,7 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
                   activeOpacity={0.75}
                 >
                   <View style={[styles.rowAccent, { backgroundColor: FORM_META[item.form].color }]} />
-                  <BotanicalIcon botanicalKey={INCENSE_BOTANICALS[item.id] ?? INCENSE_FORM_BOTANICALS[item.form] ?? 'resin-drop'} size={26} color="rgba(255,255,255,0.85)" />
+                  <BotanicalIcon botanicalKey={INCENSE_BOTANICALS[item.id] ?? INCENSE_FORM_BOTANICALS[item.form] ?? 'resin-drop'} size={26} color={Colors.iconOnAccent} />
                   <View style={styles.rowInfo}>
                     <Text style={styles.rowName}>{item.name}</Text>
                     <View style={styles.rowMetaRow}>

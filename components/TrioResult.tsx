@@ -24,7 +24,7 @@ interface Props {
 
 const NOTE_LABEL: Record<string, string> = {
   top: 'Top note',
-  middle: 'Heart note',
+  middle: 'Middle note',
   base: 'Base note',
 };
 

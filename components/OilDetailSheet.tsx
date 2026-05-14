@@ -21,7 +21,7 @@ interface Props {
 
 const NOTE_FULL: Record<string, string> = {
   top: 'Top note — opens the session',
-  middle: 'Heart note — carries the session',
+  middle: 'Middle note — carries the session',
   base: 'Base note — anchors the session',
 };
 

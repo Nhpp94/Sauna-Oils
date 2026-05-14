@@ -308,7 +308,7 @@ export default function ResultScreen() {
         )}
 
         {/* Empty kit prompts */}
-        {session.kitOnly && (session.kitOilCount + (session.kitBlendCount ?? 0)) < 9 && (
+        {session.oilSource === 'kit' && (session.kitOilCount + (session.kitBlendCount ?? 0)) < 9 && (
           <TouchableOpacity style={styles.addToKitBtn} onPress={() => { router.dismissAll(); router.navigate('/(tabs)/library'); }} activeOpacity={0.7}>
             <Ionicons name="add-circle-outline" size={18} color={Colors.gold} />
             <Text style={styles.addToKitText}>Add oils to your kit</Text>

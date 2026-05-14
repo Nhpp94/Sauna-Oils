@@ -1,12 +1,18 @@
 import { useEffect } from 'react';
+import { LogBox } from 'react-native';
 import { Stack } from 'expo-router';
+
+LogBox.ignoreLogs(['Some of the used filters are not yet supported on native platforms']);
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
-import { Typography, FontSize } from '../constants/theme';
+import { Colors, Typography, FontSize } from '../constants/theme';
 import { CustomLibraryProvider } from '../context/CustomLibraryContext';
 import { MyKitProvider } from '../context/MyKitContext';
 import { SavedSessionsProvider } from '../context/SavedSessionsContext';
 import { RemoteDataProvider } from '../context/RemoteDataContext';
+import { AuthProvider } from '../context/AuthContext';
+import { StudioProvider } from '../context/StudioContext';
+import { PurchaseProvider } from '../context/PurchaseContext';
 import {
   Inter_400Regular,
   Inter_600SemiBold,
@@ -31,20 +37,23 @@ export default function RootLayout() {
   if (!loaded) return null;
 
   return (
+    <AuthProvider>
+    <PurchaseProvider>
     <RemoteDataProvider>
     <MyKitProvider>
     <CustomLibraryProvider>
     <SavedSessionsProvider>
+    <StudioProvider>
       <StatusBar style="light" />
       <Stack
         screenOptions={{
-          headerStyle: { backgroundColor: '#0a0704' },
-          headerTintColor: '#f0e4c8',
+          headerStyle: { backgroundColor: Colors.bg },
+          headerTintColor: Colors.textPrimary,
           headerTitleStyle: {
             fontFamily: Typography.serifBold,
             fontSize: FontSize.xl,
           },
-          contentStyle: { backgroundColor: '#0a0704' },
+          contentStyle: { backgroundColor: Colors.bg },
           headerShadowVisible: false,
           headerBackTitle: '',
         }}
@@ -63,10 +72,19 @@ export default function RootLayout() {
         <Stack.Screen name="oil/[id]" options={{ headerShown: false, presentation: 'fullScreenModal' }} />
         <Stack.Screen name="blend/[id]" options={{ headerShown: false, presentation: 'fullScreenModal' }} />
         <Stack.Screen name="incense/[id]" options={{ headerShown: false, presentation: 'fullScreenModal' }} />
+        <Stack.Screen name="auth/index" options={{ headerShown: false, presentation: 'modal' }} />
+        <Stack.Screen name="studio/join" options={{ headerShown: false, presentation: 'modal' }} />
+        <Stack.Screen name="studio/create" options={{ headerShown: false, presentation: 'modal' }} />
+        <Stack.Screen name="studio/[id]" options={{ headerShown: false }} />
+        <Stack.Screen name="studio/manage" options={{ headerShown: false }} />
+        <Stack.Screen name="studio/new-session" options={{ headerShown: false }} />
       </Stack>
+    </StudioProvider>
     </SavedSessionsProvider>
     </CustomLibraryProvider>
     </MyKitProvider>
     </RemoteDataProvider>
+    </PurchaseProvider>
+    </AuthProvider>
   );
 }

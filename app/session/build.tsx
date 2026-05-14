@@ -13,23 +13,13 @@ import { useRemoteData } from '../../context/RemoteDataContext';
 import { Blend } from '../../data/blends';
 import { Incense } from '../../data/incense';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
-import { VIBE_ICONS, VIBE_COLORS, TIME_ICONS } from '../../constants/icons';
+import { VIBE_META, VIBE_ICONS, VIBE_COLORS, TIME_ICONS } from '../../constants/icons';
 import { useMyOils } from '../../hooks/useMyOils';
 import { useMyIncense } from '../../hooks/useMyIncense';
 import { useCustomLibrary } from '../../context/CustomLibraryContext';
 import { getSharedSession, setSharedSession } from '../../store/sessionStore';
 
-const VIBES: { value: Vibe; label: string; color: string }[] = [
-  { value: 'energizing', label: 'Energizing', color: '#e8a020' },
-  { value: 'relaxing',   label: 'Relaxing',   color: '#9070b0' },
-  { value: 'grounding',  label: 'Grounding',  color: '#5a8040' },
-  { value: 'meditative', label: 'Meditative', color: '#7060a0' },
-  { value: 'warming',    label: 'Warming',    color: '#d06030' },
-  { value: 'awakening',  label: 'Awakening',  color: '#30a8c0' },
-  { value: 'detox',      label: 'Detox',      color: '#60a040' },
-  { value: 'creative',   label: 'Creative',   color: '#c060a0' },
-  { value: 'immune',     label: 'Immune',     color: '#c04030' },
-];
+const VIBES = VIBE_META;
 
 const TIMES: { value: TimeOfDay; label: string }[] = [
   { value: 'morning',   label: 'Morning' },
@@ -135,7 +125,7 @@ export default function BuildScreen() {
 
       <View style={[styles.header, { paddingTop: 12 }]}>
         <Pressable onPress={() => router.back()} style={styles.backBtn}>
-          <Ionicons name="chevron-back" size={26} color="#f0e4c8" />
+          <Ionicons name="chevron-back" size={26} color={Colors.textPrimary} />
         </Pressable>
         <Text style={styles.title}>Build Session</Text>
         <View style={styles.headerSpacer} />
@@ -274,7 +264,7 @@ export default function BuildScreen() {
           <Ionicons
             name="flame-outline"
             size={16}
-            color={currentRound.incense ? '#e8a060' : Colors.textMuted}
+            color={currentRound.incense ? Colors.resinous : Colors.textMuted}
           />
           <View style={styles.slotInfo}>
             <Text style={[styles.slotMeta, currentRound.incense && { color: Colors.textSecondary }]}>
@@ -346,7 +336,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: Typography.serifBold,
     fontSize: FontSize.xl,
-    color: '#f0e4c8',
+    color: Colors.textPrimary,
   },
   headerSpacer: { width: 40 },
   scroll: { flex: 1 },

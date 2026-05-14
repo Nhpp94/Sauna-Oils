@@ -65,6 +65,17 @@ export default function TabsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="studio"
+        options={{
+          title: 'Studio',
+          headerShown: false,
+          tabBarLabel: 'Studio',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'business' : 'business-outline'} size={22} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

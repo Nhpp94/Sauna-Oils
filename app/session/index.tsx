@@ -6,13 +6,15 @@ import GrainOverlay from '../../components/GrainOverlay';
 import { SessionBuilder } from '../../components/SessionBuilder';
 import { useSession } from '../../hooks/useSession';
 import { useCustomLibrary } from '../../context/CustomLibraryContext';
+import { useStudio } from '../../context/StudioContext';
 import { Colors, Typography, FontSize, Spacing, Radius } from '../../constants/theme';
 import { setSharedSession, getPendingLoad, clearPendingLoad, setActiveSavedSessionId } from '../../store/sessionStore';
 
 export default function SessionScreen() {
   const router = useRouter();
   const { customOils } = useCustomLibrary();
-  const session = useSession(customOils);
+  const { studio, studioOils } = useStudio();
+  const session = useSession(customOils, studioOils);
   const [mode, setMode] = useState<'generate' | 'build'>('generate');
 
   useEffect(() => {
@@ -103,9 +105,11 @@ export default function SessionScreen() {
             onVibeChange={session.setVibe}
             onTimeChange={session.setTime}
             onGenerate={handleGenerate}
-            kitOnly={session.kitOnly}
-            onKitOnlyChange={session.setKitOnly}
-            kitOilCount={session.kitOilCount}
+            oilSource={session.oilSource}
+            onOilSourceChange={session.setOilSource}
+            oilCount={session.kitOilCount}
+            studioName={studio?.name}
+            studioOilCount={studioOils.length > 0 ? studioOils.length : undefined}
           />
         </ScrollView>
       ) : (

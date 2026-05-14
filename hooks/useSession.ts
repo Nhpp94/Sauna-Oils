@@ -8,11 +8,11 @@ import { useMyOils } from './useMyOils';
 import { useMyIncense } from './useMyIncense';
 import { SavedSession } from '../context/SavedSessionsContext';
 
-export function useSession(customOils: EssentialOil[] = []) {
+export function useSession(customOils: EssentialOil[] = [], studioOils: EssentialOil[] = []) {
   const { ownedIds } = useMyOils();
   const { ownedIncenseIds } = useMyIncense();
   const { oils: remoteOils, blends: remoteBlends, incense: remoteIncense } = useRemoteData();
-  const [kitOnly, setKitOnly] = useState(false);
+  const [oilSource, setOilSource] = useState<'all' | 'kit' | 'studio'>('all');
   const [vibe, setVibe] = useState<Vibe | null>(null);
   const [time, setTime] = useState<TimeOfDay | null>(null);
   const [rounds, setRounds] = useState<SessionTrio[] | null>(null);
@@ -20,10 +20,14 @@ export function useSession(customOils: EssentialOil[] = []) {
 
   const allOils = useMemo(() => [...remoteOils, ...customOils], [remoteOils, customOils]);
 
+  // Derived for incense filtering — studio mode uses all incense
+  const kitOnly = oilSource === 'kit';
+
   const oilPool = useMemo(() => {
-    if (kitOnly) return allOils.filter(o => ownedIds.has(o.id));
+    if (oilSource === 'kit')    return allOils.filter(o => ownedIds.has(o.id));
+    if (oilSource === 'studio') return studioOils.length ? studioOils : allOils;
     return allOils;
-  }, [kitOnly, allOils, ownedIds]);
+  }, [oilSource, allOils, ownedIds, studioOils]);
 
   const kitBlendCount = useMemo(() => {
     if (!kitOnly) return 0;
@@ -147,8 +151,9 @@ export function useSession(customOils: EssentialOil[] = []) {
   return {
     vibe, setVibe,
     time, setTime,
-    kitOnly, setKitOnly,
+    oilSource, setOilSource,
     kitOilCount: oilPool.length,
+    studioOilCount: studioOils.length,
     kitBlendCount,
     kitIncenseCount: ownedIncenseIds.size,
     rounds,
