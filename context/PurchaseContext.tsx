@@ -4,7 +4,11 @@ import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 import { useAuth } from './AuthContext';
 
 const RC_API_KEY = process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY ?? '';
-const ENTITLEMENT = 'studio_creator';
+const PRODUCT_ID = process.env.EXPO_PUBLIC_REVENUECAT_STUDIO_PRODUCT_ID ?? 'studio_admin_monthly';
+const ENTITLEMENTS = (process.env.EXPO_PUBLIC_REVENUECAT_STUDIO_ENTITLEMENT ?? 'studio_creator,Sauna Oils Studio')
+  .split(',')
+  .map(id => id.trim())
+  .filter(Boolean);
 
 interface PurchaseContextValue {
   isStudioCreatorActive: boolean;
@@ -16,6 +20,29 @@ interface PurchaseContextValue {
 
 const PurchaseContext = createContext<PurchaseContextValue | null>(null);
 
+function getActiveEntitlementIds(info: any) {
+  return Object.keys(info?.entitlements?.active ?? {});
+}
+
+function hasStudioEntitlement(info: any) {
+  return ENTITLEMENTS.some(id => !!info?.entitlements?.active?.[id]);
+}
+
+function entitlementErrorMessage(info: any) {
+  const activeIds = getActiveEntitlementIds(info);
+  const expected = ENTITLEMENTS.join('" or "');
+  const suffix = activeIds.length > 0
+    ? ` Active entitlement: ${activeIds.join(', ')}.`
+    : ' No active entitlements were returned.';
+  return `Purchase completed, but RevenueCat did not return the expected "${expected}" entitlement.${suffix}`;
+}
+
+function findStudioPackage(offerings: any) {
+  return offerings.current?.availablePackages.find(
+    (p: any) => p.product.identifier === PRODUCT_ID
+  ) ?? offerings.current?.monthly ?? offerings.current?.availablePackages[0];
+}
+
 export function PurchaseProvider({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   const [isStudioCreatorActive, setIsStudioCreatorActive] = useState(false);
@@ -26,7 +53,7 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
     if (Platform.OS !== 'ios') return;
     try {
       const info = await Purchases.getCustomerInfo();
-      setIsStudioCreatorActive(!!info.entitlements.active[ENTITLEMENT]);
+      setIsStudioCreatorActive(hasStudioEntitlement(info));
     } catch {
       setIsStudioCreatorActive(false);
     }
@@ -40,9 +67,7 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
       refreshEntitlement();
       Purchases.getOfferings().then(offerings => {
         console.log('[RC] current offering:', JSON.stringify(offerings.current));
-        const pkg = offerings.current?.availablePackages.find(
-          p => p.product.identifier === 'studio_admin_monthly'
-        ) ?? offerings.current?.monthly ?? offerings.current?.availablePackages[0];
+        const pkg = findStudioPackage(offerings);
         console.log('[RC] package found:', JSON.stringify(pkg));
         if (pkg) setPriceString(pkg.product.priceString);
         else setPriceString('$19.99');
@@ -54,7 +79,7 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
     if (Platform.OS !== 'ios') return;
     // Listen for customer info updates (e.g. subscription renewal in background)
     Purchases.addCustomerInfoUpdateListener((info) => {
-      setIsStudioCreatorActive(!!info.entitlements.active[ENTITLEMENT]);
+      setIsStudioCreatorActive(hasStudioEntitlement(info));
     });
   }, []);
 
@@ -63,16 +88,21 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
     setPurchaseLoading(true);
     try {
       const offerings = await Purchases.getOfferings();
-      const pkg = offerings.current?.availablePackages.find(
-        p => p.product.identifier === 'studio_admin_monthly'
-      ) ?? offerings.current?.monthly ?? offerings.current?.availablePackages[0];
+      const pkg = findStudioPackage(offerings);
 
       if (!pkg) return 'Subscription not available — please try again later';
 
       const { customerInfo } = await Purchases.purchasePackage(pkg);
-      const active = !!customerInfo.entitlements.active[ENTITLEMENT];
+      let active = hasStudioEntitlement(customerInfo);
+      let latestInfo = customerInfo;
+
+      if (!active) {
+        latestInfo = await Purchases.getCustomerInfo();
+        active = hasStudioEntitlement(latestInfo);
+      }
+
       setIsStudioCreatorActive(active);
-      return active ? null : 'Purchase completed but entitlement not found — please restore purchases';
+      return active ? null : entitlementErrorMessage(latestInfo);
     } catch (e: any) {
       if (e?.userCancelled) return 'cancelled';
       return e?.message ?? 'Purchase failed — please try again';
@@ -86,9 +116,9 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
     setPurchaseLoading(true);
     try {
       const info = await Purchases.restorePurchases();
-      const active = !!info.entitlements.active[ENTITLEMENT];
+      const active = hasStudioEntitlement(info);
       setIsStudioCreatorActive(active);
-      return active ? null : 'No active subscription found';
+      return active ? null : entitlementErrorMessage(info);
     } catch (e: any) {
       return e?.message ?? 'Restore failed';
     } finally {

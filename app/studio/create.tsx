@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
   KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView,
@@ -14,8 +14,12 @@ type Step = 'paywall' | 'details';
 
 export default function CreateStudioScreen() {
   const router = useRouter();
-  const { createStudio } = useStudio();
+  const { createStudio, studios } = useStudio();
   const { isStudioCreatorActive, purchaseLoading, priceString, purchaseStudioCreator, restorePurchases } = usePurchase();
+  const hasPaidStudio = useMemo(
+    () => studios.some(entry => entry.role === 'admin' && entry.studio.created_via === 'paid'),
+    [studios],
+  );
 
   const [step, setStep] = useState<Step>(isStudioCreatorActive ? 'details' : 'paywall');
   const [promoCode, setPromoCode] = useState('');
@@ -38,7 +42,11 @@ export default function CreateStudioScreen() {
     setRestoreMsg(null);
     const err = await purchaseStudioCreator();
     if (err === null) {
-      setStep('details');
+      if (hasPaidStudio) {
+        setPurchaseError('Your subscription includes one studio. You already have a studio for this subscription.');
+      } else {
+        setStep('details');
+      }
     } else if (err !== 'cancelled') {
       setPurchaseError(err);
     }
@@ -49,7 +57,11 @@ export default function CreateStudioScreen() {
     setRestoreMsg(null);
     const err = await restorePurchases();
     if (err === null) {
-      setStep('details');
+      if (hasPaidStudio) {
+        setRestoreMsg('Your subscription is active and already connected to one studio.');
+      } else {
+        setStep('details');
+      }
     } else {
       setRestoreMsg(err);
     }
@@ -75,6 +87,10 @@ export default function CreateStudioScreen() {
 
   async function handleCreate() {
     if (!name.trim()) return;
+    if (!promoCode && hasPaidStudio) {
+      setCreateError('Your subscription includes one studio. You already have a studio for this subscription.');
+      return;
+    }
     setCreateError(null);
     setCreateLoading(true);
     const err = await createStudio(name, description, location, promoCode || undefined);
@@ -217,6 +233,8 @@ export default function CreateStudioScreen() {
           <Text style={styles.subtitle}>
             {promoCode
               ? 'Partner code applied — set up your studio below.'
+              : hasPaidStudio
+              ? 'Your subscription already has a studio. Manage your existing studio from the Studio tab.'
               : 'Name your studio and add some context for your team.'}
           </Text>
 
@@ -230,6 +248,15 @@ export default function CreateStudioScreen() {
               {promoCode ? 'Partner code applied' : 'Subscription active'}
             </Text>
           </View>
+
+          {hasPaidStudio && !promoCode && (
+            <View style={styles.limitBox}>
+              <Ionicons name="business-outline" size={16} color={Colors.gold} />
+              <Text style={styles.limitText}>
+                One active subscription can create one studio. Use your existing studio, or redeem a partner code for a separate studio.
+              </Text>
+            </View>
+          )}
 
           <Text style={styles.fieldLabel}>Studio name *</Text>
           <TextInput
@@ -272,10 +299,10 @@ export default function CreateStudioScreen() {
           )}
 
           <TouchableOpacity
-            style={[styles.primaryBtn, (!name.trim() || createLoading) && styles.btnDisabled]}
+            style={[styles.primaryBtn, (!name.trim() || createLoading || (hasPaidStudio && !promoCode)) && styles.btnDisabled]}
             onPress={handleCreate}
             activeOpacity={0.85}
-            disabled={!name.trim() || createLoading}
+            disabled={!name.trim() || createLoading || (hasPaidStudio && !promoCode)}
           >
             {createLoading
               ? <ActivityIndicator size="small" color={Colors.bg} />
@@ -319,6 +346,8 @@ const styles = StyleSheet.create({
   redeemBtnText: { fontFamily: Typography.sansMedium, fontSize: FontSize.sm, color: Colors.gold },
   errorBox: { flexDirection: 'row', alignItems: 'center', gap: Spacing.xs, backgroundColor: Colors.errorBg, borderWidth: 1, borderColor: Colors.errorBorder, borderRadius: Radius.md, padding: Spacing.md, width: '100%', marginTop: Spacing.sm },
   errorText: { fontFamily: Typography.sans, fontSize: FontSize.sm, color: Colors.errorText, flex: 1 },
+  limitBox: { flexDirection: 'row', alignItems: 'flex-start', gap: Spacing.sm, backgroundColor: Colors.bgCard, borderWidth: 1, borderColor: Colors.borderGold, borderRadius: Radius.md, padding: Spacing.md, width: '100%', marginBottom: Spacing.md },
+  limitText: { fontFamily: Typography.sans, fontSize: FontSize.sm, color: Colors.textSecondary, flex: 1, lineHeight: FontSize.sm * 1.45 },
   legalText: { fontFamily: Typography.sans, fontSize: FontSize.xs, color: Colors.textMuted, textAlign: 'center', marginTop: Spacing.lg, lineHeight: FontSize.xs * 1.6, paddingHorizontal: Spacing.md },
   backBtn: { flexDirection: 'row', alignItems: 'center', gap: 2, alignSelf: 'flex-start', paddingVertical: Spacing.xs, marginBottom: Spacing.md },
   backBtnText: { fontFamily: Typography.sans, fontSize: FontSize.sm, color: Colors.textMuted },

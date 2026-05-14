@@ -12,8 +12,8 @@ import { setSharedSession } from '../../store/sessionStore';
 export default function SessionTab() {
   const router = useRouter();
   const { customOils } = useCustomLibrary();
-  const { studio, studioOils } = useStudio();
-  const session = useSession(customOils, studioOils);
+  const { studio, studioKitOils, studioKitIncense, studioKitBlends } = useStudio();
+  const session = useSession(customOils, studioKitOils, studioKitIncense, studioKitBlends);
   setSharedSession(session);
 
   const handleGenerate = () => {
@@ -35,7 +35,6 @@ export default function SessionTab() {
           onOilSourceChange={session.setOilSource}
           oilCount={session.kitOilCount}
           studioName={studio?.name}
-          studioOilCount={studioOils.length > 0 ? studioOils.length : undefined}
         />
       </ScrollView>
     </View>

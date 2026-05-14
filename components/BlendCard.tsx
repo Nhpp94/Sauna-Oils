@@ -10,7 +10,7 @@ import { BotanicalIcon } from './BotanicalIcon';
 import { OIL_ICONS } from '../constants/oilIcons';
 
 function blendBotanical(blend: Blend): string {
-  if (blend.id.startsWith('custom_blend_')) return 'star';
+  if (blend.id.startsWith('custom_blend_') || blend.id.startsWith('studio_custom_blend_')) return 'star';
   return OIL_ICONS[blend.oils[0]?.id]?.botanical ?? 'sprout';
 }
 

@@ -19,19 +19,37 @@ interface SelectedOil {
 interface Props {
   visible: boolean;
   onClose: () => void;
-  onSave: (blend: Blend) => void;
+  onSave: (blend: Blend, addToKit?: boolean) => void | Promise<void>;
   customOils?: EssentialOil[];
+  oilOptions?: EssentialOil[];
+  title?: string;
+  saveLabel?: string;
+  showAddToKitToggle?: boolean;
 }
 
-export function AddBlendModal({ visible, onClose, onSave, customOils = [] }: Props) {
+export function AddBlendModal({
+  visible,
+  onClose,
+  onSave,
+  customOils = [],
+  oilOptions,
+  title = 'Create Blend',
+  saveLabel = 'Save Blend',
+  showAddToKitToggle = false,
+}: Props) {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [selectedOils, setSelectedOils] = useState<SelectedOil[]>([]);
   const [search, setSearch] = useState('');
   const [showPicker, setShowPicker] = useState(false);
+  const [addToKit, setAddToKit] = useState(true);
   const { oils: remoteOils } = useRemoteData();
 
-  const allOils = useMemo(() => [...remoteOils, ...customOils], [remoteOils, customOils]);
+  const allOils = useMemo(() => {
+    const byId = new Map<string, EssentialOil>();
+    [...(oilOptions ?? remoteOils), ...(!oilOptions ? customOils : [])].forEach(oil => byId.set(oil.id, oil));
+    return Array.from(byId.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [remoteOils, customOils, oilOptions]);
 
   const filteredOils = useMemo(() => {
     const q = search.toLowerCase();
@@ -59,7 +77,7 @@ export function AddBlendModal({ visible, onClose, onSave, customOils = [] }: Pro
     }));
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!name.trim()) { Alert.alert('Name required', 'Please enter a name for your blend.'); return; }
     if (selectedOils.length < 2) { Alert.alert('Add oils', 'A blend needs at least 2 oils.'); return; }
 
@@ -82,7 +100,7 @@ export function AddBlendModal({ visible, onClose, onSave, customOils = [] }: Pro
       precautions: [],
     };
 
-    onSave(blend);
+    await onSave(blend, addToKit);
     handleClose();
   };
 
@@ -92,6 +110,7 @@ export function AddBlendModal({ visible, onClose, onSave, customOils = [] }: Pro
     setSelectedOils([]);
     setSearch('');
     setShowPicker(false);
+    setAddToKit(true);
     onClose();
   };
 
@@ -101,7 +120,7 @@ export function AddBlendModal({ visible, onClose, onSave, customOils = [] }: Pro
         <View style={styles.container}>
           {/* Header */}
           <View style={styles.header}>
-            <Text style={styles.headerTitle}>Create Blend</Text>
+            <Text style={styles.headerTitle}>{title}</Text>
             <TouchableOpacity onPress={handleClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
               <Ionicons name="close" size={24} color={Colors.textSecondary} />
             </TouchableOpacity>
@@ -175,13 +194,29 @@ export function AddBlendModal({ visible, onClose, onSave, customOils = [] }: Pro
               <Text style={styles.addOilBtnText}>Add Oil</Text>
             </TouchableOpacity>
 
+            {showAddToKitToggle && (
+              <TouchableOpacity
+                style={styles.toggleRow}
+                onPress={() => setAddToKit(v => !v)}
+                activeOpacity={0.75}
+              >
+                <View style={[styles.checkbox, addToKit && styles.checkboxActive]}>
+                  {addToKit && <Ionicons name="checkmark" size={13} color={Colors.bg} />}
+                </View>
+                <View style={styles.toggleCopy}>
+                  <Text style={styles.toggleTitle}>Add to Studio Kit</Text>
+                  <Text style={styles.toggleSubtitle}>Make this blend available for sessions right away</Text>
+                </View>
+              </TouchableOpacity>
+            )}
+
             <View style={{ height: 24 }} />
           </ScrollView>
 
           {/* Save */}
           <View style={styles.footer}>
             <TouchableOpacity style={styles.saveBtn} onPress={handleSave} activeOpacity={0.8}>
-              <Text style={styles.saveBtnText}>Save Blend</Text>
+              <Text style={styles.saveBtnText}>{saveLabel}</Text>
               <Ionicons name="checkmark" size={18} color={Colors.bg} />
             </TouchableOpacity>
           </View>
@@ -390,6 +425,44 @@ const styles = StyleSheet.create({
     fontFamily: Typography.sansMedium,
     fontSize: FontSize.md,
     color: Colors.gold,
+  },
+  toggleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.md,
+    backgroundColor: Colors.bgCard,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    borderRadius: Radius.md,
+    padding: Spacing.md,
+    marginTop: Spacing.md,
+  },
+  checkbox: {
+    width: 22,
+    height: 22,
+    borderRadius: Radius.sm,
+    borderWidth: 1,
+    borderColor: Colors.borderGold,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  checkboxActive: {
+    backgroundColor: Colors.gold,
+    borderColor: Colors.gold,
+  },
+  toggleCopy: {
+    flex: 1,
+  },
+  toggleTitle: {
+    fontFamily: Typography.sansMedium,
+    fontSize: FontSize.md,
+    color: Colors.textPrimary,
+  },
+  toggleSubtitle: {
+    fontFamily: Typography.sans,
+    fontSize: FontSize.xs,
+    color: Colors.textMuted,
+    marginTop: 2,
   },
   footer: {
     padding: Spacing.lg,

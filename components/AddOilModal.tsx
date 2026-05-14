@@ -36,16 +36,27 @@ const NOTES: { value: NoteType; label: string; desc: string }[] = [
 interface Props {
   visible: boolean;
   onClose: () => void;
-  onSave: (oil: EssentialOil) => void;
+  onSave: (oil: EssentialOil, addToKit?: boolean) => void | Promise<void>;
+  title?: string;
+  saveLabel?: string;
+  showAddToKitToggle?: boolean;
 }
 
-export function AddOilModal({ visible, onClose, onSave }: Props) {
+export function AddOilModal({
+  visible,
+  onClose,
+  onSave,
+  title = 'Add Custom Oil',
+  saveLabel = 'Save Oil',
+  showAddToKitToggle = false,
+}: Props) {
   const [name, setName] = useState('');
   const [category, setCategory] = useState<Category | null>(null);
   const [note, setNote] = useState<NoteType | null>(null);
   const [intensity, setIntensity] = useState<1 | 2 | 3>(2);
   const [selectedVibes, setSelectedVibes] = useState<Set<Vibe>>(new Set());
   const [selectedTimes, setSelectedTimes] = useState<Set<TimeOfDay>>(new Set());
+  const [addToKit, setAddToKit] = useState(true);
 
   const toggleVibe = (v: Vibe) => {
     setSelectedVibes(prev => {
@@ -63,7 +74,7 @@ export function AddOilModal({ visible, onClose, onSave }: Props) {
     });
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!name.trim()) { Alert.alert('Name required', 'Please enter a name for your oil.'); return; }
     if (!category) { Alert.alert('Category required', 'Please select a category.'); return; }
     if (!note) { Alert.alert('Note required', 'Please select top, middle, or base note.'); return; }
@@ -88,7 +99,7 @@ export function AddOilModal({ visible, onClose, onSave }: Props) {
       precautions: [],
     };
 
-    onSave(oil);
+    await onSave(oil, addToKit);
     handleClose();
   };
 
@@ -99,6 +110,7 @@ export function AddOilModal({ visible, onClose, onSave }: Props) {
     setIntensity(2);
     setSelectedVibes(new Set());
     setSelectedTimes(new Set());
+    setAddToKit(true);
     onClose();
   };
 
@@ -108,7 +120,7 @@ export function AddOilModal({ visible, onClose, onSave }: Props) {
         <View style={styles.container}>
           {/* Header */}
           <View style={styles.header}>
-            <Text style={styles.headerTitle}>Add Custom Oil</Text>
+            <Text style={styles.headerTitle}>{title}</Text>
             <TouchableOpacity onPress={handleClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
               <Ionicons name="close" size={24} color={Colors.textSecondary} />
             </TouchableOpacity>
@@ -218,13 +230,29 @@ export function AddOilModal({ visible, onClose, onSave }: Props) {
               })}
             </View>
 
+            {showAddToKitToggle && (
+              <TouchableOpacity
+                style={styles.addToKitRow}
+                onPress={() => setAddToKit(v => !v)}
+                activeOpacity={0.75}
+              >
+                <View style={[styles.toggleIcon, addToKit && styles.toggleIconActive]}>
+                  {addToKit && <Ionicons name="checkmark" size={14} color={Colors.bg} />}
+                </View>
+                <View style={styles.toggleCopy}>
+                  <Text style={styles.toggleTitle}>Add to Studio Kit</Text>
+                  <Text style={styles.toggleDesc}>Make this oil available for sessions right away</Text>
+                </View>
+              </TouchableOpacity>
+            )}
+
             <View style={{ height: 24 }} />
           </ScrollView>
 
           {/* Save */}
           <View style={styles.footer}>
             <TouchableOpacity style={styles.saveBtn} onPress={handleSave} activeOpacity={0.8}>
-              <Text style={styles.saveBtnText}>Save Oil</Text>
+              <Text style={styles.saveBtnText}>{saveLabel}</Text>
               <Ionicons name="checkmark" size={18} color={Colors.bg} />
             </TouchableOpacity>
           </View>
@@ -437,6 +465,41 @@ const styles = StyleSheet.create({
   },
   timeChipTextActive: {
     color: Colors.gold,
+  },
+  addToKitRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.md,
+    borderRadius: Radius.md,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    backgroundColor: Colors.bgCard,
+    padding: Spacing.md,
+    marginTop: Spacing.lg,
+  },
+  toggleIcon: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  toggleIconActive: {
+    borderColor: Colors.gold,
+    backgroundColor: Colors.gold,
+  },
+  toggleCopy: { flex: 1, gap: 2 },
+  toggleTitle: {
+    fontFamily: Typography.sansMedium,
+    fontSize: FontSize.sm,
+    color: Colors.textPrimary,
+  },
+  toggleDesc: {
+    fontFamily: Typography.sans,
+    fontSize: FontSize.xs,
+    color: Colors.textMuted,
   },
   footer: {
     padding: Spacing.lg,

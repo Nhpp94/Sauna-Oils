@@ -8,7 +8,12 @@ import { useMyOils } from './useMyOils';
 import { useMyIncense } from './useMyIncense';
 import { SavedSession } from '../context/SavedSessionsContext';
 
-export function useSession(customOils: EssentialOil[] = [], studioOils: EssentialOil[] = []) {
+export function useSession(
+  customOils: EssentialOil[] = [],
+  studioOils: EssentialOil[] = [],
+  studioIncense: Incense[] = [],
+  studioBlends: Blend[] = [],
+) {
   const { ownedIds } = useMyOils();
   const { ownedIncenseIds } = useMyIncense();
   const { oils: remoteOils, blends: remoteBlends, incense: remoteIncense } = useRemoteData();
@@ -22,6 +27,7 @@ export function useSession(customOils: EssentialOil[] = [], studioOils: Essentia
 
   // Derived for incense filtering — studio mode uses all incense
   const kitOnly = oilSource === 'kit';
+  const studioOnly = oilSource === 'studio';
 
   const oilPool = useMemo(() => {
     if (oilSource === 'kit')    return allOils.filter(o => ownedIds.has(o.id));
@@ -44,7 +50,19 @@ export function useSession(customOils: EssentialOil[] = [], studioOils: Essentia
     for (let r = 0; r < 3; r++) {
       const pool = oilPool.filter(o => !usedIds.has(o.id));
       const effectivePool = pool.length >= 3 ? pool : oilPool;
-      const trio = generateSession(vibe, time, effectivePool, 3, ROUND_POSITIONS[r], kitOnly ? ownedIds : undefined, kitOnly ? ownedIncenseIds : undefined, remoteBlends, remoteIncense);
+      const studioIncenseIds = new Set(studioIncense.map(i => i.id));
+      const studioBlendPool = studioOnly ? studioBlends : remoteBlends;
+      const trio = generateSession(
+        vibe,
+        time,
+        effectivePool,
+        3,
+        ROUND_POSITIONS[r],
+        kitOnly ? ownedIds : undefined,
+        kitOnly ? ownedIncenseIds : studioOnly && studioIncense.length ? studioIncenseIds : undefined,
+        studioBlendPool,
+        studioOnly && studioIncense.length ? studioIncense : remoteIncense,
+      );
       generated.push(trio);
       trio.slots.forEach(s => {
         if (s.kind === 'oil') usedIds.add(s.oil.id);
@@ -54,7 +72,7 @@ export function useSession(customOils: EssentialOil[] = [], studioOils: Essentia
     const sessionIncense = generated[0].incense;
     generated.forEach(trio => { trio.incense = sessionIncense; });
     setRounds(generated);
-  }, [vibe, time, oilPool, kitOnly, ownedIds, ownedIncenseIds]);
+  }, [vibe, time, oilPool, kitOnly, studioOnly, ownedIds, ownedIncenseIds, remoteBlends, remoteIncense, studioIncense, studioBlends]);
 
   const initBuildRounds = useCallback((builtRounds: SessionTrio[], v?: Vibe | null, t?: TimeOfDay | null) => {
     setSource('built');
@@ -135,10 +153,21 @@ export function useSession(customOils: EssentialOil[] = [], studioOils: Essentia
       : otherExcludedPool.length >= 3 ? otherExcludedPool
       : oilPool;
 
-    const newTrio = generateSession(vibe, time, effectivePool, 3, ROUND_POSITIONS[roundIndex], kitOnly ? ownedIds : undefined, kitOnly ? ownedIncenseIds : undefined);
+    const studioIncenseIds = new Set(studioIncense.map(i => i.id));
+    const newTrio = generateSession(
+      vibe,
+      time,
+      effectivePool,
+      3,
+      ROUND_POSITIONS[roundIndex],
+      kitOnly ? ownedIds : undefined,
+      kitOnly ? ownedIncenseIds : studioOnly && studioIncense.length ? studioIncenseIds : undefined,
+      studioOnly ? studioBlends : remoteBlends,
+      studioOnly && studioIncense.length ? studioIncense : remoteIncense,
+    );
     // Preserve the existing incense — "New" only refreshes oils/blends
     setRounds(prev => prev?.map((r, i) => i === roundIndex ? { ...newTrio, incense: currentIncense } : r) ?? null);
-  }, [vibe, time, rounds, oilPool, kitOnly, ownedIds, ownedIncenseIds]);
+  }, [vibe, time, rounds, oilPool, kitOnly, studioOnly, ownedIds, ownedIncenseIds, remoteBlends, remoteIncense, studioIncense, studioBlends]);
 
   const setRoundIncense = useCallback((roundIndex: number, incense: Incense) => {
     setRounds(prev => prev?.map((r, i) => i !== roundIndex ? r : { ...r, incense }) ?? null);

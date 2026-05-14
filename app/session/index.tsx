@@ -13,8 +13,8 @@ import { setSharedSession, getPendingLoad, clearPendingLoad, setActiveSavedSessi
 export default function SessionScreen() {
   const router = useRouter();
   const { customOils } = useCustomLibrary();
-  const { studio, studioOils } = useStudio();
-  const session = useSession(customOils, studioOils);
+  const { studio, studioKitOils, studioKitIncense, studioKitBlends } = useStudio();
+  const session = useSession(customOils, studioKitOils, studioKitIncense, studioKitBlends);
   const [mode, setMode] = useState<'generate' | 'build'>('generate');
 
   useEffect(() => {
@@ -109,7 +109,6 @@ export default function SessionScreen() {
             onOilSourceChange={session.setOilSource}
             oilCount={session.kitOilCount}
             studioName={studio?.name}
-            studioOilCount={studioOils.length > 0 ? studioOils.length : undefined}
           />
         </ScrollView>
       ) : (

@@ -18,7 +18,7 @@ import { BotanicalIcon } from './BotanicalIcon';
 import { OIL_ICONS } from '../constants/oilIcons';
 
 function blendBotanical(blend: Blend): string {
-  if (blend.id.startsWith('custom_blend_')) return 'star';
+  if (blend.id.startsWith('custom_blend_') || blend.id.startsWith('studio_custom_blend_')) return 'star';
   return OIL_ICONS[blend.oils[0]?.id]?.botanical ?? 'sprout';
 }
 
@@ -49,6 +49,8 @@ interface Props {
   browseOils: (EssentialOil & { compatibilityScore: number })[];
   ownedIds: Set<string>;
   ownedIncenseIds: Set<string>;
+  browseIncense?: Incense[];
+  browseBlends?: Blend[];
   vibe: Vibe | null;
   time: TimeOfDay | null;
   initialTab?: Tab;
@@ -59,7 +61,7 @@ interface Props {
   onClose: () => void;
 }
 
-export function SwapModal({ visible, oilToReplace, suggestion, browseOils, customBlends, ownedIds, ownedIncenseIds, initialTab, onUseOil, onUseBlend, onUseIncense, onClose }: Props) {
+export function SwapModal({ visible, oilToReplace, suggestion, browseOils, browseIncense, browseBlends, customBlends, ownedIds, ownedIncenseIds, initialTab, onUseOil, onUseBlend, onUseIncense, onClose }: Props) {
   const [tab, setTab] = useState<Tab>('oils');
   const { blends: remoteBlends, incense: remoteIncense } = useRemoteData();
   const [search, setSearch] = useState('');
@@ -108,15 +110,15 @@ export function SwapModal({ visible, oilToReplace, suggestion, browseOils, custo
       ]
     : browseOilsList.map(o => ({ type: 'oil' as const, oil: o }));
 
-  const sortedBlends = [...remoteBlends, ...(customBlends ?? [])]
-    .filter(b => !kitOnly || b.oils.every(bo => ownedIds.has(bo.id)))
+  const sortedBlends = [...(browseBlends ?? [...remoteBlends, ...(customBlends ?? [])])]
+    .filter(b => !kitOnly || browseBlends || b.oils.every(bo => ownedIds.has(bo.id)))
     .filter(b => {
       const q = search.toLowerCase();
       return !q || b.name.toLowerCase().includes(q) || b.benefits.some(x => x.toLowerCase().includes(q));
     })
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const sortedIncense = [...remoteIncense]
+  const sortedIncense = [...(browseIncense ?? remoteIncense)]
     .filter(i => !kitOnly || ownedIncenseIds.has(i.id))
     .filter(i => {
       const q = search.toLowerCase();

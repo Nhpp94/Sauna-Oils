@@ -15,6 +15,7 @@ import { VIBE_META, VIBE_ICONS, VIBE_COLORS, TIME_ICONS } from '../../constants/
 import { SessionSlot, SessionTrio } from '../../data/recommendations';
 import { Vibe, TimeOfDay, EssentialOil } from '../../data/oils';
 import { Incense } from '../../data/incense';
+import { Blend } from '../../data/blends';
 
 const VIBES = VIBE_META;
 
@@ -38,7 +39,7 @@ const emptyRound = (): RoundState => ({ slots: [null, null, null], incense: unde
 export default function NewStudioSessionScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { studio, studioOils, addSessionToStudio } = useStudio();
+  const { studio, studioKitOils, studioKitIncense, studioKitBlends, addSessionToStudio } = useStudio();
 
   const [localRounds, setLocalRounds] = useState<RoundState[]>([
     emptyRound(), emptyRound(), emptyRound(),
@@ -54,10 +55,11 @@ export default function NewStudioSessionScreen() {
   const [saving, setSaving] = useState(false);
 
   const browseOils = useMemo(
-    () => studioOils.map(o => ({ ...o, compatibilityScore: 0 as number })),
-    [studioOils],
+    () => studioKitOils.map(o => ({ ...o, compatibilityScore: 0 as number })),
+    [studioKitOils],
   );
-  const studioOilIds = useMemo(() => new Set(studioOils.map(o => o.id)), [studioOils]);
+  const studioOilIds = useMemo(() => new Set(studioKitOils.map(o => o.id)), [studioKitOils]);
+  const studioIncenseIds = useMemo(() => new Set(studioKitIncense.map(i => i.id)), [studioKitIncense]);
 
   const canSave = localRounds.every(r => r.slots.some(s => s !== null));
   const currentRound = localRounds[activeRound];
@@ -68,6 +70,16 @@ export default function NewStudioSessionScreen() {
     setLocalRounds(prev => prev.map((r, i) => i !== roundIndex ? r : {
       ...r,
       slots: r.slots.map((s, j) => j === slotIndex ? { kind: 'oil' as const, oil } : s),
+    }));
+    setSwapTarget(null);
+  };
+
+  const handleUseBlend = (blend: Blend) => {
+    if (!swapTarget || swapTarget.kind !== 'slot') return;
+    const { roundIndex, slotIndex } = swapTarget;
+    setLocalRounds(prev => prev.map((r, i) => i !== roundIndex ? r : {
+      ...r,
+      slots: r.slots.map((s, j) => j === slotIndex ? { kind: 'blend' as const, blend } : s),
     }));
     setSwapTarget(null);
   };
@@ -258,7 +270,9 @@ export default function NewStudioSessionScreen() {
                 slotIndex,
                 oil: oil ?? null,
               })}
-              onBlendPress={blend => router.push(`/blend/${blend.id}`)}
+              onBlendPress={blend => {
+                if (!blend.id.startsWith('studio_custom_blend_')) router.push(`/blend/${blend.id}`);
+              }}
             />
 
             {/* Incense row */}
@@ -381,14 +395,15 @@ export default function NewStudioSessionScreen() {
         oilToReplace={swapTarget?.kind === 'slot' ? (swapTarget.oil ?? null) : null}
         suggestion={null}
         browseOils={browseOils}
-        customBlends={[]}
+        browseBlends={studioKitBlends}
         ownedIds={studioOilIds}
-        ownedIncenseIds={new Set()}
+        ownedIncenseIds={studioIncenseIds}
+        browseIncense={studioKitIncense}
         vibe={localVibe}
         time={localTime}
         initialTab={swapTarget?.kind === 'incense' ? 'incense' : 'oils'}
         onUseOil={handleUseOil}
-        onUseBlend={() => {}}
+        onUseBlend={handleUseBlend}
         onUseIncense={handleUseIncense}
         onClose={() => setSwapTarget(null)}
       />

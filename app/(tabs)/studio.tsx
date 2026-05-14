@@ -4,6 +4,7 @@ import {
   ActivityIndicator, Share,
 } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../context/AuthContext';
 import { useStudio, StudioEntry } from '../../context/StudioContext';
@@ -52,10 +53,14 @@ const gate = StyleSheet.create({
 function NoStudio() {
   const router = useRouter();
   const { signOut } = useAuth();
+  const insets = useSafeAreaInsets();
   return (
     <View style={noStudio.container}>
       <GrainOverlay />
-      <ScrollView contentContainerStyle={noStudio.scroll} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={[noStudio.scroll, { paddingTop: insets.top + Spacing.lg }]}
+        showsVerticalScrollIndicator={false}
+      >
         <Text style={noStudio.title}>Your Studio</Text>
         <Text style={noStudio.subtitle}>
           Join your sauna house studio to access a shared oil catalog and pre-built sessions for your team.
@@ -107,7 +112,6 @@ const noStudio = StyleSheet.create({
 
 // ─── Studio card ──────────────────────────────────────────────────────────────
 function StudioCard({ entry, onPress }: { entry: StudioEntry; onPress: () => void }) {
-  const router = useRouter();
   const { purchaseStudioCreator, purchaseLoading } = usePurchase();
   const isAdmin = entry.role === 'admin';
 
@@ -146,11 +150,6 @@ function StudioCard({ entry, onPress }: { entry: StudioEntry; onPress: () => voi
 
   function handleShareCode() {
     Share.share({ message: `Join ${entry.studio.name} on Aufguss — code: ${entry.studio.join_code}` });
-  }
-
-  function handleManage() {
-    onPress(); // sets active studio first
-    router.push('/studio/manage');
   }
 
   return (
@@ -220,15 +219,6 @@ function StudioCard({ entry, onPress }: { entry: StudioEntry; onPress: () => voi
             <Text style={card.memberCount}>
               {memberCount} {memberCount === 1 ? 'member' : 'members'}
             </Text>
-            <TouchableOpacity
-              style={card.manageBtn}
-              onPress={handleManage}
-              activeOpacity={0.8}
-              hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
-            >
-              <Ionicons name="settings-outline" size={13} color={Colors.gold} />
-              <Text style={card.manageBtnText}>Manage</Text>
-            </TouchableOpacity>
           </View>
         </>
       )}
@@ -267,8 +257,6 @@ const card = StyleSheet.create({
   avatarOverflow: { backgroundColor: Colors.bgCard, borderColor: Colors.border },
   avatarOverflowText: { fontFamily: Typography.sansBold, fontSize: 9, color: Colors.textMuted },
   memberCount: { fontFamily: Typography.sans, fontSize: FontSize.sm, color: Colors.textMuted, flex: 1 },
-  manageBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: Spacing.sm, paddingVertical: 5, borderRadius: Radius.md, borderWidth: 1, borderColor: Colors.borderGold, backgroundColor: Colors.goldDim },
-  manageBtnText: { fontFamily: Typography.sansMedium, fontSize: FontSize.xs, color: Colors.gold },
   chevronRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: 4, paddingTop: Spacing.xs, borderTopWidth: 1, borderTopColor: Colors.border },
   tapHint: { fontFamily: Typography.sans, fontSize: FontSize.xs, color: Colors.textMuted },
   lockedContainer: { opacity: 0.75, borderColor: Colors.borderSubtle },
@@ -282,6 +270,7 @@ const card = StyleSheet.create({
 // ─── Main Studio tab ──────────────────────────────────────────────────────────
 export default function StudioScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { user, loading: authLoading, signOut } = useAuth();
   const { studios, loading, setActiveStudioId } = useStudio();
 
@@ -315,7 +304,11 @@ export default function StudioScreen() {
   return (
     <View style={styles.container}>
       <GrainOverlay />
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={[styles.scroll, { paddingTop: insets.top + Spacing.lg }]}
+        showsVerticalScrollIndicator={false}
+      >
         <Text style={styles.heading}>Your Studios</Text>
 
         {studios.map(entry => (

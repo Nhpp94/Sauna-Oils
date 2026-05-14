@@ -1,4 +1,8 @@
 import type { SessionTrio } from '../data/recommendations';
+import type { Category } from '../constants/categories';
+import type { NoteType, TimeOfDay, Vibe } from '../data/oils';
+import type { BlendOil } from '../data/blends';
+import type { IncenseForm } from '../data/incense';
 
 export interface Studio {
   id: string;
@@ -29,6 +33,63 @@ export interface StudioSession {
   rounds: SessionTrio[];
   vibe: string | null;
   time_of_day: string | null;
+  created_at: string;
+}
+
+export interface StudioCustomOilRow {
+  id: string;
+  studio_id: string;
+  name: string;
+  latin_name: string;
+  category: Category;
+  note: NoteType;
+  intensity: 1 | 2 | 3;
+  vibes: Vibe[];
+  time_of_day: TimeOfDay[];
+  body_impact: string;
+  sauna_note: string;
+  benefits: string[];
+  pairs_with: string[];
+  precautions: string[];
+  color: string;
+  emoji: string;
+  created_by: string;
+  created_at: string;
+}
+
+export interface StudioCustomBlendRow {
+  id: string;
+  studio_id: string;
+  name: string;
+  description: string;
+  sauna_note: string;
+  oils: BlendOil[];
+  vibes: Vibe[];
+  time_of_day: TimeOfDay[];
+  benefits: string[];
+  precautions: string[];
+  color: string;
+  emoji: string;
+  created_by: string;
+  created_at: string;
+}
+
+export interface StudioCustomIncenseRow {
+  id: string;
+  studio_id: string;
+  name: string;
+  latin_name: string | null;
+  origin: string;
+  form: IncenseForm;
+  vibes: Vibe[];
+  time_of_day: TimeOfDay[];
+  description: string;
+  sauna_note: string;
+  benefits: string[];
+  precautions: string[];
+  color: string;
+  emoji: string;
+  created_by: string;
   created_at: string;
 }
 

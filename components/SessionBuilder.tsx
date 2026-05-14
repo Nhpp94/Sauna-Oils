@@ -15,7 +15,6 @@ interface Props {
   onOilSourceChange: (v: 'all' | 'kit' | 'studio') => void;
   oilCount: number;
   studioName?: string;
-  studioOilCount?: number;
 }
 
 const VIBES = VIBE_META;
@@ -26,7 +25,7 @@ const TIMES: { value: TimeOfDay; label: string; desc: string }[] = [
   { value: 'evening',   label: 'Evening',   desc: 'Wind-down' },
 ];
 
-export function SessionBuilder({ selectedVibe, selectedTime, onVibeChange, onTimeChange, onGenerate, oilSource, onOilSourceChange, oilCount, studioName, studioOilCount }: Props) {
+export function SessionBuilder({ selectedVibe, selectedTime, onVibeChange, onTimeChange, onGenerate, oilSource, onOilSourceChange, oilCount, studioName }: Props) {
   const canGenerate = !!selectedVibe && !!selectedTime;
 
   return (
@@ -112,7 +111,7 @@ export function SessionBuilder({ selectedVibe, selectedTime, onVibeChange, onTim
           >
             <Ionicons name="business-outline" size={13} color={oilSource === 'studio' ? Colors.gold : Colors.textMuted} />
             <Text style={[styles.sourceSegText, oilSource === 'studio' && styles.sourceSegTextActive]} numberOfLines={1}>
-              {studioOilCount ? `${studioName} · ${studioOilCount}` : studioName}
+              {studioName}
             </Text>
           </TouchableOpacity>
         )}
