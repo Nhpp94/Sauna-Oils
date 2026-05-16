@@ -4,6 +4,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 
 const CHUNK_SIZE = 2000;
+const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+
+export const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
 const ExpoSecureStoreAdapter = {
   getItem: async (key: string) => {
@@ -42,8 +46,8 @@ const ExpoSecureStoreAdapter = {
 };
 
 export const supabase = createClient(
-  process.env.EXPO_PUBLIC_SUPABASE_URL!,
-  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY!,
+  SUPABASE_URL || 'https://missing-supabase-url.supabase.co',
+  SUPABASE_ANON_KEY || 'missing-supabase-anon-key',
   {
     auth: {
       storage: Platform.OS === 'web' ? AsyncStorage : ExpoSecureStoreAdapter,

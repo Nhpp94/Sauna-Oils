@@ -206,7 +206,7 @@ export default function ResultScreen() {
       >
         {/* Round tabs */}
         <View style={styles.roundTabs}>
-          {rounds.map((_, i) => (
+          {rounds.map((_: SessionTrio, i: number) => (
             <TouchableOpacity
               key={i}
               style={[styles.roundTab, activeRound === i && styles.roundTabActive]}

@@ -76,7 +76,7 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
   }, [user, refreshEntitlement]);
 
   useEffect(() => {
-    if (Platform.OS !== 'ios') return;
+    if (Platform.OS !== 'ios' || !RC_API_KEY) return;
     // Listen for customer info updates (e.g. subscription renewal in background)
     Purchases.addCustomerInfoUpdateListener((info) => {
       setIsStudioCreatorActive(hasStudioEntitlement(info));
@@ -85,6 +85,7 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
 
   async function purchaseStudioCreator(): Promise<string | null> {
     if (Platform.OS !== 'ios') return 'Subscriptions are only available on iOS';
+    if (!RC_API_KEY) return 'RevenueCat is not configured for this build';
     setPurchaseLoading(true);
     try {
       const offerings = await Purchases.getOfferings();
@@ -113,6 +114,7 @@ export function PurchaseProvider({ children }: { children: React.ReactNode }) {
 
   async function restorePurchases(): Promise<string | null> {
     if (Platform.OS !== 'ios') return null;
+    if (!RC_API_KEY) return 'RevenueCat is not configured for this build';
     setPurchaseLoading(true);
     try {
       const info = await Purchases.restorePurchases();
